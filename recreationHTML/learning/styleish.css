@@ -1,0 +1,74 @@
+body {
+  background-color:lightblue;
+  color: grey;
+  font-family: Arial, Helvetica, sans-sans-serif;
+  font-size: 16px;
+  line-height: 1.6em;
+  margin:0;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.box-1 {
+  background-color:black;
+  color: white;
+
+  border: 5px red solid;
+  border-radius: 10px;
+
+
+}
+
+.box-1 h1{
+  font-family: Tahoma;
+  font-weight: 800;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+div:hover {
+  background-color: orange;
+}
+
+.box-2 {
+  background-color: white;
+  border: 3px dotted black;
+  padding: 20px;
+  margin: 20px;
+}
+
+.box-2 h1 {
+  text-align: center;
+}
+
+.my-form {
+  padding: 20px;
+}
+
+.form-group {
+  padding-bottom: 15px;
+}
+
+.my-form label {
+  display:block;
+}
+
+.my-form input[type = "text"], .my-form textarea {
+  padding: 8px;
+  width: 100%;
+}
+
+.my-form input[type = submit] {
+  background-color: grey;
+}
+
+
+display: -ms-grid;
+display: grid;
+-ms-grid-columns: 1fr 350px;
+grid-template-columns: 1fr 350px;
+-ms-grid-rows: auto;
+grid-template-rows: auto;
