@@ -11,20 +11,43 @@
   </head>
   <body>
       <div class="grid">
-        <div class="image"> </div>
+        <div id="change-image" class="change-image"></div>
 
         <div class="white-space">
-          <div class="feature">magnetic closure</div>
-          <div class="feature">o-ring seal</div>
-          <div class="feature">storage compartment</div>
-          <div class="feature">grinding</div>
-          <div class="feature">weed</div>
 
-          <button class = "buy-button" onclick="window.location.href='https://buy.stripe.com/6oE6rVddF8KC4TeaEE';" target="_blank">Click Here</button>
+          <button class ="buy-button" onclick="window.location.href='https://buy.stripe.com/6oE6rVddF8KC4TeaEE';" target="_blank">Click Here</button>
+
+          <label class="rad-label" id="hi"><input type="radio" class="rad-input" name="rad"><div class="rad-design"></div><div class="rad-text">magnetic</div></label>
+        
+          <label class="rad-label">
+            <input type="radio" class="rad-input" name="rad">
+            <div class="rad-design"></div>
+            <div class="rad-text">o-ring</div>
+          </label>
+        
+          <label class="rad-label">
+            <input type="radio" class="rad-input" name="rad">
+            <div class="rad-design"></div>
+            <div class="rad-text">storage</div>
+          </label>
+        
+          <label class="rad-label">
+            <input type="radio" class="rad-input" name="rad">
+            <div class="rad-design"></div>
+            <div class="rad-text">grinding</div>
+          </label>
+
+          <label class="rad-label">
+            <input type="radio" class="rad-input" name="rad">
+            <div class="rad-design"></div>
+            <div class="rad-text">weed</div>
+          </label>
+
         </div>
         
 
       </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
       <script src="script.js"></script>
   </body>
