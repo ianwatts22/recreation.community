@@ -18,7 +18,7 @@ body {
 }
 
 .change-image {
-  background-image: url('blap.png');
+  background-image: url('assembled.png');
   background-position: 50% 50%;
   background-size: cover;
   width: 100%;
@@ -29,6 +29,7 @@ body {
   width: 100%;
   height: 100vh;
   position: relative;
+  padding: 20px;
 }
 
 
