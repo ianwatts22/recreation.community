@@ -14,45 +14,38 @@
         <div id="change-image" class="change-image"></div>
 
         <div class="white-space">
-
-          <button class ="buy-button" onclick="window.location.href='https://buy.stripe.com/6oE6rVddF8KC4TeaEE';" target="_blank">Click Here</button>
-
           <label class="rad-label" id="magnet-btn">
-            <input type="radio" class="rad-input" name="rad">
-            <div class="rad-design"></div>
-            <div class="rad-text">magnetic</div>
+            <input type="radio" class="rad-input" onclick="changeImage(magnet)" name="rad" value="" checked="checked">
+            <div class="rad-design"></div> <div class="rad-text">magnetic</div>
           </label>
         
-          <label class="rad-label" id="o-ring-btn">
-            <input type="radio" class="rad-input" name="rad">
-            <div class="rad-design"></div>
-            <div class="rad-text">o-ring</div>
+          <label class="rad-label" id="ring-btn">
+            <input type="radio" class="rad-input" name="rad" onclick="changeImage(ring)">
+            <div class="rad-design"></div> <div class="rad-text">o-ring</div>
           </label>
         
           <label class="rad-label" id="storage-btn">
-            <input type="radio" class="rad-input" name="rad">
-            <div class="rad-design"></div>
-            <div class="rad-text">storage</div>
+            <input type="radio" class="rad-input" name="rad" onclick="changeImage(storage)">
+            <div class="rad-design"></div> <div class="rad-text">storage</div>
           </label>
         
           <label class="rad-label" id="grinding-btn">
-            <input type="radio" class="rad-input" name="rad">
-            <div class="rad-design"></div>
-            <div class="rad-text">grinding</div>
+            <input type="radio" class="rad-input" name="rad" onclick="changeImage(grinding)">
+            <div class="rad-design"></div> <div class="rad-text">grinding</div>
           </label>
 
           <label class="rad-label" id="container-btn">
-            <input type="radio" class="rad-input" name="rad">
-            <div class="rad-design"></div>
-            <div class="rad-text">weed</div>
+            <input type="radio" class="rad-input" name="rad" onclick="changeImage(container)">
+            <div class="rad-design"></div>  <div class="rad-text">weed</div>
           </label>
 
+          <button class ="buy-button" onclick="window.location.href='https://buy.stripe.com/6oE6rVddF8KC4TeaEE';" target="_blank">buy now</button>
         </div>
-        
+      
 
       </div>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="script.js"></script>
   </body>
 </html>
