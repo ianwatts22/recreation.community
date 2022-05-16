@@ -4,7 +4,8 @@ body {
 
 * {
   transition-duration: 150ms;
-  font-family: 'Varela Round';font-size: 22px;
+  font-family: 'Varela Round';
+  font-size: 22px;
 }
 
 .grid {
@@ -18,7 +19,7 @@ body {
 }
 
 .change-image {
-  background-image: url('assembled.png');
+  background-image: url('images/caps.png');
   background-position: 50% 50%;
   background-size: cover;
   width: 100%;
@@ -60,7 +61,7 @@ body {
   display: flex;
   align-items: center;
 
-  border-radius: 100px;
+  border-radius: 20px;
   padding: 14px 16px;
   margin: 10px 0;
 
