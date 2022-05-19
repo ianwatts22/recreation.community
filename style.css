@@ -11,27 +11,65 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 350px;
-  grid-template-rows: auto;
-
+  grid-template-columns: 1fr 300px;
+  grid-template-rows: 60px 1fr;
+  position: relative;
 
   width: 100vw;
   height: 100vh;
 }
 
 .change-image {
-  background-image: url('images/caps.png');
+  background-image: url('images/magnet.png');
   background-position: 50% 50%;
   background-size: cover;
   width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  border-top-right-radius: 20px;
+  grid-row: 2;
+}
+
+.myVideo
+{
+  width: 100%;
   height: 100vh;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+}
+
+.header {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 1;
+  text-align: center;
+  line-height: 100%;
+  grid-row: 1;
+  grid-column: 1 / span 2;
+}
+
+.header h3 {
+  margin: auto;
+  vertical-align: middle;
+  line-height: 60px;
 }
 
 .white-space {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   position: relative;
   padding: 20px;
+  padding-top: 0;
+  z-index: 2;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 50px;
 }
 
 
@@ -143,4 +181,9 @@ body {
   left: 20px;
   color: hsla(0, 0%, 0%, .5);
   font-size: 16px;
+}
+
+
+.top-rad {
+  margin-top: 0;
 }
