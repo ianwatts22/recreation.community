@@ -1,18 +1,25 @@
 body {
     margin: 0;
+    min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+}
+
+html {
+    height: -webkit-fill-available;
   }
   
-  * {
+* {
     transition-duration: 150ms;
     font-family: 'Varela Round';
     font-size: 22px;
     color: hsl(0, 0%, 60%);
-  }
+}
   
-  .grid {
+.grid {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 60px 1fr auto;
+    grid-template-rows: 50px 1fr auto;
     position: relative;
   
     width: 100vw;
@@ -20,7 +27,7 @@ body {
   }
   
   .change-image {
-    background-image: url('images/magnet.png');
+    background-image: url('images/grinding.png');
     background-position: 50% 50%;
     background-size: cover;
     width: 100%;
@@ -56,7 +63,7 @@ body {
   .header h3 {
     margin: auto;
     vertical-align: middle;
-    line-height: 60px;
+    line-height: 50px;
   }
   
   .white-space {
@@ -187,5 +194,6 @@ body {
     margin-top: 0;
   }
   
+
 
   
