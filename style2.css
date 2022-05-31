@@ -16,7 +16,7 @@
   overflow: hidden;
   width: 100vw;
   height: 100vh;
-  height: var( — app-height);
+  height: var(—app-height);
  }
   
 .grid {
