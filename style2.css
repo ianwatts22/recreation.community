@@ -5,6 +5,20 @@
   color: hsl(0, 0%, 60%);
 }
 
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  /*min-height: 100vh;
+  /* mobile viewport bug fix */
+  max-height: -webkit-fill-available;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
+/*
 :root {
   —app-height: 100%;
  }
@@ -13,12 +27,12 @@
  body {
   padding: 0;
   margin: 0;
-  overflow: hidden;
   width: 100vw;
   height: 100vh;
   height: var(—app-height);
  }
-  
+*/
+
 .grid {
   display: grid;
   grid-template-columns: 1fr;
