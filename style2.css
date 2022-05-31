@@ -5,14 +5,19 @@
   color: hsl(0, 0%, 60%);
 }
 
-body {
-  margin: 0;
+:root {
+  —app-height: 100%;
+ }
+
+ html,
+ body {
   padding: 0;
+  margin: 0;
+  overflow: hidden;
   width: 100vw;
   height: 100vh;
-  /* mobile viewport bug fix */
-  height: -webkit-fill-available;
-}
+  height: var( — app-height);
+ }
   
 .grid {
   display: grid;
