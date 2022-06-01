@@ -12,11 +12,6 @@ body {
   max-height: -webkit-fill-available;
 }
 
-#ar {
-  height: 100px;
-  width: 100px;
-}
-
 html {
   height: -webkit-fill-available;
 }
