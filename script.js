@@ -12,13 +12,6 @@ var container = "url('images/container.png')";
     storage = "url('images/caps.png')";
 }*/
 
-const appHeight = () => {
-  const doc = document.documentElement;
-  doc.style.setProperty('—app-height', '${window.innerHeight}px');
-}
-window.addEventListener('resize', appHeight);
-appHeight();
-
 
 var vid = document.getElementById("myVideo");
 

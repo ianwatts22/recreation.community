@@ -1,0 +1,215 @@
+* {
+  transition-duration: 150ms;
+  font-family: 'Varela Round';
+  font-size: 22px;
+  color: hsl(0, 0%, 60%);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  max-height: -webkit-fill-available;
+}
+
+#ar {
+  height: 100px;
+  width: 100px;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
+.grid {
+  display: grid;
+  position: relative;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 1fr 1fr;
+  
+  width: 100%;
+  height: 100%;
+}
+
+/* header */
+.header {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 1;
+  text-align: center;
+  line-height: 100%;
+  grid-column: 1;
+  grid-row: 1;
+}
+.header h3 {
+  margin: auto;
+  vertical-align: middle;
+  line-height: 50px;
+}
+
+/* left */
+.change-image {
+  background-image: url('images/grinding.png');
+  background-position: 50% 50%;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  grid-column: 1;
+  grid-row: 2;
+}
+
+/* 
+.myVideo
+{
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+}
+*/
+
+
+/* right */
+.white-space {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 20px;
+  z-index: 2;
+  grid-column: 1;
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 50px;
+}
+
+.buy-button {
+  margin: auto;
+  height: 54px;
+  width: 100%;
+  border-radius: 20px;
+  background-color: rgb(246, 246, 246);
+  color: hsla(0, 0%, 0%, .5);
+  border-width: 0;
+}
+
+.buy-button:hover {
+  background-color: rgb(233, 233, 233);
+}
+
+
+/* radio buttons */
+.rad-label {
+  display: flex;
+  align-items: center;
+
+  border-radius: 20px;
+  padding: 14px 16px;
+  margin: 10px 0;
+
+  cursor: pointer;
+  transition: .3s;
+}
+
+.rad-label:hover,
+.rad-label:focus-within {
+  background: hsla(0, 0%, 80%, .14);
+}
+
+.rad-input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  z-index: -1;
+}
+
+.rad-design {
+  width: 22px;
+  height: 22px;
+  border-radius: 100px;
+
+  background: grey;
+  position: relative;
+}
+
+.rad-design::before {
+  content: '';
+
+  display: inline-block;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+
+  background: hsl(0, 0%, 90%);
+  transform: scale(1.1);
+  transition: .3s;
+}
+
+.rad-input:checked+.rad-design::before {
+  transform: scale(0);
+}
+
+.rad-text {
+  color: hsl(0, 0%, 60%);
+  margin-left: 14px;
+  letter-spacing: 3px;
+  /*text-transform: uppercase;*/
+  font-size: 18px;
+  font-weight: 900;
+
+  transition: .3s;
+}
+
+.rad-input:checked~.rad-text {
+  color: hsl(0, 0%, 40%);
+}
+
+
+/* ABS */
+.abs-site-link {
+  position: fixed;
+  bottom: 40px;
+  left: 20px;
+  color: hsla(0, 0%, 0%, .5);
+  font-size: 16px;
+}
+
+.top-rad {
+  margin-top: 0;
+}
+
+
+
+/* computer */
+@media only screen and (min-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr 300px;
+    grid-template-rows: 50px 1fr;
+  }
+
+  .white-space {
+    grid-column: 2;
+    grid-row: 2;
+    padding-top: 0;
+  }
+
+  .header {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+ }
+
+  .change-image {
+    grid-column: 1;
+    grid-row: 2;
+    border-top-right-radius: 20px;
+  }
+}
