@@ -49,3 +49,12 @@ window.addEventListener('resize', function(event){
     $(".myVideo")[0].play();
   }
 });
+
+
+//AR
+const linkElement = document.getElementById("ar-link");
+linkElement.addEventListener("message", function(event) {
+  if (event.data === "_apple_ar_quicklook_button_tapped") {
+    window.open("https://www.w3schools.com");
+  }
+}, false)
