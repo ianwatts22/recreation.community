@@ -10,6 +10,7 @@ body {
   margin: 0;
   height: 100vh;
   max-height: -webkit-fill-available;
+  overflow: hidden;
 }
 
 html {
@@ -58,7 +59,10 @@ html {
   grid-row: 2;
 }
 
-/* 
+/* landing page */
+
+
+
 .myVideo
 {
   width: 100%;
@@ -67,7 +71,6 @@ html {
   top: 0;
   left: 0;
 }
-*/
 
 
 /* right */
