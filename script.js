@@ -60,11 +60,11 @@ function hide(){
 }
 
 function vid1() {
-  $("#topoff").attr("src", "videos/vid1.mp4");
-  $('#topoff')[0].play();
+  $("#real-video").attr("src", "videos/vid1.mp4");
+  $('#real-video')[0].play();
 }
 
 function vid2() {
-  $("#topoff").attr("src", "videos/vid2.mp4");
-  $('#topoff')[0].play();
+  $("#real-video").attr("src", "videos/vid2.mp4");
+  $('#real-video')[0].play();
 }
