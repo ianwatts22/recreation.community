@@ -50,6 +50,7 @@ body {
   grid-template-rows: auto auto;
 
   position: relative;
+  z-index: 101;
   grid-column: 1;
   grid-row: 2;
   height: 100%;
