@@ -28,7 +28,6 @@ function myFunction2() {
 function changeVideo(){
     $("#change-image").fadeOut("slow", function() {
         //$('#video').setAttribute('src', "url('teeth.mp4')");
-        $('#video-source').src = 'magnet.mp4';
         $("#change-image").fadeIn("slow");
         console.log("ciao");
     });
@@ -49,3 +48,23 @@ window.addEventListener('resize', function(event){
     $(".myVideo")[0].play();
   }
 });
+
+$('#myVideo').bind('ended', function(){
+  //$('#myVideo').fadeOut()
+  console.log("ciao");
+});
+
+
+function hide(){
+  $('.blur').fadeOut();
+}
+
+function vid1() {
+  $("#topoff").attr("src", "videos/vid1.mp4");
+  $('#topoff')[0].play();
+}
+
+function vid2() {
+  $("#topoff").attr("src", "videos/vid2.mp4");
+  $('#topoff')[0].play();
+}

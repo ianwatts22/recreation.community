@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>recreation</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
+    <link rel="icon" href="images/fav/favicon.ico?v=2">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+    <div class="proto">
+        <video class="topoff" id="topoff" muted>
+            <source id="mp4" src="videos/vid1.mp4" type="video/mp4">
+        </video>
+
+        <div class="blurred-container">
+            <label class="rad-label" id="storage-btn" grid-row="1" grid-column="1">
+            <input type="radio" class="rad-input" name="rad" onclick="vid1()"><div class="rad-design"></div> <div class="rad-text">storage</div>
+            </label>
+        
+            <label class="rad-label" id="grinding-btn" grid-row="1" grid-column="2">
+            <input type="radio" class="rad-input" name="rad" onclick="vid2()"><div class="rad-design"></div> <div class="rad-text">grinding</div>
+            </label>
+    
+            <label class="rad-label" id="container-btn" grid-row="1" grid-column="3">
+            <input type="radio" class="rad-input" name="rad"><div class="rad-design"></div>  <div class="rad-text">portability</div>
+            </label>
+
+            <button class ="buy-now" onclick="window.location.href='https://buy.stripe.com/6oE6rVddF8KC4TeaEE';" target="_blank" grid-column="1 / span 3" grid-row="2">buy now</button>
+
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
