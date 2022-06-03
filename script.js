@@ -44,7 +44,7 @@ function vid1() {
 
 function vid2() {
   $("#real-video")[0].pause();
-  $("#real-video").attr("src", "videos/vid2.mp4");
+  $("#real-video").attr("src", "videos/teeth.mp4");
   $("#real-video")[0].load();
   $('#real-video')[0].play();
 }
