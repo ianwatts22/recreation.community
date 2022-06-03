@@ -12,6 +12,10 @@ body {
   max-height: -webkit-fill-available;
 }
 
+html {
+  height: -webkit-fill-available;
+}
+
 .proto {
   height: 100vh;
   width: 100%;
@@ -31,8 +35,7 @@ body {
   display: grid;
   position: relative;
   grid-template-columns: 1fr;
-  grid-template-rows: 50px auto;
-  
+  grid-template-rows: auto 1fr 200px;
 }
 
 .real-video {
@@ -46,6 +49,9 @@ body {
   grid-column: 1 / span 2;
 }
 
+#top-video {
+  grid-row: 1 / span 3;
+}
 
 .margin-maker {
   position: relative;
@@ -54,6 +60,14 @@ body {
   padding: 10px 10px;
   grid-column: 1;
   grid-row: 2;
+}
+
+.top-margin {
+  grid-row: 3;
+}
+
+.header-margin {
+  grid-row: 1;
 }
 
 .blurred-container {
@@ -68,82 +82,20 @@ body {
   height: 100%;
   width: 100%;
   padding: 10px 10px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
   border-radius: 20px;
-}
-
-
-html {
-  height: -webkit-fill-available;
-}
-
-.grid {
-  display: grid;
-  position: relative;
-  grid-template-columns: 1fr;
-  grid-template-rows: 50px 1fr auto;
-  
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
 }
 
 /* header */
 .header {
-  position:relative;
-  z-index: 3;
-  width: 100%;
-  height: 60px;
-  background-color: white;
-  z-index: 1;
+  display: block;
   text-align: center;
   line-height: 100%;
-  grid-column: 1;
-  grid-row: 1;
 }
 .header h3 {
   margin: auto;
   vertical-align: middle;
   line-height: 50px;
-}
-
-/* left */
-.change-image {
-  background-image: url('images/grinding.png');
-  background-position: 50% 50%;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-  grid-column: 1;
-  grid-row: 2;
-}
-
-/* landing page */
-.blur {
-  position: relative;
-  display: flex;
-  z-index: 4;
-  grid-column: 1 / span 2;
-  grid-row: 1 / span 3;
-  height: 100%;
-  width: 100%;
-  backdrop-filter: blur(4px);
-}
-
-.landing {
-  /*display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;*/
-  z-index: 5;
-  display: flex;
-  justify-content: center;
-
-
-  background-color: white;
-  border-radius: 20px;
-  margin: auto;
 }
 
 .buy-now {
@@ -160,6 +112,54 @@ html {
   grid-column: 1 / span 3;
 }
 
+
+/*OLD*/
+.grid {
+  display: grid;
+  position: relative;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 1fr auto;
+  
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+/* left */
+.change-image {
+  background-image: url('images/grinding.png');
+  background-position: 50% 50%;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  grid-column: 1;
+  grid-row: 2;
+}
+/* landing page */
+.blur {
+  position: relative;
+  display: flex;
+  z-index: 4;
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 3;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(4px);
+}
+.landing {
+  /*display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;*/
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+
+
+  background-color: white;
+  border-radius: 20px;
+  margin: auto;
+}
 .myVideo
 {
   width: 100%;
@@ -168,7 +168,6 @@ html {
   grid-row: 1 / span 2;
   grid-column: 1 / span 2;
 }
-
 .qrCode {
   background-image: url('images/recreation.community_QR.png');
   background-size: contain;
@@ -178,7 +177,6 @@ html {
   width: 300px;
   height: 300px;
 }
-
 .landing-left {
   grid-row: 1;
   grid-column: 1;
@@ -187,7 +185,6 @@ html {
   margin: 30px;
 
 }
-
 .ar-preview {
   /*background-image: url('images/ar-preview.png');
   background-size: contain;
@@ -201,13 +198,10 @@ html {
   min-width: 300px;
   margin: 30px;
 }
-
 .ar-img {
   /*min-width: 300px;*/
   max-height: 70vh;
 }
- 
-
 /* right */
 .white-space {
   width: 100%;
@@ -221,14 +215,6 @@ html {
   grid-template-columns: auto auto;
   grid-template-rows: auto auto auto;
 }
-
-.description {
-  color: black;
-  text-align: center;
-  font-size: 20px;
-  padding: 10px;
-}
-
 .buy-button {
   margin: auto;
   width: 100%;
@@ -243,11 +229,9 @@ html {
   grid-row: 3;
   grid-column: 1 / span 2;
 }
-
 .buy-button:hover {
   background-color: rgb(233, 233, 233);
 }
-
 .exit-button {
   grid-row: 1;
   grid-column: 1;
