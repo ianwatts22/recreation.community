@@ -11,61 +11,44 @@
     <link rel="stylesheet" href="https://unpkg.com/@leoncvlt/ar-button/styles.css">
 </head>
 <body>
-    <div class="top-section">
-        <div class="margin-maker header-margin">
-            <div class="blurred-container header">
-                <h3>recreation</h3>
-            </div>
-        </div>
-        
-
-        <div class="margin-maker top-margin">
-            <div class="blurred-container">
-                <a rel="ar" id="ar-link" href="htmlembed.usdz#callToAction=buy&checkoutTitle=recreation%20grinder&checkoutSubtitle=a1&price=$145">
-                    <img src="images/grinding.png" height = "100px" width = "100px">
-                </a>
-
-            </div>
-        </div>
-
-        <video class="real-video" id="top-video" preload ="metadata" images muted playsinline>
-            <source id="mp4" src="videos/turks-cut.mp4#t=0.5" type="video/mp4">
-        </video>
-    </div>
-
     <div class="proto">
         <video class="real-video" id="bottom-video" playsinline>
             <source id="mp4" src="videos/green1.mp4#t=0.1" type="video/mp4">
         </video>
 
-        <div class="margin-maker header-margin">
-            <div class="blurred-container header">
-                <h3>recreation</h3>
+        <div class="header-container">
+            <div class="header blurring">
+                <div class="rad-text"></div>
             </div>
+            <div class="header-text">recreation</div>
         </div>
 
-        <div class="margin-maker">
-            <div class="blurred-container">
-                <label class="rad-label" id="storage-btn">
-                <input type="radio" class="rad-input" name="rad" onclick="vid1()"><div class="rad-design"></div> <div class="rad-text">storage</div>
-                </label>
-            
-                <label class="rad-label" id="grinding-btn">
-                <input type="radio" class="rad-input" name="rad" onclick="vid2()"><div class="rad-design"></div> <div class="rad-text">grinding</div>
-                </label>
+        <div class="blurred-container">
+            <div class="storage-btn blurring"></div>
+            <div class="grinding-btn blurring"></div>
+            <div class="container-btn blurring"></div>
+            <div class="buy-now blurring"></div>
+            <div class="blurring ar-button"></div>
+
+            <label class="rad-label storage-btn">
+            <input type="radio" class="rad-input" name="rad" onclick="vid1()"><div class="rad-design"></div> <div class="rad-text">storage</div>
+            </label>
         
-                <label class="rad-label" id="container-btn">
-                <input type="radio" class="rad-input" name="rad" onclick="vid3()"><div class="rad-design"></div>  <div class="rad-text">portability</div>
-                </label>
+            <label class="rad-label grinding-btn">
+            <input type="radio" class="rad-input" name="rad" onclick="vid2()"><div class="rad-design"></div> <div class="rad-text">grinding</div>
+            </label>
+    
+            <label class="rad-label container-btn">
+            <input type="radio" class="rad-input" name="rad" onclick="vid3()"><div class="rad-design"></div>  <div class="rad-text">portability</div>
+            </label>
 
-                <button class ="buy-now" onclick="window.location.href='https://buy.stripe.com/6oE6rVddF8KC4TeaEE';" target="_blank" grid-column="1 / span 3" grid-row="2">buy now</button>
+            <button class ="rad-label buy-now" onclick="window.location.href='https://buy.stripe.com/6oE6rVddF8KC4TeaEE';" target="_blank" grid-column="1 / span 3" grid-row="2"><div class="rad-text">portability</div></button>
 
-                <ar-button id="ar-button" 
-                    src="https://github.com/leoncvlt/ar-button/raw/master/assets/Astronaut.glb" ios-src="htmlembed.usdz" link="https://buy.stripe.com/6oE6rVddF8KC4TeaEE" title="A 3D model of an astronaut" checkout-title="recreation grinder" checkout-subtitle="a1" price="$90" call-to-action="buy now" show-if-unsupported="" ar="unsupported">
-                    <span class="unsupported"></span>
-                    <span class="prompt">AR</span>
-                </ar-button>
-            </div>
+            <ar-button id="ar-button" 
+                src="https://github.com/leoncvlt/ar-button/raw/master/assets/Astronaut.glb" ios-src="htmlembed.usdz" link="https://buy.stripe.com/6oE6rVddF8KC4TeaEE" title="A 3D model of an astronaut" checkout-title="recreation grinder" checkout-subtitle="a1" price="$90" call-to-action="buy now" show-if-unsupported="" ar="unsupported">
+                <span class="unsupported"></span>
+                <span class="prompt">AR</span>
+            </ar-button>
         </div>
     </div>
     <script type="module" src="https://unpkg.com/@leoncvlt/ar-button"></script>
