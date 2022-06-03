@@ -109,6 +109,8 @@ html {
   width: 100%;
   text-align: center;
   line-height: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: none;
 }
 
 /* header */
@@ -128,8 +130,7 @@ html {
   margin: auto;
   width: 100%;
   border-radius: 20px;
-  background-color: rgb(246, 246, 246, 0.1);
-  color: hsla(0, 0%, 0%, .5);
+  background-color: rgb(246, 246, 246, 0);
   border-width: 0;
 
   padding: 14px 16px;
