@@ -37,7 +37,7 @@ function hide(){
 
 function vid1() {
   $("#bottom-video")[0].pause();
-  $("#bottom-video").attr("src", "videos/vid1.mp4");
+  $("#bottom-video").attr("src", "videos/green.mp4");
   $("#bottom-video")[0].load();
   $('#bottom-video')[0].play();
 }

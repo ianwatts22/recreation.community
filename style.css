@@ -33,6 +33,7 @@ html {
   overflow: hidden;
 
   display: grid;
+  display: none;
   position: relative;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr 200px;
