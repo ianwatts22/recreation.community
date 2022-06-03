@@ -43,8 +43,8 @@ function vid1() {
 }
 
 function vid2() {
-  $("#real-video").pause();
+  $("#real-video")[0].pause();
   $("#real-video").attr("src", "videos/vid2.mp4");
-  $("#real-video").load();
+  $("#real-video")[0].load();
   $('#real-video')[0].play();
 }
