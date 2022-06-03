@@ -60,6 +60,8 @@ body {
   height: 100%;
   width: 100%;
   padding: 10px 10px;
+  grid-column: 1;
+  grid-row: 2;
 }
 
 .blurred-container {
