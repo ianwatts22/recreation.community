@@ -37,14 +37,21 @@ function hide(){
 
 function vid1() {
   $("#bottom-video")[0].pause();
-  $("#bottom-video").attr("src", "videos/green.mp4");
+  $("#bottom-video").attr("src", "videos/green1.mp4");
   $("#bottom-video")[0].load();
   $('#bottom-video')[0].play();
 }
 
 function vid2() {
   $("#bottom-video")[0].pause();
-  $("#bottom-video").attr("src", "videos/teeth.mp4");
+  $("#bottom-video").attr("src", "videos/green2.mp4");
+  $("#bottom-video")[0].load();
+  $('#bottom-video')[0].play();
+}
+
+function vid3() {
+  $("#bottom-video")[0].pause();
+  $("#bottom-video").attr("src", "videos/green3.mp4");
   $("#bottom-video")[0].load();
   $('#bottom-video')[0].play();
 }
