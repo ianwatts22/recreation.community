@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://unpkg.com/@leoncvlt/ar-button/styles.css">
 </head>
 <body>
+    <div class="qrCode"></div>
+
     <div class="proto">
         <video class="real-video" id="bottom-video" playsinline>
             <source id="mp4" src="videos/green1.mp4#t=0.1" type="video/mp4">
@@ -31,18 +33,18 @@
             <div class="blurring ar-button"></div>
 
             <label class="rad-label storage-btn">
-            <input type="radio" class="rad-input" name="rad" onclick="vid1()"><div class="rad-design"></div> <div class="rad-text">storage</div>
+            <input type="radio" class="rad-input" name="rad" onclick="vid1()"><div class="rad-text">store</div>
             </label>
         
             <label class="rad-label grinding-btn">
-            <input type="radio" class="rad-input" name="rad" onclick="vid2()"><div class="rad-design"></div> <div class="rad-text">grinding</div>
+            <input type="radio" class="rad-input" name="rad" onclick="vid2()"><div class="rad-text">grind</div>
             </label>
     
             <label class="rad-label container-btn">
-            <input type="radio" class="rad-input" name="rad" onclick="vid3()"><div class="rad-design"></div>  <div class="rad-text">portability</div>
+            <input type="radio" class="rad-input" name="rad" onclick="vid3()"><div class="rad-text">go</div>
             </label>
 
-            <button class ="rad-label buy-now" onclick="window.location.href='https://buy.stripe.com/6oE6rVddF8KC4TeaEE';" target="_blank" grid-column="1 / span 3" grid-row="2"><div class="rad-text">portability</div></button>
+            <button class ="rad-label buy-now" onclick="window.location.href='https://buy.stripe.com/6oE6rVddF8KC4TeaEE';" target="_blank" grid-column="1 / span 3" grid-row="2"><div class="rad-text">buy now</div></button>
 
             <ar-button id="ar-button" 
                 src="https://github.com/leoncvlt/ar-button/raw/master/assets/Astronaut.glb" ios-src="htmlembed.usdz" link="https://buy.stripe.com/6oE6rVddF8KC4TeaEE" title="A 3D model of an astronaut" checkout-title="recreation grinder" checkout-subtitle="a1" price="$90" call-to-action="buy now" show-if-unsupported="" ar="unsupported">
