@@ -12,7 +12,7 @@
     <div class="qrCode"></div>
 
     <div class="main">
-        <video id="video" playsinline>
+        <video id="video" onclick="toggleVid()" playsinline>
             <source id="mp4" src="videos/green1.mp4#t=0.1" type="video/mp4">
         </video>
 
@@ -28,28 +28,28 @@
             <div class="buy-now blurring"></div>
             <div class="ar-btn blurring "></div>
 
-            <label class="btn storage-btn">
-            <input type="radio" class="rad-input" name="rad" onclick="vid(video1)"><div class="text">store</div>
+            <label id="label1"  class="btn storage-btn">
+            <input type="radio" id="rad1" class="rad-input" name="rad" onclick="vid(video1)"><div class="text">store</div>
             </label>
         
-            <label class="btn grinding-btn">
-            <input type="radio" class="rad-input" name="rad" onclick="vid(video2)"><div class="text">grind</div>
+            <label id="label2" class="btn grinding-btn">
+            <input type="radio" id="rad2" class="rad-input" name="rad" onclick="vid(video2)"><div class="text">grind</div>
             </label>
     
-            <label class="btn container-btn">
-            <input type="radio" class="rad-input" name="rad" onclick="vid(video3)"><div class="text">go</div>
+            <label id="label3" class="btn container-btn">
+            <input type="radio" id="rad3" class="rad-input" name="rad" onclick="vid(video3)"><div class="text">go</div>
             </label>
 
             <button class ="btn buy-now" onclick="window.location.href='https://buy.stripe.com/6oE6rVddF8KC4TeaEE';"><div class="text">buy now</div></button>
 
             <ar-button class = "btn ar-btn"
                 src="https://github.com/leoncvlt/ar-button/raw/master/assets/Astronaut.glb"
-                ios-src="htmlembed.usdz"
-                link="https://www.nasa.gov/"
-                title="A 3D model of an astronaut"
-                checkout-title="grinder"
-                checkout-subtitle="wasup"
-                price="$145"
+                ios-src="videos/htmlembed.usdz"
+                link="https://buy.stripe.com/6oE6rVddF8KC4TeaEE"
+                title="recreation grinder"
+                checkout-title="recreation grinder"
+                checkout-subtitle="all g"
+                price="$90"
                 call-to-action="buy"
                 no-scale show-if-unsupported>
                 <span class="prompt">ar</span>

@@ -43,6 +43,7 @@ html {
   grid-column: 1;
 }
 .header {
+  display: none;
   grid-row: 1;
   grid-column: 1;
 }
@@ -147,7 +148,7 @@ ar-button:before {
 
 .btn:hover,
 .btn:focus-within {
-  background: hsla(0, 0%, 80%, .1);
+  background: hsla(0, 0%, 80%, .15);
 }
 
 /*checked cirlce*/
