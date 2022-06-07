@@ -11,19 +11,17 @@
 <body>
     <div class="qrCode"></div>
 
-    <div class="proto">
-        <video class="real-video" id="bottom-video" playsinline>
+    <div class="main">
+        <video id="video" playsinline>
             <source id="mp4" src="videos/green1.mp4#t=0.1" type="video/mp4">
         </video>
 
         <div class="header-container">
-            <div class="header blurring">
-                <div class="rad-text"></div>
-            </div>
+            <div class="header blurring"></div>
             <div class="header-text">recreation</div>
         </div>
 
-        <div class="blurred-container">
+        <div class="btn-container">
             <div class="storage-btn blurring"></div>
             <div class="grinding-btn blurring"></div>
             <div class="container-btn blurring"></div>
@@ -31,18 +29,18 @@
             <div class="ar-btn blurring "></div>
 
             <label class="btn storage-btn">
-            <input type="radio" class="rad-input" name="rad" onclick="vid1()"><div class="rad-text">store</div>
+            <input type="radio" class="rad-input" name="rad" onclick="vid(video1)"><div class="text">store</div>
             </label>
         
             <label class="btn grinding-btn">
-            <input type="radio" class="rad-input" name="rad" onclick="vid2()"><div class="rad-text">grind</div>
+            <input type="radio" class="rad-input" name="rad" onclick="vid(video2)"><div class="text">grind</div>
             </label>
     
             <label class="btn container-btn">
-            <input type="radio" class="rad-input" name="rad" onclick="vid3()"><div class="rad-text">go</div>
+            <input type="radio" class="rad-input" name="rad" onclick="vid(video3)"><div class="text">go</div>
             </label>
 
-            <button class ="btn buy-now" onclick="window.location.href='https://buy.stripe.com/6oE6rVddF8KC4TeaEE';"><div class="rad-text">buy now</div></button>
+            <button class ="btn buy-now" onclick="window.location.href='https://buy.stripe.com/6oE6rVddF8KC4TeaEE';"><div class="text">buy now</div></button>
 
             <ar-button class = "btn ar-btn"
                 src="https://github.com/leoncvlt/ar-button/raw/master/assets/Astronaut.glb"
@@ -58,6 +56,8 @@
             </ar-button>
         </div>
     </div>
+
+    <!--JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="module" src="https://unpkg.com/@leoncvlt/ar-button"></script>
     <script src="script.js"></script>

@@ -1,57 +1,23 @@
-
-function changeVideo(){
-    $("#change-image").fadeOut("slow", function() {
-        $('#video').setAttribute('src', "url('teeth.mp4')");
-        $("#change-image").fadeIn("slow");
-        console.log("change video");
-    });
-}
-
-function changeImage(image){
-    $("#change-image").fadeOut("slow", function() {
-        $('#change-image').css('background-image', image);
-        $("#change-image").fadeIn("slow");
-        console.log("change image");
-    });
-}
-
-//continue video on screen resize
-/*window.addEventListener('resize', function(event){
-  console.log("hi");
-  if($(".myVideo")[0].paused) {
-    $(".myVideo")[0].play();
+function checkPswd() {
+  var confirmPassword = "turtle";
+  var password = document.getElementById("pswd").value;
+  if (password == confirmPassword) {
+      window.location="proto.html";
   }
-});*/
-
-
-//fade after video
-$('#random').bind('ended', function(){
-  $('#random').fadeOut()
-  console.log("fade after video");
-});
-
-
-function hide(){
-  $('.blur').fadeOut();
+  else{
+      alert("Passwords do not match.");
+  }
 }
 
-function vid1() {
-  $("#bottom-video")[0].pause();
-  $("#bottom-video").attr("src", "videos/green1.mp4");
-  $("#bottom-video")[0].load();
-  $('#bottom-video')[0].play();
-}
+var video1 = "videos/green1.mp4";
+var video2 = "videos/green1.mp4";
+var video3 = "videos/green1.mp4";
 
-function vid2() {
-  $("#bottom-video")[0].pause();
-  $("#bottom-video").attr("src", "videos/green2.mp4");
-  $("#bottom-video")[0].load();
-  $('#bottom-video')[0].play();
-}
 
-function vid3() {
-  $("#bottom-video")[0].pause();
-  $("#bottom-video").attr("src", "videos/green3.mp4");
-  $("#bottom-video")[0].load();
-  $('#bottom-video')[0].play();
+function vid(video) {
+  $("#video")[0].pause();
+  console.log(video);
+  $("#video").attr("src", video);
+  $("#video")[0].load();
+  $('#video')[0].play();
 }
