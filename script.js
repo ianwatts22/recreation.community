@@ -26,6 +26,9 @@ var label3 = document.getElementById("label3");
 const labels = [label1, label2, label3];
 
 function vid(video) {
+  label1.style.background = "hsla(0, 0%, 80%, .0)";
+  label2.style.background = "hsla(0, 0%, 80%, .0)";
+  label3.style.background = "hsla(0, 0%, 80%, .0)";
   $("#video")[0].pause();
   $("#video").attr("src", video);
   $("#video")[0].load();
