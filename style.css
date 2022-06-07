@@ -61,8 +61,6 @@ html {
   z-index: 101;
   grid-column: 1;
   grid-row: 3;
-  height: 100%;
-  width: 100%;
   padding: 10px 10px;
   border-radius: 20px;
 }
@@ -135,8 +133,6 @@ ar-button > a:hover {
   z-index: 1000;
   display: grid;
 
-  
-  width: 100%;
   grid-row: 1;
   grid-column: 1;
 }
@@ -157,7 +153,7 @@ ar-button > a:hover {
 
 
 /* radio buttons */
-.rad-label {
+.btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -176,12 +172,8 @@ ar-button > a:hover {
 
 }
 
-.rad-input:checked~.rad-label {
-  background: red;
-}
-
-.rad-label:hover,
-.rad-label:focus-within {
+.btn:hover,
+.btn:focus-within {
   background: hsla(0, 0%, 80%, .1);
 }
 
@@ -194,11 +186,6 @@ ar-button > a:hover {
   width: 100%;
   text-align: center;
 }
-/*
-.rad-input:checked~.rad-text {
-  color: red;
-}*/
-
 
 
 /* Hide scrollbar for Chrome, Safari and Opera */
