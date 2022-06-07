@@ -91,10 +91,6 @@ html {
 }
 
 ar-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
   grid-row: 2;
   grid-column: 4 / span 3;
   background-color: red;
@@ -164,6 +160,7 @@ ar-button > a:hover {
 .rad-label {
   display: flex;
   align-items: center;
+  justify-content: center;
   position: relative;
   z-index: 1;
 
