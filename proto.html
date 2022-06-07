@@ -29,7 +29,7 @@
             <div class="grinding-btn blurring"></div>
             <div class="container-btn blurring"></div>
             <div class="buy-now blurring"></div>
-            <div class="blurring ar-button"></div>
+            <div class="ar-btn blurring "></div>
 
             <label class="rad-label storage-btn">
             <input type="radio" class="rad-input" name="rad" onclick="vid1()"><div class="rad-text">store</div>
@@ -45,13 +45,16 @@
 
             <button class ="rad-label buy-now" onclick="window.location.href='https://buy.stripe.com/6oE6rVddF8KC4TeaEE';" target="_blank" grid-column="1 / span 3" grid-row="2"><div class="rad-text">buy now</div></button>
 
-            <ar-button
+            <ar-button class = "rad-label ar-btn"
                 src="https://github.com/leoncvlt/ar-button/raw/master/assets/Astronaut.glb"
                 ios-src="https://github.com/leoncvlt/ar-button/raw/master/assets/Astronaut.usdz"
                 link="https://www.nasa.gov/"
-                title="A 3D model of an astronaut">
-                See in Augmented Reality 
-                <span class="prompt">See in <b>Augmented Reality</b></span>
+                title="A 3D model of an astronaut"
+                checkout-title="grinder"
+                checkout-subtitle="wasup"
+                price="$145" no-scale call-to-action show-if-unsupported fallback-url="https://buy.stripe.com/6oE6rVddF8KC4TeaEE"
+                >
+                <span class="prompt">ar</span>
             </ar-button>
         </div>
     </div>
