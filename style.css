@@ -176,6 +176,24 @@ ar-button:before {
   display: none;
 }
 
+.age-container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.age-button {
+  width: 200px;
+  height: 40px;
+}
+
+.password { 
+  display: none;
+}
+
 /* computer */
 @media only screen and (min-width: 600px) {
   .main {
