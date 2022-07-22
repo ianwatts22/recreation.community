@@ -9,8 +9,8 @@ function checkPswd() {
   }
 }
 
-var video1 = "videos/green1.mp4";
-var video2 = "videos/green2.mp4";
+var video1 = "videos/green3.mp4";
+var video2 = "videos/green3.mp4";
 var video3 = "videos/green3.mp4";
 const videos = [video1, video2, video3];
 var videonum = 1;
