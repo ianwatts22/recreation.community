@@ -1,4 +1,4 @@
-function checkPswd() {
+/* function checkPswd() {
   var confirmPassword = "turtle";
   var password = document.getElementById("pswd").value;
   if (password == confirmPassword) {
@@ -7,7 +7,7 @@ function checkPswd() {
   else{
       alert("Passwords do not match.");
   }
-}
+} */
 
 var video1 = "videos/green3.mp4";
 var video2 = "videos/green3.mp4";
