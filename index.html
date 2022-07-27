@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +9,27 @@
     <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
     <link rel="icon" href="images/fav/favicon.ico?v=2">
 </head>
+
 <body>
     <div class="age-container">
-        <button class ="age-button btn" onclick="window.location.href='https://buy.stripe.com/6oE6rVddF8KC4TeaEE';"><div class="text">i am 21+</div></button>
-
-        <form class = "password">
-            <label for="pswd">Enter your password: </label>
-            <input type="password" id="pswd">
-            <input type="button" value="Submit" onclick="checkPswd();" />
-        </form>
+        <div class="text">are you 21+?</div>
+        <div class="text">
+            <button class="age-button btn" onclick="window.location.href='https://recreation.community/grinder';">
+                <div class="text">&#128077;</div>
+            </button>
+            <button class="age-button btn" onclick="window.location.href='https://recreation.community';">
+                <div class="text">&#128078;</div>
+            </button>
+        </div>
+        <div class="text">
+            <form class="password">
+                <label for="pswd">password: </label>
+                <input type="password" id="pswd">
+                <input type="button" value="submit" onclick="checkPswd();" />
+            </form>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
