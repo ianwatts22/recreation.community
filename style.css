@@ -1,6 +1,13 @@
+/* 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ */
+
+ /* general */
 * {
   transition-duration: 200ms;
-  font-family: 'Varela Round';
+  font-family: 'Varela Round', serif;
   font-size: 24px;
   color: black;
 }
@@ -29,6 +36,14 @@ html {
   grid-template-rows: auto 1fr auto;
 }
 
+/* index page */
+.right {
+  float: right
+}
+
+.left {
+  float: left
+}
 
 /* header */
 .header-container {
@@ -50,11 +65,10 @@ html {
   grid-row: 1;
   grid-column: 1;
   text-align: center;
-  font-size: 32px;
-  margin: 6px 6px;
-  padding: 0 0;
+  font-size: 40px;
+  margin: 6px;
+  padding: 0;
 }
-
 
 /* video */
 #video {
@@ -68,7 +82,7 @@ html {
   grid-column: 1 / span 2;
 }
 
-
+/* grinder page */
 /* bottom */
 .btn-container {
   display: grid;
@@ -128,27 +142,30 @@ ar-button:before {
 
 /* buttons */
 .btn {
-  display: flex;
   align-items: center;
+  border-radius: 100%;
+  display: flex;
   justify-content: center;
   position: relative;
   z-index: 1;
 
-  border-radius: 20px;
-  padding: 14px 16px;
-  margin: 6px 6px;
-  cursor: pointer;
+  padding: 14px;
+  margin: 10px;
+  
   transition: .3s;
-  justify-content: center;
 
-  background-color: rgb(246, 246, 246, 0);
+  background-color: rgba(246, 246, 246, 0);
   border-width: 0;
-
 }
-
-.btn:hover,
+.btn:hover {
+  background-color: rgba(246, 246, 246, 0.4);
+}
 .btn:focus-within {
   background: hsla(0, 0%, 80%, .15);
+}
+
+.btn-text {
+  font-size: 50px;
 }
 
 /*checked circle*/
@@ -159,6 +176,7 @@ ar-button:before {
   width: 100%;
   text-align: center;
   display : block;
+  margin: auto;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -177,28 +195,40 @@ ar-button:before {
 }
 
 .age-container {
-  vertical-align: middle;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  display: block;
+  display: flex;
   align-items: center;
   justify-content: center;
+  height: 160px;
+  width: 260px;
+  margin: auto;
+  display: inline;
+  grid-row: 2;
+  font-size: 40;
+
+  /* float: left; */
+  /* overflow: hidden; */
+
+  /* margin: auto;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); */
 }
 
 .age-button {
-  padding: 20px 20px;
+  padding: 15px;
   background: hsla(0, 0%, 80%, .15);
+  margin: auto;
+  width: 95.5px;
 }
 
 /* computer */
+/* 
 @media only screen and (min-width: 600px) {
   .main {
     display: none;
   }
 
-
-  /* 
   .qrCode {
     display: block;
     width: 50vh;
@@ -207,5 +237,5 @@ ar-button:before {
     background-size: contain;
     background-repeat: no-repeat;
   }
-  */
-}
+} 
+*/
