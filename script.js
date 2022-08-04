@@ -9,9 +9,9 @@
   }
 } */
 
-var video1 = "videos/green3.mp4";
-var video2 = "videos/green3.mp4";
-var video3 = "videos/green3.mp4";
+var video1 = "videos/website intro 2.mp4";
+var video2 = "videos/website intro 2.mp4";
+var video3 = "videos/website intro 2.mp4";
 const videos = [video1, video2, video3];
 var videonum = 1;
 
@@ -52,9 +52,30 @@ $('#video').bind('ended', function(){
 function toggleVid() {
   if($("#video")[0].paused){
     $('#video')[0].play();
-  }
-  else
-  {
+  } else {
     $('#video')[0].pause();
+  }
+}
+
+// popup
+let qrCode = document.getElementsByClassName("qrCode");
+let popup = document.getElementsByClassName("popup");
+let main = document.getElementsByClassName("main");
+
+function toggleQR() {
+  if (qrCode.classList.contains("popup")) {
+    qrCode.classList.remove("popup");
+    blurBackground();
+  } else {
+    qrCode.classList.add("popup");
+    blurBackground();
+  }
+}
+
+function blurBackground() {
+  if (main.classList.contains("popup")) {
+    qrCode.classList.remove("popup");
+  } else {
+    qrCode.classList.add("popup");
   }
 }
