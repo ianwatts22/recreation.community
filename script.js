@@ -60,9 +60,9 @@ function toggleVid() {
 // popup
 let qrCode = document.getElementsByClassName("qrCode");
 let popup = document.getElementsByClassName("popup");
-let main = document.getElementsByClassName("main");
 
-function toggleQR() {
+
+/* function toggleQR() {
   if (qrCode.classList.contains("popup")) {
     qrCode.classList.remove("popup");
     blurBackground();
@@ -71,11 +71,44 @@ function toggleQR() {
     blurBackground();
   }
 }
+ */
+
+// function addBackgroundBlur() {
+
+// }
+
+/* trying to get it to work for all of .main classes but can't figure it out, maybe cuz trying to lead a class list of a class?
+
+  const mainClass = document.getElementsByTagName("main").classList;
+  document.getElementsByTagName("main").classList.add("popup");
+  */
+
+function twentyOne () {
+  const twentyOneQ = document.getElementById("21?").classList;
+  const twentyOneY = document.getElementById("21y").classList;
+  const twentyOneN = document.getElementById("21n").classList;
+  twentyOneQ.toggle("hidden");
+  twentyOneY.toggle("hidden");
+  twentyOneN.toggle("hidden");
+  blurBackground();
+}
 
 function blurBackground() {
-  if (main.classList.contains("popup")) {
-    qrCode.classList.remove("popup");
-  } else {
-    qrCode.classList.add("popup");
-  }
+  const mainClass = document.getElementById("main1").classList;
+
+  mainClass.toggle("popup");
+}
+
+function clickawayBG() {
+  const bgButton = document.getElementById("bgButton").classList;
+  
+  // bgButton.toggle("visible");
+  bgButton.toggle("disabled");
+}
+
+function showQR() {
+  const qrCode = document.getElementById("qrCode").classList;
+  qrCode.toggle("hidden");
+  blurBackground();
+  clickawayBG();
 }
