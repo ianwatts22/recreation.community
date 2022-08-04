@@ -11,39 +11,34 @@
 </head>
 
 <body>
-    <div class="qrCode"></div>
+    <!-- need to figure out what to do with this -->
+    <!-- <div class="qrCode"></div> -->    
+    <!-- <div class="popup"></div> -->
 
     <div class="main">
-        <video id="video" onclick="toggleVid()" playsinline>
-            <source id="mp4" src="videos/green3.mp4#t=0.1" type="video/mp4">
-        </video>
+        <header>
+            <div class="blurring" style="grid-row: 1; grid-column: 1; width: 340px;"></div>
+            <h1 style="grid-row: 1; grid-column: 1; margin: auto">recreation</h1>
+            <div class="blurring" style="grid-row: 2; grid-column: 1; width: 220px;"></div>
+            <h2 style="grid-row: 2; grid-column: 1; margin: auto">compact grinder</h2>
+        </header>
 
-        <div class="header-container">
-            <div class="header blurring"></div>
-            <div class="header-text">recreation</div>
-        </div>
+        <video id="video" onclick="toggleVid()" playsinline>
+            <source id="mp4" src="videos/website intro 2.mp4" type="video/mp4">
+        </video>
 
         <div class="btn-container">
             <div class="storage-btn blurring"></div>
             <div class="grinding-btn blurring"></div>
             <div class="container-btn blurring"></div>
-            <div class="buy-now blurring"></div>
+            <div class="buy-btn blurring"></div>
             <div class="ar-btn blurring "></div>
 
-            <label id="label1"  class="btn storage-btn">
-            <input type="radio" id="rad1" class="rad-input" name="rad" onclick="vid(video1)"><div class="text">store</div>
-            </label>
-        
-            <label id="label2" class="btn grinding-btn">
-            <input type="radio" id="rad2" class="rad-input" name="rad" onclick="vid(video2)"><div class="text">grind</div>
-            </label>
-    
-            <label id="label3" class="btn container-btn">
-            <input type="radio" id="rad3" class="rad-input" name="rad" onclick="vid(video3)"><div class="text">go</div>
-            </label>
-
-            <button class ="btn buy-now" onclick="window.location.href='https://buy.stripe.com/6oE6rVddF8KC4TeaEE';"><div class="text">buy now</div></button>
-
+            <button class="btn text storage-btn" onclick="vid(video3)">store</button>
+            <button class="btn text grinding-btn" onclick="vid(video3)">grind</button>
+            <button class="btn text container-btn" onclick="vid(video3)">go</button>
+            <button class ="btn text buy-btn" onclick="window.location.href='https://buy.stripe.com/6oE6rVddF8KC4TeaEE';">buy now</button>
+            <!-- source: https://leoncvlt.github.io/ar-button/ -->
             <ar-button class = "btn ar-btn"
                 src="https://github.com/leoncvlt/ar-button/raw/master/assets/Astronaut.glb"
                 ios-src="Reality.reality"
@@ -53,8 +48,10 @@
                 checkout-subtitle=""
                 price="$59"
                 call-to-action="buy"
-                no-scale show-if-unsupported>
-                <span class="prompt">ar</span>
+                no-scale 
+                show-if-unsupported
+                fallback-url=""> <!-- need fallback URL w/ QR code -->
+                <span class="text" style="width: auto; margin: 0;">AR</span>
             </ar-button>
         </div>
     </div>
