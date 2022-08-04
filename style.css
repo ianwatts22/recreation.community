@@ -2,18 +2,56 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- */
+*/
 
- /* general */
+/* general */
+
+/* BRYANT 2 FONT SPECS
+URL: https://fonts.adobe.com/fonts/bryant-2
+
+Regular
+font-family: bryant-web, sans-serif;
+font-weight: 400;
+font-style: normal;
+
+Bold
+font-family: bryant-web, sans-serif;
+font-weight: 700;
+font-style: normal;
+
+Italic
+font-family: bryant-web, sans-serif;
+font-weight: 400;
+font-style: italic;
+ 
+Bold Italic
+font-family: bryant-web, sans-serif;
+font-weight: 700;
+font-style: italic;
+
+Regular Alternate
+font-family: bryant-web-alternate, sans-serif;
+font-weight: 400;
+font-style: normal;
+ 
+Bold Alternate
+font-family: bryant-web-alternate, sans-serif;
+font-weight: 700;
+font-style: normal; */
+
+/* BRYANT ALTERNATE
+
+ */
 
 html {
   height: -webkit-fill-available;
   overflow: hidden;
 }
 * {
-  transition-duration: 200ms;
-  font-family: 'Varela Round', serif;
+  /* font-family: bryant-web, sans-serif; */
+  font-family: 'Varela Round', sans-serif;
   font-size: 24px;
+  font-weight: 600;
   color: black;
 }
 
@@ -52,26 +90,56 @@ button {
   background-color: rgba(0, 0, 0, 0);
 }
 
+.transitions {
+  transition-property: filter, opacity;
+  transition-duration: .5s;
+}
+
 .main {
   height: 100%;
   width: 100%;
   overflow: hidden;
 
+  /* transition: filter .5s; */
+
   display: grid;
-  position: relative;
+  position: absolute;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
 }
 
+/* hiding/showing, disabling */
+
+.visible {
+  /* visibility: visible; */
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.hidden {
+  /* visibility: hidden; */
+  /* z-index: -1; */
+  pointer-events: none;
+  opacity: 0;
+}
+
+.disabled { pointer-events: none; }
+
+.full-screen {
+  grid-row: 1 / span 3;
+  grid-column: 1;
+  height: 100%;
+  width: 100%;
+}
 
 /*---------------------- grinder.html ---------------------*/
 #video {
   position: absolute;
-  width: 100%;
   height: 100%;
+  width: 100%;
   object-fit: cover;
   grid-row: 1 / span 3;
-  /* grid-column: 1 / span 2; */
+  grid-column: 1 / span 2;
   z-index: -2;
 }
 
@@ -80,6 +148,7 @@ button {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: auto auto;
+  gap: 7px;
 
   position: relative;
   grid-column: 1; /* pos in main grid */
@@ -91,13 +160,11 @@ button {
 }
 
 .blurring {
-  filter: blur(4px);
-  background-color: rgba(255, 255, 255, 0.2);
+  filter: blur(6px);
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 60px;
-  margin: auto;   /* used to be 6px */
-  width: 100%;
-  height: 100%;
   z-index: -1;
+
   /* position: relative; */
 }
 
@@ -143,18 +210,17 @@ ar-button:before {
   padding: 14px;
   margin: 10px;
   
-  transition: .3s;
+  /* transition: .3s; */
 
-  /* background-color: rgba(255, 255, 255, 0); */
+  background-color: rgba(255, 255, 255, 0);
   border-width: 0;
 }
 .btn:hover {
   background-color: rgba(255, 255, 255, 0.4);
 }
 .btn:focus-within {
-  background: hsla(0, 0%, 80%, .15);
+  background: rgba(204, 204, 204, 0.373);
 }
-
 .btn-text {
   font-size: 50px;
 }
@@ -169,11 +235,8 @@ ar-button:before {
   text-align: center;
   display : block;
   margin: auto;
-  font-size: 32px;
-}
-
-.qrCode {
-  display: none;
+  font-size: 40px;
+  z-index: 1;
 }
 
 .age-container {
@@ -184,17 +247,9 @@ ar-button:before {
   width: 260px;
   margin: auto;
   display: inline;
-  grid-row: 2;
+  grid-row: 1 / span 3;
   font-size: 40;
-
-  /* float: left; */
-  /* overflow: hidden; */
-
-  /* margin: auto;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%); */
+  overflow: hidden;
 }
 
 .age-button {
@@ -205,34 +260,67 @@ ar-button:before {
 }
 
 .popup {
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* visibility: hidden; */
-  filter: blur(40px);
-  background-color: rgba(105, 105, 105, 0.8);
-  z-index: 2000;
+  filter: blur(15px);
+  background-color: rgba(255, 255, 255, 0.8);
   grid-row: 1 / span 3;
+  transition: filter .5s;
+}
+
+#bgButton {
+  z-index: 20;
 }
 
 .qrCode {
-  width: 400px;
-  height: 400px;
-  display: block;
-  margin: auto;
-  background-image: url(images/recreation.community_QR.png);
-  background-size: contain;
-  /* background-repeat: no-repeat; */
+  width: 360px;
+  height: 360px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.ar-desktop-btn {
+  visibility: hidden;
 }
 
 /* computer */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 650px) {
   ar-button:before {
-    display: none;
-    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .ar-desktop-btn {
+    visibility: visible;
+  }
+
+  /* BOTTOM BUTTONS */
+  .btn-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .storage-btn {
+    grid-column: 1;
+  }
+  .grinding-btn {
+    grid-column: 2;
+  }
+  .container-btn {
+    grid-column: 3;
+  }
+  .spacer {
+    grid-row: 1;
+    grid-column: 4;
+  }
+  .buy-btn {
+    grid-row: 1;
+    grid-column: 5;
+  }
+  .ar-btn { 
+    grid-row: 1;
+    grid-column: 6;
   }
 } 
 
@@ -240,10 +328,8 @@ ar-button:before {
 /* browswer specific */
 /* Hide scrollbar for Chrome, Safari and Opera */
 .example::-webkit-scrollbar {
-  display: none;
-}
+  display: none; }
 /* Hide scrollbar for IE, Edge and Firefox */
 .example {
   -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
+  scrollbar-width: none;  /* Firefox */ }
