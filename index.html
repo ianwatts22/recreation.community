@@ -13,6 +13,16 @@
     <link rel="icon" href="images/fav/favicon.ico?v=2">
 </head>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y78ELM5FLB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y78ELM5FLB');
+</script>
+
 <body>
     <!-- 21+ -->
     <div id="21" class="main full-screen transition">
@@ -73,7 +83,7 @@
             <button class="btn text storage-btn" onclick="vid(video3)">store</button>
             <button class="btn text grinding-btn" onclick="vid(video3)">grind</button>
             <button class="btn text container-btn" onclick="vid(video3)">go</button>
-            <button class ="btn text buy-btn" style="font-size: 46px;" onclick="window.open('https://buy.stripe.com/aEU2bF3D52me85q6oq','_blank');">BUY</button>
+            <button class ="btn text buy-btn" style="font-size: 46px;" onclick="window.open('https://buy.stripe.com/aEU2bF3D52me85q6oq','_blank');">PRE-ORDER</button>
 
             <!-- AR BUTTON (source: https://leoncvlt.github.io/ar-button/ )-->
             <ar-button class = "btn ar-btn"
@@ -86,6 +96,7 @@
                 call-to-action="buy"
                 no-scale 
                 show-if-unsupported
+
                 >
                 
                 <span class="text ar-btn" style="width: auto; margin: 0;">AR</span>
