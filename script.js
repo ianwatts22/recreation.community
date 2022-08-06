@@ -1,21 +1,13 @@
 // VIDEO
-var video1 = "videos/website intro 2.mp4";
+/* var video1 = "videos/website intro 2.mp4";
 var video2 = "videos/website intro 2.mp4";
 var video3 = "videos/website intro 2.mp4";
 const videos = [video1, video2, video3];
-var videonum = 1;
+var videonum = 1; */
 
-/* 
-var rad1 = document.getElementById("rad1");
-var rad2 = document.getElementById("rad2");
-var rad3 = document.getElementById("rad3");
-const rads = [rad1, rad2, rad3];
 
-var label1 = document.getElementById("label1");
-var label2 = document.getElementById("label2");
-var label3 = document.getElementById("label3");
-const labels = [label1, label2, label3]; 
-*/
+
+const video = "videos/website intro 3.mp4";
 
 // a video is an array (of frames?) so to reference 
 function vid(video) {
@@ -25,6 +17,7 @@ function vid(video) {
   $('#video')[0].play();
 }
 
+/* 
 $('#video').bind('ended', function(){
   console.log(videos[videonum]);
   vid(videos[videonum]);
@@ -35,6 +28,7 @@ $('#video').bind('ended', function(){
     videonum = 0;
   }
 });
+ */
 
 function toggleVid() {
   if($("#video")[0].paused){
@@ -50,7 +44,7 @@ function toggleVid() {
   document.getElementsByTagName("main").classList.add("popup");
   */
 
-function twentyOne () {
+function twentyOne() {
   const twentyOneQ = document.getElementById("21?").classList;
   const twentyOneY = document.getElementById("21y").classList;
   const twentyOneN = document.getElementById("21n").classList;
@@ -58,6 +52,7 @@ function twentyOne () {
   twentyOneY.toggle("hidden");
   twentyOneN.toggle("hidden");
   blurBackground();
+  toggleVid();
 }
 
 function blurBackground() {

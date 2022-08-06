@@ -69,21 +69,26 @@
 
         <!-- BACKGROUND VIDEO -->
         <video id="video" onclick="toggleVid()" playsinline>
-            <source id="mp4" src="videos/website intro 2.mp4" type="video/mp4">
+            <source id="mp4" src="videos/website intro 3.mp4" type="video/mp4">
         </video>
+        <!-- controls autoplay style="z-index: 1000;"   -->
 
         <!-- BOTTOM BUTTONS -->
         <div class="btn-container">
-            <div class="storage-btn blurring"></div>
+            <!-- <div class="storage-btn blurring"></div>
             <div class="grinding-btn blurring"></div>
-            <div class="container-btn blurring"></div>
-            <div class="buy-btn blurring"></div>
+            <div class="container-btn blurring"></div> -->
+
+            <div class="replay-btn blurring"></div>
+            <div style="border-width: 10px; border-color: rgba(0, 0, 0, .6);" class="buy-btn blurring"></div>
             <div class="ar-btn blurring"></div>
 
-            <button class="btn text storage-btn" onclick="vid(video3)">store</button>
-            <button class="btn text grinding-btn" onclick="vid(video3)">grind</button>
-            <button class="btn text container-btn" onclick="vid(video3)">go</button>
-            <button class ="btn text buy-btn" style="font-size: 46px;" onclick="window.open('https://buy.stripe.com/aEU2bF3D52me85q6oq','_blank');">PRE-ORDER</button>
+            <!-- <button class="btn text storage-btn" onclick="vid(video)">before</button>
+            <button class="btn text grinding-btn" onclick="vid(video)">now</button>
+            <button class="btn text container-btn" onclick="vid(video)">life</button> -->
+
+            <button class="btn text replay-btn" onclick="vid(video)">replay</button>
+            <button class ="btn text buy-btn" onclick="window.open('https://buy.stripe.com/aEU2bF3D52me85q6oq','_blank');">PRE-ORDER</button>
 
             <!-- AR BUTTON (source: https://leoncvlt.github.io/ar-button/ )-->
             <ar-button class = "btn ar-btn"
