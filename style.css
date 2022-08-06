@@ -161,7 +161,7 @@ button {
 
 .blurring {
   filter: blur(6px);
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(156, 156, 156, 0.2);
   border-radius: 60px;
   z-index: -1;
 
@@ -184,10 +184,16 @@ button {
 .buy-btn {
   grid-row: 2;
   grid-column: 1 / span 3;
+  border-width: 40px;
+  border-color: rgba(0, 0, 0, 1);;
 }
 .ar-btn { 
   grid-row: 2;
   grid-column: 4 / span 3;
+}
+.replay-btn {
+  grid-row: 1;
+  grid-column: 1 / span 3;
 }
 
 ar-button:before {
@@ -304,7 +310,7 @@ ar-button:before {
     grid-template-rows: auto;
   }
 
-  .storage-btn {
+  /* .storage-btn {
     grid-column: 1;
   }
   .grinding-btn {
@@ -312,15 +318,19 @@ ar-button:before {
   }
   .container-btn {
     grid-column: 3;
+  } */
+
+  .replay-btn {
+    grid-column: 1;
   }
-  .spacer {
+  /* .spacer {
     grid-row: 1;
     grid-column: 4;
 
-  }
+  } */
   .buy-btn {
     grid-row: 1;
-    grid-column: 5;
+    grid-column: 3 / 5;
   }
   .ar-btn { 
     grid-row: 1;
