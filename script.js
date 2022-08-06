@@ -7,7 +7,7 @@ var videonum = 1; */
 
 
 
-const video = "videos/website intro 4.mp4";
+const video = "videos/website intro 3.mp4";
 
 // a video is an array (of frames?) so to reference 
 function vid(video) {
