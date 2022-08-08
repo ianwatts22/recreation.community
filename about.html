@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>recreation</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
+
+    <!-- ADOBE fontsd -->
+    <link rel="stylesheet" href="https://use.typekit.net/qru3fkv.css">
+
+    <link rel="icon" href="images/fav/favicon.ico?v=2">
+</head>
+
+<!-- Google tag (gtag.js) -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y78ELM5FLB"></script> -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y78ELM5FLB');
+</script>
+
+<body>
+    <!-- 21+ -->
+
+    <!-- QR code -->
+
+    <!-- MAIN -->
+    <div  id="main1" class="main transitions popup">
+        <!-- HEADER -->
+        <header>
+            <!-- blur behind headers -->
+            <!-- 
+            <div class="blurring" style="grid-row: 1; grid-column: 1; width: 340px;"></div> 
+            <div class="blurring" style="grid-row: 2; grid-column: 1; width: 220px; height: 100%; margin: auto;"></div> 
+            -->
+            
+            <h1 style="grid-row: 1; grid-column: 1; margin: auto">recreation</h1>
+            <h2 style="grid-row: 2; grid-column: 1; margin: auto">compact grinder</h2>
+        </header>
+
+        <!-- BACKGROUND VIDEO -->
+        <video id="video" onclick="toggleVid()" playsinline>
+            <source id="mp4" src="videos/website intro 3.mp4" type="video/mp4">
+        </video>
+        <!-- controls autoplay style="z-index: 1000;"   -->
+
+        <!-- BOTTOM BUTTONS -->
+        <div class="btn-container">
+            <!-- <div class="storage-btn blurring"></div>
+            <div class="grinding-btn blurring"></div>
+            <div class="container-btn blurring"></div> -->
+
+            <div class="replay-btn blurring"></div>
+            <div style="border-width: 10px; border-color: rgba(0, 0, 0, .6);" class="buy-btn blurring"></div>
+            <div class="ar-btn blurring"></div>
+
+            <!-- <button class="btn text storage-btn" onclick="vid(video)">before</button>
+            <button class="btn text grinding-btn" onclick="vid(video)">now</button>
+            <button class="btn text container-btn" onclick="vid(video)">life</button> -->
+
+            <button class="btn text replay-btn" onclick="vid(video)">replay</button>
+            <button class ="btn text buy-btn" onclick="window.open('https://buy.stripe.com/aEU2bF3D52me85q6oq','_blank');">PRE-ORDER</button>
+
+            <!-- AR BUTTON (source: https://leoncvlt.github.io/ar-button/ )-->
+            <ar-button class = "btn ar-btn"
+                ios-src="Reality.reality"
+                link="https://buy.stripe.com/6oE6rVddF8KC4TeaEE"
+                title="compact grinder"
+                checkout-title="compact grinder"
+                checkout-subtitle=""
+                price="$59"
+                call-to-action="buy"
+                no-scale 
+                show-if-unsupported
+
+                >
+                
+                <span class="text ar-btn" style="width: auto; margin: 0;">AR</span>
+            </ar-button>
+            <button class="btn ar-btn ar-desktop-btn" onclick="showQR();"></button>
+            <!-- <button class="main" style="z-index: 1000;" onclick="blurBackground()"></button> -->
+        </div>
+    </div>
+
+
+    <!-- JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="module" src="https://unpkg.com/@leoncvlt/ar-button"></script>
+    <script src="script.js"></script>
+</body>
+</html>
