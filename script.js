@@ -95,8 +95,6 @@ function showQR() {
 
 
 
-
-
 // (source: https://stackoverflow.com/questions/52514522/html5-video-how-to-seamlessly-play-several-videos-and-then-loop-the-sequence )
 /* 
 var videoContainer = document.getElementById('main1');
