@@ -1,10 +1,13 @@
 // VIDEO
 
 var vidElement = document.getElementById('video');  //HTML video element
-var nextVidElement = document.createelement
+// var nextVidElement = document.createelement
 const video1 = "videos/grinder demo.mp4";
 const video2 = "videos/grinder vibes.mp4";
+const video1GD = "https://drive.google.com/uc?export=download&id=1VKzbOLapnnnV1ibwUoMloifRDmVXNnzt"
+const video2GD = "https://drive.google.com/uc?export=download&id=1vgKe3VTrvGLrjSTUc8iN8y_iO7JBzMBV"
 const videos = [video1, video2];
+const videosGD = [video1GD, video2GD];
 var activeVideo = 0;
 
 
@@ -15,7 +18,7 @@ function vid(video) {
   $("#video")[0].load();
   $('#video')[0].play(); */
 
-  vidElement.pause();
+  // vidElement.pause();
   vidElement.src = video;
   vidElement.load();
   vidElement.play();
