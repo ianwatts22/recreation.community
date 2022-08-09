@@ -51,7 +51,7 @@ function toggleVid() {
   } else {
     $('#video')[0].pause();
   } */
-
+  console.log("toggleVid");
   if(vidElement.paused){
     vidElement.play();
   } else {
