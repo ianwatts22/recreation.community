@@ -1,14 +1,37 @@
 // VIDEO
-
-var vidElement = document.getElementById('video');  //HTML video element
-// var nextVidElement = document.createelement
+var vidElement = document.getElementById("video");
 const video1 = "videos/grinder demo.mp4";
 const video2 = "videos/grinder vibes.mp4";
-const video1GD = "https://drive.google.com/uc?export=download&id=1VKzbOLapnnnV1ibwUoMloifRDmVXNnzt"
-const video2GD = "https://drive.google.com/uc?export=download&id=1vgKe3VTrvGLrjSTUc8iN8y_iO7JBzMBV"
-const videos = [video1, video2];
-const videosGD = [video1GD, video2GD];
+const video1mobile = "videos/grinder demo mobile.mp4";
+const video2mobile = "videos/grinder vibes mobile.mp4";
+var videos = [video1, video2];
 var activeVideo = 0;
+
+// http://detectmobilebrowsers.com/
+
+/* (() => {
+  if (jQuery.browser.mobile) {
+    videos = [video1mobile, video2mobile];
+    vidElement.src = videos[0];
+    vidElement.playbackRate = 2;
+  }
+})(); */
+
+// source: https://stackoverflow.com/questions/53701660/change-html5-video-source-for-mobile
+$(document).ready(function () {
+  var screenWidth = $(window).width();
+  if (screenWidth < 600) {
+    videos = [video1mobile, video2mobile];
+    vidElement.src = videos[0];
+  }
+
+/*   if (jQuery.browser.mobile) {
+    videos = [video1mobile, video2mobile];
+    vidElement.src = videos[0];
+    vidElement.playbackRate = 2;
+  } */
+});
+
 
 
 // a video is an array (of frames?) so to reference 
@@ -22,13 +45,18 @@ function vid(video) {
   vidElement.src = video;
   vidElement.load();
   vidElement.play();
-
 }
 
-vidElement.addEventListener('ended', function(e) {
+vidElement.click(function (e) {
+  toggleVid();
+});
+
+vidElement.addEventListener('ended', function (e) {
   // update the active video index
+  console.log("ended");
+
   activeVideo += 1;
-  if(activeVideo == videos.length){
+  if (activeVideo == videos.length) {
     activeVideo = 0;
   }
 
@@ -52,12 +80,22 @@ function toggleVid() {
     $('#video')[0].pause();
   } */
   console.log("toggleVid");
-  if(vidElement.paused){
+  if (vidElement.paused) {
     vidElement.play();
   } else {
     vidElement.pause();
   }
 }
+
+$('#buy-butn').click(function () {
+  // toggleVid();
+  window.open('https://buy.stripe.com/aEU2bF3D52me85q6oq', '_blank');
+  console.log("buy-btn");
+});
+
+$('#main1').click(function () {
+  toggleVid();
+});
 
 /* trying to get it to work for all of .main classes but can't figure it out, maybe cuz trying to lead a class list of a class?
 
@@ -84,7 +122,7 @@ function blurBackground() {
 
 function clickawayBG() {
   const bgButton = document.getElementById("bgButton").classList;
-  
+
   // bgButton.toggle("visible");
   bgButton.toggle("disabled");
 }
@@ -100,6 +138,7 @@ function showQR() {
 
 // (source: https://stackoverflow.com/questions/52514522/html5-video-how-to-seamlessly-play-several-videos-and-then-loop-the-sequence )
 /* 
+var nextVidElement = document.createelement
 var videoContainer = document.getElementById('main1');
 nextVideo;
 videoObjects = [document.createElement('video'), document.createElement('video')];

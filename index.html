@@ -69,28 +69,27 @@
 
         <!-- BACKGROUND VIDEO -->
         <video id="video" playsinline>
-            <!-- <source type="video/mp4"> -->
             <source src="videos/grinder demo.mp4" type="video/mp4">
-        </video>
-        <!-- controls autoplay style="z-index: 1000;"   -->
+        </video> 
+        <!-- style="z-index: 1000;" -->
 
         <!-- BOTTOM BUTTONS -->
         <div class="btn-container">
             <!-- <div class="storage-btn blurring"></div>
             <div class="grinding-btn blurring"></div>
             <div class="container-btn blurring"></div> -->
-            <div class="replay-btn blurring"></div>
+            <!-- <div class="replay-btn blurring"></div> -->
             <div style="border-width: 10px; border-color: rgba(0, 0, 0, .6);" class="buy-btn blurring"></div>
-            <div class="ar-btn blurring"></div>
+            <!-- <div class="ar-btn blurring"></div> -->
 
             <!-- <button class="btn text storage-btn" onclick="vid(video)">before</button>
             <button class="btn text grinding-btn" onclick="vid(video)">now</button>
             <button class="btn text container-btn" onclick="vid(video)">life</button> -->
-            <button class="btn text replay-btn" onclick="vid(video1)">replay</button>
-            <button class ="btn text buy-btn" onclick="window.open('https://buy.stripe.com/aEU2bF3D52me85q6oq','_blank');">PRE-ORDER</button>
+            <!-- <button class="btn text replay-btn" onclick="vid(video1)">replay</button> -->
+            <button id="buy-butn" class ="btn text buy-btn">PRE-ORDER</button>
 
             <!-- AR BUTTON (source: https://leoncvlt.github.io/ar-button/ )-->
-            <ar-button class = "btn ar-btn"
+            <!-- <ar-button class = "btn ar-btn"
                 ios-src="Reality.reality"
                 link="https://buy.stripe.com/6oE6rVddF8KC4TeaEE"
                 title="compact grinder"
@@ -105,7 +104,9 @@
                 
                 <span class="text ar-btn" style="width: auto; margin: 0;">AR</span>
             </ar-button>
-            <button class="btn ar-btn ar-desktop-btn" onclick="showQR();"></button>
+            <button class="btn ar-btn ar-desktop-btn" onclick="showQR();"></button> -->
+
+
             <!-- <button class="main" style="z-index: 1000;" onclick="blurBackground()"></button> -->
         </div>
     </div>
