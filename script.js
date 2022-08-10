@@ -7,29 +7,20 @@ const video2mobile = "videos/grinder vibes mobile.mp4";
 var videos = [video1, video2];
 var activeVideo = 0;
 
-// http://detectmobilebrowsers.com/
-
-/* (() => {
-  if (jQuery.browser.mobile) {
-    videos = [video1mobile, video2mobile];
-    vidElement.src = videos[0];
-    vidElement.playbackRate = 2;
-  }
-})(); */
 
 // source: https://stackoverflow.com/questions/53701660/change-html5-video-source-for-mobile
-$(document).ready(function () {
+$(document).ready(function () {   // detects when the document is ready
   var screenWidth = $(window).width();
   if (screenWidth < 600) {
     videos = [video1mobile, video2mobile];
     vidElement.src = videos[0];
   }
-
-/*   if (jQuery.browser.mobile) {
-    videos = [video1mobile, video2mobile];
-    vidElement.src = videos[0];
-    vidElement.playbackRate = 2;
-  } */
+  // http://detectmobilebrowsers.com/
+  /*   if (jQuery.browser.mobile) {
+      videos = [video1mobile, video2mobile];
+      vidElement.src = videos[0];
+      vidElement.playbackRate = 2;
+    } */
 });
 
 
