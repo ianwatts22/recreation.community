@@ -80,7 +80,8 @@ function toggleVid() {
 
 $('#buy-butn').click(function () {
   // toggleVid();
-  window.open('https://buy.stripe.com/aEU2bF3D52me85q6oq', '_blank');
+  // window.open('https://buy.stripe.com/aEU2bF3D52me85q6oq', '_blank');
+  window.open('https://recreation-community.myshopify.com/66077622512/checkouts/cc54e961365c315f73dc92c436bd95a7', '_blank');
   console.log("buy-btn");
 });
 
