@@ -54,6 +54,9 @@ vidElement.addEventListener('ended', function (e) {
   vid(videos[activeVideo]);
 });
 
+window.addEventListener('scroll',(event) => {
+  console.log('Scrolling...');
+});
 
 /* $('#video').bind('ended', function() {
   vid(videos[activeVideo]);          // playing video
@@ -105,6 +108,26 @@ function twentyOne() {
   blurBackground();
   toggleVid();
 }
+
+/* function contact() {
+  const contactForm = document.getElementById("contactForm").classList;
+  contactForm.toggle("hidden");
+  blurBackground();
+  clickawayBG();
+  toggleVid();
+} */
+
+const contactButton = document.getElementById("contactButton");
+const contact = document.getElementById("contact").classList;
+
+contactButton.onmouseenter = function () {
+  contact.toggle("hidden");
+  console.log('contact on');
+};
+contactButton.onmouseleave = function () {
+  contact.toggle("hidden");
+  console.log('contact off');
+};
 
 function blurBackground() {
   const mainClass = document.getElementById("main1").classList;
