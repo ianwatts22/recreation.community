@@ -117,16 +117,28 @@ function twentyOne() {
   toggleVid();
 } */
 
-const contactButton = document.getElementById("contactButton");
-const contact = document.getElementById("contact").classList;
+// const contactButton = document.getElementById("contactButton");
+// const contact = document.getElementById("contact").classList;
 
-contactButton.onmouseenter = function () {
-  contact.toggle("hidden");
-  console.log('contact on');
+// contactButton.onmouseenter = function () {
+//   contact.toggle("hidden");
+//   console.log('contact on');
+// };
+// contactButton.onmouseleave = function () {
+//   contact.toggle("hidden");
+//   console.log('contact off');
+// };
+
+const appButton = document.getElementById("appButton");
+const appQR = document.getElementById("appQR").classList;
+
+appButton.onmouseenter = function () {
+  appQR.toggle("hidden");
+  toggleVid();
 };
-contactButton.onmouseleave = function () {
-  contact.toggle("hidden");
-  console.log('contact off');
+appButton.onmouseleave = function () {
+  appQR.toggle("hidden");
+  toggleVid();
 };
 
 function blurBackground() {
