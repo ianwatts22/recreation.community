@@ -78,7 +78,7 @@ header {
   
   display: grid;
   grid-template-rows: auto auto;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: auto 1fr auto;
   
   grid-column: 1;
   grid-row: 1;
@@ -152,7 +152,7 @@ button {
   background-color: rgba(156, 156, 156, 0.4);
   /* box-shadow: 0 0 5px 5px rgba(156, 156, 156, 0.4); */
 
-  padding: 14px;
+  padding: 10px;
   margin: 10px;
   border-width: 0;
 
@@ -218,9 +218,7 @@ button:focus-within {
   position: relative;
   grid-column: 1; /* pos in main grid */
   grid-row: 3;
-  padding: 10px;
-  padding-bottom: 20px;
-  border-radius: 20px;
+  padding: 20px;
   max-width: 1000px;
   margin: auto;
 }
@@ -249,6 +247,9 @@ button:focus-within {
   grid-row: 1;
   grid-column: 1 / span 6;
   border-color: rgba(0, 0, 0, 1);
+  width: 250px;
+  font-size: 2rem;
+  margin: 0;
 }
 .pre-order {
   grid-row: 2;
@@ -354,12 +355,16 @@ ar-button:before {
   }
 
   #appButton {
-    visibility: visible;
+    visibility: none;
   }
 
   /* BOTTOM BUTTONS */
   .btn-container {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
+    line-height: 2.5rem;
+  }
+  .buy-btn {
+    font-size: 2.5rem;
   }
 } 
