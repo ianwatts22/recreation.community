@@ -27,55 +27,26 @@
 
 <body>
     <!-- 21+ -->
-    <!-- need to add "popup" back as main1 class -->
-    <div id="21" class="main full-screen transitions">
-        <div class="age-container">
-            <div style="display: flex; padding-bottom: 15px;">
-                <div id="21?" class="text" style="font-size: 40px;">
-                    are you 21+?
-                </div>
-            </div>
-            <div style="display: flex; justify-content: space-evenly; margin: auto;">
-                <button id="21y" class="age-button btn" onclick="twentyOne();">
-                    <div class="btn-text">&#128077;</div>
-                </button>
-                <button id="21n" class="age-button btn" onclick="window.location.href='https://google.com';">
-                    <div class="btn-text">&#128078;</div>
-                </button>
-            </div>
-        </div>
+    <div id="21" class="transitions age-container center">
+        are you 21+?
+        <button id="21y" class="age-button" onclick="twentyOne();">&#128077;</button>
+        <button id="21n" class="age-button" onclick="window.location.href='https://google.com';">&#128078;</button>
     </div>
-
-    <!-- CONTACT button -->
-    <!-- <div id="contact" class="contact text transitions hidden">
-        <div class="blurring blur-background"></div>
-        <div class="contact">
-            <h1 style="margin: auto;">(310) 497-4985</h1>
-            <h1>ian@ianwatts.site</h1>
-        </div>
-    </div> -->
 
     <!-- app QR -->
     <div id="appQR" class="transitions hidden qrCode">
         <div class="blurring blur-background"></div>
-        <img id="qrCode" class="qrCode" style="object-fit: fill;" src="images/appQR.png"> 
+        <img id="qrCode" class="qrCode" style="object-fit: fill;" src="images/appQR.png">
     </div>
 
     <!-- MAIN  -->
     <div id="main1" class="main transitions  scroll-snap popup">
         <!-- HEADER -->
         <header>
-            <!-- blur behind headers -->
-            <div class="blurring" style="grid-row: 1; grid-column: 2; width: 340px; height: 100%; margin: auto;"></div>
-            <div class="blurring" style="grid-row: 2; grid-column: 2; width: 220px; height: 100%; margin: auto;"></div>
-            <!-- <div class="blurring" style="grid-row: 1 / 3; grid-column: 3; width: 220px; height: 100%; margin: auto;">
-            </div> -->
-
-            <h1 style="grid-row: 1; grid-column: 2; margin: auto">recreation</h1>
-            <h2 style="grid-row: 2; grid-column: 2; margin: auto">dial compact</h2>
-            <h2 id="contactButton" style="grid-row: 1 / 3; grid-column: 3"><a href="mailto:ian@ianwatts.site" style="text-decoration:none;" target="_blank">contact</a></h2>
-            <h2 id="appButton" style="grid-row: 1 / 3; grid-column: 1">Consume app</h2>
-            <!-- <button class="btn text">contact</button> -->
+            <h1 class="" style="grid-row: 1; grid-column: 2; margin: auto; padding-left: 10px; padding-right: 10px;">
+                recreation</h1>
+            <h2 style="grid-row: 2; grid-column: 2; margin: auto">dial</h2>
+            <h2 id="appButton" style="grid-row: 1 / 3; grid-column: 1;">Consume app</h2>
         </header>
 
         <!-- BACKGROUND VIDEO -->
@@ -85,26 +56,17 @@
 
         <!-- BOTTOM BUTTONS -->
         <div class="btn-container">
-            <!-- BLURS -->
-            <!-- <div class="storage-btn blurring"></div>
-            <div class="grinding-btn blurring"></div>
-            <div class="container-btn blurring"></div>
-            <div class="replay-btn blurring"></div>
-            <div class="ar-btn blurring"></div> -->
-            <div style="border-width: 10px; border-color: rgba(0, 0, 0, .6);" class="buy-btn blurring btn"></div>
-
-            <!-- BUTTONS -->
-            <!-- <button class="btn text storage-btn" onclick="vid(video)">before</button>
-            <button class="btn text grinding-btn" onclick="vid(video)">now</button>
-            <button class="btn text container-btn" onclick="vid(video)">life</button>
-            <button class="btn text replay-btn" onclick="vid(video1)">replay</button> -->
-            <button id="buy-butn" class="btn text buy-btn">
-                PRE-ORDER
-                <br>
-                $69</button>
-
+            <button id="">
+                ONE $29</button>
+            <button id="buy-butn">
+                TWO $69</button>
+            <button id="">
+                THREE $99</button>
+            <button id="">
+                PLUS +$29</button>
+            <br>
             <!-- PRE-ORDER TEXT -->
-            <div class="text pre-order" style="font-size: 30px;">free shipping in 2-3 weeks</div>
+            <div class="text pre-order" style="font-size: 30px;">free shipping (3 weeks)</div>
 
 
             <!-- AR BUTTON (source: https://leoncvlt.github.io/ar-button/ )-->
@@ -124,26 +86,26 @@
                 <span class="text ar-btn" style="width: auto; margin: 0;">AR</span>
             </ar-button>
             <button class="btn ar-btn ar-desktop-btn" onclick="showQR();"></button> -->
-            
-            <!-- full screen anti-blur? -->
-            <!-- <button class="main" style="z-index: 1000;" onclick="blurBackground()"></button> -->
         </div>
 
         <div class="footer">
             <img src="images/footer_background.png" class="blurring footer-image">
 
-            <p style="margin: 0;">
+            <p class="footer-text">
                 policies:
                 <a href="https://recreation.community/policies/privacy">privacy</a>,
                 <a href="https://recreation.community/policies/shipping">shipping</a>,
                 <a href="https://recreation.community/policies/refund">refund</a>
             </p>
-
-            <p style="margin: 0;">
+            <p class="footer-text">
                 sales appear as "recreation community" on
                 <img style="vertical-align: middle" alt="credit card logos" title="credit card logos"
                     src="https://www.shift4shop.com/images/credit-card-logos/cc-sm-4.png" width="198" height="28" />
             </p>
+            <p class="footer-text"><a href="mailto:help@recreation.community" style="text-decoration:none;"
+                    target="_blank">contact</a></p>
+            <p class="footer-text">Watts Enterprises LLC, Los Angeles, CA</a></p>
+
         </div>
     </div>
 

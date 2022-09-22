@@ -23,8 +23,6 @@ $(document).ready(function () {   // detects when the document is ready
     } */
 });
 
-
-
 // a video is an array (of frames?) so to reference 
 function vid(video) {
   /* $("#video")[0].pause();
@@ -98,40 +96,17 @@ $('#main1').click(function () {
   document.getElementsByTagName("main").classList.add("popup");
   */
 
+// 21+
 function twentyOne() {
-  const twentyOneQ = document.getElementById("21?").classList;
-  const twentyOneY = document.getElementById("21y").classList;
-  const twentyOneN = document.getElementById("21n").classList;
-  twentyOneQ.toggle("hidden");
-  twentyOneY.toggle("hidden");
-  twentyOneN.toggle("hidden");
+  const twentyOne = document.getElementById("21").classList;
+  twentyOne.toggle("hidden");
   blurBackground();
   toggleVid();
 }
 
-/* function contact() {
-  const contactForm = document.getElementById("contactForm").classList;
-  contactForm.toggle("hidden");
-  blurBackground();
-  clickawayBG();
-  toggleVid();
-} */
-
-// const contactButton = document.getElementById("contactButton");
-// const contact = document.getElementById("contact").classList;
-
-// contactButton.onmouseenter = function () {
-//   contact.toggle("hidden");
-//   console.log('contact on');
-// };
-// contactButton.onmouseleave = function () {
-//   contact.toggle("hidden");
-//   console.log('contact off');
-// };
-
+// APP
 const appButton = document.getElementById("appButton");
 const appQR = document.getElementById("appQR").classList;
-
 appButton.onmouseenter = function () {
   appQR.toggle("hidden");
   toggleVid();
@@ -141,9 +116,10 @@ appButton.onmouseleave = function () {
   toggleVid();
 };
 
+
+// FULL SCREEN BLURRING?
 function blurBackground() {
   const mainClass = document.getElementById("main1").classList;
-
   mainClass.toggle("popup");
 }
 
@@ -160,7 +136,6 @@ function showQR() {
   blurBackground();
   clickawayBG();
 }
-
 
 
 // (source: https://stackoverflow.com/questions/52514522/html5-video-how-to-seamlessly-play-several-videos-and-then-loop-the-sequence )
