@@ -29,47 +29,66 @@
 
 <body>
     <!-- 21+ -->
-    <div id="21" class="transitions age-container center">
+    <div id="21" class="age-container center">
         are you 21+?
-        <button id="21y" class="age-button" onclick="twentyOne();">&#128077;</button>
-        <button id="21n" class="age-button" onclick="window.location.href='https://google.com';">&#128078;</button>
+        <button id="21y" onclick="twentyOne();">&#128077;</button>
+        <button id="21n" onclick="window.location.href='https://google.com';">&#128078;</button>
     </div>
 
     <!-- app QR -->
-    <div id="appQR" class="transitions hidden qrCode back-blur center" style="border-radius: 35px;">
+    <div id="appQR" class="hidden qrCode back-blur center" style="border-radius: 35px;">
         <img class="qrCode" style="object-fit: fill;" src="assets/images/appQR.png">
     </div>
 
     <!-- CONTACT -->
-    <!-- <div id="contact" class="transitions hidden qrCode">
+    <!-- <div id="contact" class="hidden qrCode">
         <div class="blur-background">email: help@recreation.community<br>phone</div>
     </div> -->
 
     <!-- MAIN  -->
-    <div id="main1" class="main transitions popup">
+    <div id="main1" class="main popup">
         <!-- HEADER -->
         <header class="branded">
-            <div id="appQRIcon" class="header-sides back-blur" style="grid-column: 1; margin: 0px auto auto 0px; padding: 12px"><img src="assets/images/app store button.png" class="app-icon">Consume</div>
-            <div id="appButton" class="header-sides back-blur" style="grid-column: 1; margin: 0px auto auto 0px; padding: 12px"><a href="https://apps.apple.com/us/app/consume-alcohol-tracker/id1633718776"><img src="assets/images/app store button.png" class="app-icon"></a></div>
-
+            <!-- LEFT -->
+            <div id="appQRIcon" class="header-sides back-blur"
+                style="grid-column: 1; margin: 0px auto auto 0px; padding: 12px"><img
+                    src="assets/images/app store button.png" class="app-icon">Consume</div>
+            <div id="appButton" class="header-sides back-blur"
+                style="grid-column: 1; margin: 0px auto auto 0px; padding: 12px"><a
+                    href="https://apps.apple.com/us/app/consume-alcohol-tracker/id1633718776"><img
+                        src="assets/images/app store button.png" class="app-icon"></a></div>
+            
+            <!-- CENTER -->
             <img src="assets/images/dial_recreation.svg" class="header-image">
+
+            <!-- RIGHT -->
             <div class="header-sides back-blur" style="grid-column: 3; margin: 0px 0px auto auto;">
-                <a href="https://www.instagram.com/recreation.life/" target="_blank"><img src="assets/images/IG icon.svg" class="social-icon"></a>
-                <a href="https://twitter.com/recreation_life" target="_blank"><img src="assets/images/Twitter icon.png" class="social-icon"></a>
-                <a href="https://www.youtube.com/channel/UCA1tCuEnEiZLYgk4Oxe9k4w" target="_blank"><img src="assets/images/YT icon.svg" class="social-icon"></a>
-                <a href="https://www.tiktok.com/@recreation.life" target="_blank"><img src="assets/images/TikTok icon.svg" class="social-icon"></a>
+                <a href="https://www.instagram.com/recreation.life/" target="_blank"><img
+                        src="assets/images/IG icon.svg" class="social-icon"></a>
+                <a href="https://twitter.com/recreation_life" target="_blank"><img src="assets/images/Twitter icon.png"
+                        class="social-icon"></a>
+                <a href="https://www.youtube.com/channel/UCA1tCuEnEiZLYgk4Oxe9k4w" target="_blank"><img
+                        src="assets/images/YT icon.svg" class="social-icon"></a>
+                <a href="https://www.tiktok.com/@recreation.life" target="_blank"><img
+                        src="assets/images/TikTok icon.svg" class="social-icon"></a>
             </div>
         </header>
 
         <!-- BACKGROUND VIDEO -->
-        <video id="video" playsinline><source src="/assets/videos/grinder demo.mp4" type="video/mp4"></video>
+        <video id="video" playsinline>
+            <source src="/assets/videos/grinder demo.mp4" type="video/mp4">
+        </video>
 
         <!-- BOTTOM BUTTONS -->
         <div class="btn-container">
-            <!-- <button id="" class="buy-btn"><div class="branded">ONE</div><div style="width: 8px;"></div><div> $29</div></button> -->
-            <button id="TWO-buy" class="buy-btn"><div class="branded">TWO</div><div style="width: 8px;"></div><div>$69</div></button>
+            <!-- <button id=""><div class="branded">ONE</div><div style="width: 8px;"></div><div> $29</div></button> -->
+            <button id="TWO-buy">
+                <div class="branded">TWO</div>
+                <div style="width: 8px;"></div>
+                <div>$69</div>
+            </button>
 
-            <!-- <button id="THREE-buy" class="buy-btn"><div class="branded">THREE</div><div style="width: 8px;"></div><div>$99</div></button> -->
+            <!-- <button id="THREE-buy"><div class="branded">THREE</div><div style="width: 8px;"></div><div>$99</div></button> -->
 
             <!-- AR BUTTON (source: https://leoncvlt.github.io/ar-button/ )-->
             <!-- <ar-button class = "btn ar-btn"
@@ -93,23 +112,24 @@
         <div class="text pre-order" style="font-size: 24px;">free shipping (3 weeks)</div>
 
         <div class="footer">
-            <img src="assets/images/footer_background.png" class="footer-image">
-
-            <p class="footer-text">
-                policies:
-                <a href="https://recreation.community/policies/privacy">privacy</a>,
-                <a href="https://recreation.community/policies/shipping">shipping</a>,
-                <a href="https://recreation.community/policies/refund">refund</a>
-            </p>
-            <p class="footer-text">
-                all sales appear as "recreation community" on your billing statement
-                <img style="vertical-align: middle" alt="credit card logos" title="credit card logos"
-                    src="https://www.shift4shop.com/images/credit-card-logos/cc-sm-4.png" width="198" height="28"/>
-            </p>
-            <p class="footer-text"><a href="mailto:help@recreation.community" style="text-decoration:none;"
-                    target="_blank">contact</a></p>
-            <p class="footer-text">Watts Enterprises LLC, Los Angeles, CA (310) 497-4985</a></p>
-
+            <img src="assets/images/footer_background.png">
+            <div>
+                <span>
+                    policies:
+                    <a href="https://recreation.community/policies/privacy">privacy</a>,
+                    <a href="https://recreation.community/policies/shipping">shipping</a>,
+                    <a href="https://recreation.community/policies/refund">refund</a>
+                </span>
+                <span>
+                    all sales appear as "recreation community" on your billing statement
+                    <img style="vertical-align: middle" alt="credit card logos" title="credit card logos"
+                        src="https://www.shift4shop.com/images/credit-card-logos/cc-sm-4.png" width="198" height="28" />
+                </span>
+                <span><a href="mailto:help@recreation.community" style="text-decoration:none;"
+                        target="_blank">contact</a></span>
+                <span>Watts Enterprises LLC, Los Angeles, CA (310) 497-4985</a></span>
+                <span>© 2022, Recreation</span>
+            </div>
         </div>
     </div>
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,69 +17,53 @@
 <!-- Google tag (gtag.js) -->
 <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y78ELM5FLB"></script> -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-Y78ELM5FLB');
+    gtag('config', 'G-Y78ELM5FLB');
 </script>
 
 <body>
 
     <!-- MAIN -->
-    <div  id="main1" class="main transitions popup">
+    <div class="main" style="background-color: #FEEBCA;">
         <!-- HEADER -->
-        <header>
-            <!-- blur behind headers -->
-            <!-- 
-            <div class="blurring" style="grid-row: 1; grid-column: 1; width: 340px;"></div> 
-            <div class="blurring" style="grid-row: 2; grid-column: 1; width: 220px; height: 100%; margin: auto;"></div> 
-            -->
-            
-            <h1 style="grid-row: 1; grid-column: 1; margin: auto">recreation</h1>
-            <h2 style="grid-row: 2; grid-column: 1; margin: auto">compact grinder</h2>
+        <header class="branded">
+            <div id="appQRIcon" class="header-sides back-blur"
+                style="grid-column: 1; margin: 0px auto auto 0px; padding: 12px"><img
+                    src="assets/images/app store button.png" class="app-icon">Consume</div>
+            <div id="appButton" class="header-sides back-blur"
+                style="grid-column: 1; margin: 0px auto auto 0px; padding: 12px"><a
+                    href="https://apps.apple.com/us/app/consume-alcohol-tracker/id1633718776"><img
+                        src="assets/images/app store button.png" class="app-icon"></a></div>
+
+            <h1 class="branded" style="font-size: 5rem;">RECREATION</h1>
+            <div class="header-sides back-blur" style="grid-column: 3; margin: 0px 0px auto auto;">
+                <a href="https://www.instagram.com/recreation.life/" target="_blank"><img
+                        src="assets/images/IG icon.svg" class="social-icon"></a>
+                <a href="https://twitter.com/recreation_life" target="_blank"><img src="assets/images/Twitter icon.png"
+                        class="social-icon"></a>
+                <a href="https://www.youtube.com/channel/UCA1tCuEnEiZLYgk4Oxe9k4w" target="_blank"><img
+                        src="assets/images/YT icon.svg" class="social-icon"></a>
+                <a href="https://www.tiktok.com/@recreation.life" target="_blank"><img
+                        src="assets/images/TikTok icon.svg" class="social-icon"></a>
+            </div>
         </header>
 
-        <!-- BACKGROUND VIDEO -->
-        <video id="video" onclick="toggleVid()" playsinline>
-            <source id="mp4" src="videos/website intro 3.mp4" type="video/mp4">
-        </video>
-        <!-- controls autoplay style="z-index: 1000;"   -->
-
-        <!-- BOTTOM BUTTONS -->
-        <div class="btn-container">
-            <!-- <div class="storage-btn blurring"></div>
-            <div class="grinding-btn blurring"></div>
-            <div class="container-btn blurring"></div> -->
-
-            <div class="replay-btn blurring"></div>
-            <div style="border-width: 10px; border-color: rgba(0, 0, 0, .6);" class="buy-btn blurring"></div>
-            <div class="ar-btn blurring"></div>
-
-            <!-- <button class="btn text storage-btn" onclick="vid(video)">before</button>
-            <button class="btn text grinding-btn" onclick="vid(video)">now</button>
-            <button class="btn text container-btn" onclick="vid(video)">life</button> -->
-
-            <button class="btn text replay-btn" onclick="vid(video)">replay</button>
-            <button class ="btn text buy-btn" onclick="window.open('https://buy.stripe.com/aEU2bF3D52me85q6oq','_blank');">PRE-ORDER</button>
-
-            <!-- AR BUTTON (source: https://leoncvlt.github.io/ar-button/ )-->
-            <ar-button class = "btn ar-btn"
-                ios-src="Reality.reality"
-                link="https://buy.stripe.com/6oE6rVddF8KC4TeaEE"
-                title="compact grinder"
-                checkout-title="compact grinder"
-                checkout-subtitle=""
-                price="$59"
-                call-to-action="buy"
-                no-scale 
-                show-if-unsupported
-                >
-                
-                <span class="text ar-btn" style="width: auto; margin: 0;">AR</span>
-            </ar-button>
-            <button class="btn ar-btn ar-desktop-btn" onclick="showQR();"></button>
-            <!-- <button class="main" style="z-index: 1000;" onclick="blurBackground()"></button> -->
+        <div class="writing">
+            <p>
+                At RECREATION, we aim to maximize happy, healthy experiences. Everything we consume is a tool towards the life we desire. With consideration and intent, we can make the most of the time we have. To live with purpose and without regret.
+            </p>
+            <p>
+                To that end, we are building tools that trust you to make the right decision. Providing options and information at your fingertips to decide what’s best for you at the moment.
+            </p>
+            <p>
+                DIAL is the subtle, dynamic all-in-one grinder and storage device for all of your needs. Carry whatever you need for the night in the storage container and clip-on magnetic accessories to go.
+            </p>
+            <p>
+                <a href="https://apps.apple.com/us/app/consume-alcohol-tracker/id1633718776">Consume</a> lets you track and monitor your drinking, to gain awareness and control. Gain intent through
+            </p>
         </div>
     </div>
 
@@ -88,4 +73,5 @@
     <script type="module" src="https://unpkg.com/@leoncvlt/ar-button"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
