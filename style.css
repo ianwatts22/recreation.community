@@ -301,6 +301,10 @@ ar-button:before {
 #appQRIcon { display: none; }
 #appButton { display: initial; }
 
+#appButton {
+  visibility: hidden;
+}
+
 /* computer */
 @media only screen and (min-width: 650px) {
   /* AR */

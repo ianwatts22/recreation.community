@@ -22,6 +22,21 @@ $(document).ready(function () {   // detects when the document is ready
     } */
 });
 
+// source: https://stackoverflow.com/questions/53701660/change-html5-video-source-for-mobile
+$(document).ready(function () {   // detects when the document is ready
+  var screenWidth = $(window).width();
+  if (screenWidth < 600) {
+    videos = [video1mobile, video2mobile];
+    vidElement.src = videos[0];
+  }
+  // http://detectmobilebrowsers.com/
+  /*   if (jQuery.browser.mobile) {
+      videos = [video1mobile, video2mobile];
+      vidElement.src = videos[0];
+      vidElement.playbackRate = 2;
+    } */
+});
+
 // a video is an array (of frames?) so to reference 
 function vid(video) {
   /* $("#video")[0].pause();
