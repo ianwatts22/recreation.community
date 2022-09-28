@@ -12,5 +12,5 @@ adding custom font to website [1](https://www.pagecloud.com/blog/how-to-add-cust
  * use [webfont generator](https://www.fontsquirrel.com/tools/webfont-generator) to get a fontkit
 
 icons
- * IG: [iconmnstr.com](https://iconmonstr.com/instagram-11-svg/) 
+ * [iconmnstr.com](https://iconmonstr.com) 
  * coloring SVGs: https://stackoverflow.com/questions/22252472/how-to-change-the-color-of-an-svg-element
