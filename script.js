@@ -1,12 +1,11 @@
 // VIDEO
 var vidElement = document.getElementById("video");
-const video1 = "videos/grinder demo.mp4";
-const video2 = "videos/grinder vibes.mp4";
-const video1mobile = "videos/grinder demo mobile.mp4";
-const video2mobile = "videos/grinder vibes mobile.mp4";
+const video1 = "assets/videos/grinder demo.mp4";
+const video2 = "assets/videos/grinder vibes.mp4";
+const video1mobile = "assets/videos/grinder demo mobile.mp4";
+const video2mobile = "assets/videos/grinder vibes mobile.mp4";
 var videos = [video1, video2];
 var activeVideo = 0;
-
 
 // source: https://stackoverflow.com/questions/53701660/change-html5-video-source-for-mobile
 $(document).ready(function () {   // detects when the document is ready
@@ -36,9 +35,9 @@ function vid(video) {
   vidElement.play();
 }
 
-vidElement.click(function (e) {
-  toggleVid();
-});
+// vidElement.click(function (e) {
+//   toggleVid();
+// });
 
 vidElement.addEventListener('ended', function (e) {
   // update the active video index
@@ -52,10 +51,6 @@ vidElement.addEventListener('ended', function (e) {
   vid(videos[activeVideo]);
 });
 
-window.addEventListener('scroll',(event) => {
-  console.log('Scrolling...');
-});
-
 /* $('#video').bind('ended', function() {
   vid(videos[activeVideo]);          // playing video
   
@@ -66,11 +61,6 @@ window.addEventListener('scroll',(event) => {
 }); */
 
 function toggleVid() {
-  /* if($("#video")[0].paused){
-    $('#video')[0].play();
-  } else {
-    $('#video')[0].pause();
-  } */
   console.log("toggleVid");
   if (vidElement.paused) {
     vidElement.play();
@@ -80,25 +70,12 @@ function toggleVid() {
 }
 
 $('#TWO-buy').click(function () {
-  // toggleVid();
   window.open('https://recreation-community.myshopify.com/66077622512/checkouts/cc54e961365c315f73dc92c436bd95a7', '_blank');
-  console.log("buy-btn");
-});
-$('#THREE-buy').click(function () {
-  // toggleVid();
-  window.open('https://recreation-community.myshopify.com/66077622512/checkouts/d215e528edb195d065891280c7f905b0?step=contact_information', '_blank');
-  console.log("buy-btn");
 });
 
 $('#main1').click(function () {
   toggleVid();
 });
-
-/* trying to get it to work for all of .main classes but can't figure it out, maybe cuz trying to lead a class list of a class?
-
-  const mainClass = document.getElementsByTagName("main").classList;
-  document.getElementsByTagName("main").classList.add("popup");
-  */
 
 // 21+
 function twentyOne() {
@@ -109,13 +86,13 @@ function twentyOne() {
 }
 
 // APP
-const appButton = document.getElementById("appButton");
+const appQRIcon = document.getElementById("appQRIcon");
 const appQR = document.getElementById("appQR").classList;
-appButton.onmouseenter = function () {
+appQRIcon.onmouseenter = function () {
   appQR.toggle("hidden");
   toggleVid();
 };
-appButton.onmouseleave = function () {
+appQRIcon.onmouseleave = function () {
   appQR.toggle("hidden");
   toggleVid();
 };
@@ -129,8 +106,6 @@ function blurBackground() {
 
 function clickawayBG() {
   const bgButton = document.getElementById("bgButton").classList;
-
-  // bgButton.toggle("visible");
   bgButton.toggle("disabled");
 }
 
