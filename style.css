@@ -104,6 +104,17 @@ header {
   margin: 4px;
 }
 
+.socials {
+  position: absolute;
+  right: 10px;
+  bottom: 24px;
+}
+.info {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+}
+
 .main {
   height: 101vh;
   width: 100%;
@@ -151,7 +162,9 @@ header {
 }
 .branded { font-family: bippo; }
 .writing {
-  margin: 2rem 10% 2rem 10%;
+  margin: 0 10% 2rem 10%;
+  height: 81vh;
+  overflow: scroll;
 }
 
 h1 {
@@ -275,6 +288,11 @@ ar-button:before {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.middle {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
 
 .ar-desktop-btn { visibility: hidden; }
 
@@ -283,6 +301,9 @@ ar-button:before {
 
 /* computer */
 @media only screen and (min-width: 650px) {
+  h1 { font-size: 4.5rem; }
+  h2 { font-size: 3.5rem; }
+  
   /* AR */
   ar-button:before {
     pointer-events: none;
@@ -324,7 +345,6 @@ ar-button:before {
 #bgButton {
   z-index: 20;
 }
-
 .contact {
   width: auto;
   font-size: 3rem;
