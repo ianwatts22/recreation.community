@@ -50,17 +50,9 @@ html {
   height: -webkit-fill-available;
   overflow: scroll;
   scrollbar-width: none;  /* hides scrollbar for Firefox */
-  
-  /* want to add in scroll snapping for */
-  /* scroll-snap-type: y mandatory; */
 }
-/* hides scrollbar for Chrome, Opera, Safari */
-::-webkit-scrollbar {
+::-webkit-scrollbar {   /* hides scrollbar for Chrome, Opera, Safari */
   display: none;
-}
-.scroll-snap {
-  scroll-snap-type: y mandatory;
-  scroll-snap-align: center;
 }
 
 * {
@@ -80,7 +72,6 @@ body {
 
 header {
   padding: 8px;
-  position: static;
   text-align: center;
   font-size: 2rem;
   
@@ -249,7 +240,6 @@ button:hover {
   background-color: rgb(254, 235, 202);
 }
 
-
 ar-button:before {
   content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='38' height='38' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3'%3E%3C/path%3E%3C/svg%3E");
   display: block;
@@ -306,9 +296,7 @@ ar-button:before {
   transform: translate(-50%, -50%);
 }
 
-.ar-desktop-btn {
-  visibility: hidden;
-}
+.ar-desktop-btn { visibility: hidden; }
 
 #appQRIcon { display: none; }
 #appButton { display: initial; }
@@ -341,7 +329,6 @@ ar-button:before {
   #appButton { display: none; }
   #appQRIcon { display: initial; }
   
-
   /* BOTTOM BUTTONS */
   .btn-container {
     line-height: 2.5rem;
@@ -350,5 +337,4 @@ ar-button:before {
     font-size: 4rem;
     width: 400px;
   }
-
-} 
+}
