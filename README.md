@@ -14,3 +14,8 @@ adding custom font to website [1](https://www.pagecloud.com/blog/how-to-add-cust
 icons
  * [iconmnstr.com](https://iconmonstr.com) 
  * coloring SVGs: https://stackoverflow.com/questions/22252472/how-to-change-the-color-of-an-svg-element
+
+[Shopify JS Buy SDK](https://shopify.github.io/js-buy-sdk/)
+
+**LINKS**
+APP: https://apps.apple.com/us/app/consume-alcohol-tracker/id1633718776

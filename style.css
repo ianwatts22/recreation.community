@@ -367,7 +367,7 @@ ar-button:before {
     margin: 8px;
     vertical-align: middle;
   }
-
+  
   .app > img {
     vertical-align: middle;
     width: 56px;
@@ -393,11 +393,7 @@ ar-button:before {
   }
 }
 
-
 /* UNUSED */
-#bgButton {
-  z-index: 20;
-}
 .contact {
   width: auto;
   font-size: 3rem;
