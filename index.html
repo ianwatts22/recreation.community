@@ -47,32 +47,42 @@
 
     <!-- MAIN  -->
     <div id="main1" class="main popup">
-        <!-- HEADER -->
-        <header class="branded">
-            <!-- LEFT -->
-            <div id="appQRIcon" class="header-sides back-blur"
-                style="grid-column: 1; margin: 0px auto auto 0px; padding: 12px"><img
-                    src="assets/images/app store button.png" class="app-icon">Consume</div>
-            <div id="appButton" class="header-sides back-blur"
-                style="grid-column: 1; margin: 0px auto auto 0px; padding: 12px"><a
-                    href="https://apps.apple.com/us/app/consume-alcohol-tracker/id1633718776"><img
-                        src="assets/images/app store button.png" class="app-icon"></a></div>
-            
-            <!-- CENTER -->
-            <img src="assets/images/dial_recreation.svg" class="header-image">
 
-            <!-- RIGHT -->
-            <!-- <div class="header-sides back-blur" style="grid-column: 3; margin: 0px 0px auto auto;">
-                <a href="https://www.instagram.com/recreation.life/" target="_blank"><img
-                        src="assets/images/IG icon.svg" class="social-icon"></a>
-                <a href="https://twitter.com/recreation_life" target="_blank"><img src="assets/images/Twitter icon.png"
-                        class="social-icon"></a>
-                <a href="https://www.youtube.com/channel/UCA1tCuEnEiZLYgk4Oxe9k4w" target="_blank"><img
-                        src="assets/images/YT icon.svg" class="social-icon"></a>
-                <a href="https://www.tiktok.com/@recreation.life" target="_blank"><img
-                        src="assets/images/TikTok icon.svg" class="social-icon"></a>
-            </div> -->
-        </header>
+        <!-- HEADER -->
+        <img src="assets/images/dial_recreation.svg" style="width: 200px; margin: 10px auto 0 auto;">
+        <!-- CONSUME -->
+        <a href="https://apps.apple.com/us/app/consume-alcohol-tracker/id1633718776"
+            class="app info back-blur links top-left" style="text-decoration:none" target="_blank">
+            <img src="assets/images/app store button.png">
+            <span style="margin: 0">Consume</span>
+        </a>
+
+        <!-- <div class="app info top-left">
+            <a href="https://apps.apple.com/us/app/consume-alcohol-tracker/id1633718776" class="app back-blur links"
+                style="text-decoration:none" target="_blank">
+                <img src="assets/images/app store button.png">
+                <span style="margin: 0">Consume</span>
+            </a>
+            <span style="width: 20px;"></span>
+            <br>
+            <br>
+            <a href="https://recreation.community/about.html"
+                class="app back-blur links" style="text-decoration:none" target="_blank">
+                <img src="assets/images/info-filled.svg">
+                <span style="margin: 0">about</span>
+            </a>
+        </div> -->
+
+        <!-- SOCIALS -->
+        <div class="socials links back-blur top-right">
+            <a href="https://www.instagram.com/recreation.life/" target="_blank"><img
+                    src="assets/images/IG icon.svg"></a>
+            <a href="https://twitter.com/recreation_life" target="_blank"><img src="assets/images/Twitter icon.png"></a>
+            <a href="https://www.youtube.com/channel/UCA1tCuEnEiZLYgk4Oxe9k4w" target="_blank"><img
+                    src="assets/images/YT icon.svg"></a>
+            <a href="https://www.tiktok.com/@recreation.life" target="_blank"><img
+                    src="assets/images/TikTok icon.svg"></a>
+        </div>
 
         <!-- BACKGROUND VIDEO -->
         <video id="video" playsinline>
@@ -81,14 +91,39 @@
 
         <!-- BOTTOM BUTTONS -->
         <div class="btn-container">
-            <!-- <button id=""><div class="branded">ONE</div><div style="width: 8px;"></div><div> $29</div></button> -->
-            <button id="TWO-buy">
-                <div class="branded">TWO</div>
-                <div style="width: 8px;"></div>
-                <div>$69</div>
+            <!-- <button id="back" style="width: auto; padding: 0 1rem 0 1rem;">
+                ←
+            </button> -->
+            
+            <!-- ONE -->
+            <button id="ONE-buy">
+                <div class="branded">ONE</div>
+                <pre> $29</pre>
             </button>
+            <!-- <button id="ONE+_buy">
+                <div class="branded">ONE+</div>
+                <pre> $49</pre>
+            </button> -->
 
-            <!-- <button id="THREE-buy"><div class="branded">THREE</div><div style="width: 8px;"></div><div>$99</div></button> -->
+            <!-- TWO -->
+            <!-- <button id="TWO-buy">
+                <span class="branded">TWO</span>
+                <pre> $69</pre>
+            </button>
+            <button id="TWO+_buy">
+                <span class="branded">TWO+</span>
+                <pre> $89</pre>
+            </button> -->
+
+            <!-- THREE -->
+            <!-- <button id="THREE-buy">
+                <span class="branded">THREE</span>
+                <pre> $99</pre>
+            </button>
+            <button id="THREE+_buy" class="">
+                <span class="branded">THREE+</span>
+                <pre> $119</pre>
+            </button> -->
 
             <!-- AR BUTTON (source: https://leoncvlt.github.io/ar-button/ )-->
             <!-- <ar-button class = "btn ar-btn"
@@ -109,7 +144,7 @@
             <button class="btn ar-btn ar-desktop-btn" onclick="showQR();"></button> -->
         </div>
 
-        <div class="text pre-order" style="font-size: 24px;">free shipping (3 weeks)</div>
+        <div class="text pre-order" style="font-size: 20px;">free shipping (3 weeks)</div>
 
         <div class="footer">
             <img src="assets/images/footer_background.png">

@@ -93,26 +93,42 @@ header {
   width: 52px;
   padding: 8px;
 }
-.social-icon {
+
+/* LINK BUTTONS */
+.links {
+  margin: 1rem;
+  padding: 0.5rem;
+}
+.app { 
+  font-size: 2.5rem;
+}
+.app > img {
+  vertical-align: middle;
+  width: 3rem;
+  margin: 4px;
+}
+.app > span { display: none; }  /* hide text on mobile */
+
+.socials {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 52px;
+}
+.socials > a > img {
   width: 36px;
   margin: 8px;
   vertical-align: middle;
 }
-.app-icon {
+.info {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+}
+.info > a > img {
   vertical-align: middle;
   width: 48px;
   margin: 4px;
-}
-
-.socials {
-  position: absolute;
-  right: 10px;
-  bottom: 24px;
-}
-.info {
-  position: absolute;
-  left: 10px;
-  bottom: 10px;
 }
 
 .main {
@@ -157,7 +173,7 @@ header {
   text-align: center;
   display : block;
   margin: auto;
-  font-size: 2.5rem;
+  font-size: 1rem;
   z-index: 1;
 }
 .branded { font-family: bippo; }
@@ -177,6 +193,9 @@ h2 {
 }
 p {
   font-size: 1.5rem;
+}
+pre {
+  margin: 0;
 }
 
 button {
@@ -233,7 +252,7 @@ button:hover {
   margin: auto auto 0px auto;
 }
 .btn-container > button {
-  width: 250px;
+  width: 220px;
   font-size: 2rem;
   margin: 0;
   background-color: rgb(254, 235, 202);
@@ -293,6 +312,28 @@ ar-button:before {
   left: 50%;
   transform: translate(-50%);
 }
+.top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: auto;
+}
+.top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: auto;
+}
+.bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
 
 .ar-desktop-btn { visibility: hidden; }
 
@@ -303,7 +344,8 @@ ar-button:before {
 @media only screen and (min-width: 650px) {
   h1 { font-size: 4.5rem; }
   h2 { font-size: 3.5rem; }
-  
+  .text { font-size: 3rem; }
+
   /* AR */
   ar-button:before {
     pointer-events: none;
@@ -315,15 +357,24 @@ ar-button:before {
   .header-sides {
     width: auto;
   }
-  .social-icon {
+
+  .socials {
+    position: absolute;
+    width: auto;
+  }
+  .socials > a > img {
     width: 48px;
     margin: 8px;
     vertical-align: middle;
   }
-  .app-icon {
+
+  .app > img {
     vertical-align: middle;
     width: 56px;
     margin: 4px;
+  }
+  .app > span {
+    display: initial;
   }
 
   /* APP */
@@ -336,7 +387,9 @@ ar-button:before {
   }
   .btn-container > button {
     font-size: 4rem;
-    width: 400px;
+    /* width: 400px; */
+    width: auto;
+    padding: 0 1rem 0 1rem;
   }
 }
 
