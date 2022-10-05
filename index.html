@@ -6,173 +6,155 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>recreation</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-
-    <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
-    <!-- ADOBE fonts -->
-    <link rel="stylesheet" href="https://use.typekit.net/qru3fkv.css">
     <link rel="icon" href="assets/fav/favicon.ico?v=2">
 
+    <!-- fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
+    <link rel="stylesheet" href="https://use.typekit.net/qru3fkv.css">
 </head>
 
 <!-- Google tag (gtag.js) -->
 <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y78ELM5FLB"></script> -->
-
-<!-- Google tag -->
-<script>
+<!-- <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-Y78ELM5FLB');
-</script>
+</script> -->
 
-<body>
+<body class="main">
     <!-- 21+ -->
-    <div id="21" class="age-container center">
+    <div id="ageCheck" class="center">
         are you 21+?
         <button id="21y" onclick="twentyOne();">&#128077;</button>
         <button id="21n" onclick="window.location.href='https://google.com';">&#128078;</button>
     </div>
 
-    <!-- app QR -->
-    <div id="appQR" class="hidden qrCode back-blur center" style="border-radius: 35px;">
-        <img class="qrCode" style="object-fit: fill;" src="assets/images/appQR.png">
-    </div>
+    <!-- FULL SCREEN BLUR -->
+    <div id="fullBlur"></div>
 
-    <!-- CONTACT -->
-    <!-- <div id="contact" class="hidden qrCode">
-        <div class="blur-background">email: help@recreation.community<br>phone</div>
-    </div> -->
+    <!-- app QR -->
+    <img id="appQR" class="back-blur center" style="display: none;" src="assets/images/appQR.png">
 
     <!-- MAIN  -->
-    <div id="main1" class="main popup">
+    <!-- HEADER -->
+    <img id="logo" src="assets/images/dial_recreation.svg">
 
-        <!-- HEADER -->
-        <img src="assets/images/dial_recreation.svg" style="width: 200px; margin: 10px auto 0 auto;">
-        <!-- CONSUME -->
-        <a href="https://apps.apple.com/us/app/consume-alcohol-tracker/id1633718776"
-            class="app info back-blur links top-left" style="text-decoration:none" target="_blank">
-            <img src="assets/images/app store button.png">
-            <span style="margin: 0">Consume</span>
-        </a>
+    <!-- CONSUME -->
+    <a id="appButton" href="https://apps.apple.com/us/app/consume-alcohol-tracker/id1633718776"
+        class="app info back-blur links top-left" style="text-decoration:none" target="_blank">
+        <img src="assets/images/app store button.png">
+        <span style="margin: 0">Consume</span>
+    </a>
 
-        <!-- <div class="app info top-left">
-            <a href="https://apps.apple.com/us/app/consume-alcohol-tracker/id1633718776" class="app back-blur links"
-                style="text-decoration:none" target="_blank">
-                <img src="assets/images/app store button.png">
-                <span style="margin: 0">Consume</span>
-            </a>
-            <span style="width: 20px;"></span>
-            <br>
-            <br>
-            <a href="https://recreation.community/about.html"
-                class="app back-blur links" style="text-decoration:none" target="_blank">
-                <img src="assets/images/info-filled.svg">
-                <span style="margin: 0">about</span>
-            </a>
-        </div> -->
+    <!-- SOCIALS -->
+    <div class="socials links back-blur top-right">
+        <a href="https://www.instagram.com/recreation.life/" target="_blank"><img src="assets/images/IG icon.svg"></a>
+        <a href="https://twitter.com/recreation_life" target="_blank"><img src="assets/images/Twitter icon.png"></a>
+        <a href="https://www.youtube.com/channel/UCA1tCuEnEiZLYgk4Oxe9k4w" target="_blank"><img
+                src="assets/images/YT icon.svg"></a>
+        <a href="https://www.tiktok.com/@recreation.life" target="_blank"><img src="assets/images/TikTok icon.svg"></a>
+    </div>
 
-        <!-- SOCIALS -->
-        <div class="socials links back-blur top-right">
-            <a href="https://www.instagram.com/recreation.life/" target="_blank"><img
-                    src="assets/images/IG icon.svg"></a>
-            <a href="https://twitter.com/recreation_life" target="_blank"><img src="assets/images/Twitter icon.png"></a>
-            <a href="https://www.youtube.com/channel/UCA1tCuEnEiZLYgk4Oxe9k4w" target="_blank"><img
-                    src="assets/images/YT icon.svg"></a>
-            <a href="https://www.tiktok.com/@recreation.life" target="_blank"><img
-                    src="assets/images/TikTok icon.svg"></a>
-        </div>
-
-        <!-- BACKGROUND VIDEO -->
-        <video id="video" playsinline>
-            <source src="/assets/videos/grinder demo.mp4" type="video/mp4">
-        </video>
-
-        <!-- BOTTOM BUTTONS -->
+    <!-- PRODUCT DESCRIPTION -->
+    <div id="description" class="back-blur" style="display: none">
+        <h2 class="branded" style="text-align: center"></h2>
+        <p></p>
+        <!-- <input type="checkbox"> -->
+        <div id="disclaimer" style="text-align: center; font-size: 2rem; display: none; padding: 0">COMING ~5 WEEKS<br>SIGN-UP FOR UPDATES</div>
         <div class="btn-container">
-            <!-- <button id="back" style="width: auto; padding: 0 1rem 0 1rem;">
-                ←
-            </button> -->
-            
-            <!-- ONE -->
-            <!-- <button id="ONE-buy">
-                <div class="branded">ONE</div>
-                <pre> $29</pre>
-            </button> -->
-            <!-- <button id="ONE+_buy">
-                <div class="branded">ONE+</div>
-                <pre> $49</pre>
-            </button> -->
-
-            <!-- TWO -->
-            <button id="TWO-buy">
-                <span class="branded">TWO</span>
-                <pre> $69</pre>
-            </button>
-            <button id="TWO+_buy">
-                <span class="branded">TWO+</span>
-                <pre> $89</pre>
-            </button>
-
-            <!-- THREE -->
-            <!-- <button id="THREE-buy">
-                <span class="branded">THREE</span>
-                <pre> $99</pre>
-            </button>
-            <button id="THREE+_buy" class="">
-                <span class="branded">THREE+</span>
-                <pre> $119</pre>
-            </button> -->
-
-            <!-- AR BUTTON (source: https://leoncvlt.github.io/ar-button/ )-->
-            <!-- <ar-button class = "btn ar-btn"
-                ios-src="Reality.reality"
-                link="https://buy.stripe.com/6oE6rVddF8KC4TeaEE"
-                title="compact grinder"
-                checkout-title="compact grinder"
-                checkout-subtitle=""
-                price="$59"
-                call-to-action="buy"
-                no-scale 
-                show-if-unsupported
-
-                >
-                
-                <span class="text ar-btn" style="width: auto; margin: 0;">AR</span>
-            </ar-button>
-            -->
+            <!-- <button id="reality" class="text-button" style="">VIRTUAL (ALPHA)</button> -->
+            <button id="buyButton" class="branded text-button" style="background-color: firebrick">BUY NOW</button>
+            <!-- <div id="emailSignup" class="klaviyo-form-Wef6xU" style=""></div> -->
         </div>
+    </div>
+    <div id="emailSignup" class="klaviyo-form-Wef6xU center" style="display: none"></div>
 
-        <div class="text pre-order" style="font-size: 20px;">free shipping (3 weeks)</div>
 
-        <div class="footer">
-            <img src="assets/images/footer_background.png">
-            <div>
-                <span>
-                    policies:
-                    <a href="https://recreation.community/policies/privacy">privacy</a>,
-                    <a href="https://recreation.community/policies/shipping">shipping</a>,
-                    <a href="https://recreation.community/policies/refund">refund</a>
-                </span>
-                <span>
-                    all sales appear as "recreation community" on your billing statement
-                    <img style="vertical-align: middle" alt="credit card logos" title="credit card logos"
-                        src="https://www.shift4shop.com/images/credit-card-logos/cc-sm-4.png" width="198" height="28" />
-                </span>
-                <span><a href="mailto:help@recreation.community" style="text-decoration:none;"
-                        target="_blank">contact</a></span>
-                <span>Watts Enterprises LLC, Los Angeles, CA (310) 497-4985</a></span>
-                <span>© 2022, Recreation</span>
-            </div>
+    <!-- OPTIONS
+    ar-scale="fixed", xr-environment
+     -->
+    <model-viewer src="assets/3D/USDZ to DAE to.glb" ar camera-controls touch-action="pan-y"
+        skybox-image="assets/3D/moon_4k.hdr" ios-src="assets/3D/F1 internal v27.usdz" auto-rotate
+        interaction-prompt-threshold camera-orbit="0deg 90deg 0.5m" style="display: none;">
+    </model-viewer>
+
+    <!-- BACKGROUND VIDEO -->
+    <video id="video" playsinline>
+        <source src="assets/videos/grinder demo.mp4" type="video/mp4">
+    </video>
+
+    <!-- BOTTOM BUTTONS -->
+    <div class="btn-container">
+        <!-- <button id="back" style="width: auto; padding: 0 1rem 0 1rem;">
+            ←
+        </button> -->
+
+        <!-- PRODUCT BUTTONS -->
+        <button id="one" style="display: none">
+            <span class="branded">ONE</span>
+            <pre> $29+</pre>
+        </button>
+        <button id="two">
+            <span class="branded">TWO</span>
+            <pre> $69+</pre>
+        </button>
+        <button id="three">
+            <span class="branded">THREE</span>
+            <pre> $99+</pre>
+        </button>
+
+        <!-- AR BUTTON (source: https://leoncvlt.github.io/ar-button/ )-->
+        <!-- <ar-button class = "btn ar-btn"
+            ios-src="Reality.reality"
+            link="https://buy.stripe.com/6oE6rVddF8KC4TeaEE"
+            title="compact grinder"
+            checkout-title="compact grinder"
+            checkout-subtitle=""
+            price="$59"
+            call-to-action="buy"
+            no-scale 
+            show-if-unsupported
+
+            >
+            
+            <span class="text ar-btn" style="width: auto; margin: 0;">AR</span>
+        </ar-button>
+        -->
+    </div>
+
+    <div id="pre-order" class="text">free shipping (3 weeks)</div>
+
+    <div class="footer">
+        <img src="assets/images/footer_background.png">
+        <div>
+            <span>
+                policies:
+                <a href="https://recreation.community/policies/privacy">privacy</a>,
+                <a href="https://recreation.community/policies/shipping">shipping</a>,
+                <a href="https://recreation.community/policies/refund">refund</a>
+            </span>
+            <span>
+                all sales appear as "recreation community" on your billing statement
+                <img style="vertical-align: middle" alt="credit card logos" title="credit card logos"
+                    src="https://www.shift4shop.com/images/credit-card-logos/cc-sm-4.png" width="198" height="28" />
+            </span>
+            <span>(310) 220-0351 | <a href="mailto:help@recreation.community" style="text-decoration:none;"
+                    target="_blank">email</a></span>
+            <span>Watts Enterprises LLC, Los Angeles, CA</a></span>
+            <span>© 2022, Recreation</span>
         </div>
     </div>
 
     <!-- JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="module" src="https://unpkg.com/@leoncvlt/ar-button"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@leoncvlt/ar-button/styles.css">
+    <!-- <script type="module" src="http://sdks.shopifycdn.com/js-buy-sdk/v2/latest/index.umd.min.js"></script> -->
+    <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=XUuHGq"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <script src="script.js"></script>
-    <script type="module" src="http://sdks.shopifycdn.com/js-buy-sdk/v2/latest/index.umd.min.js"></script>
 </body>
 
 </html>

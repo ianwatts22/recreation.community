@@ -5,39 +5,6 @@
 */
 
 /* general */
-/* BRYANT 2 FONT SPECS
-URL: https://fonts.adobe.com/fonts/bryant-2
-
-Regular
-font-family: bryant-web, sans-serif;
-font-weight: 400;
-font-style: normal;
-
-Bold
-font-family: bryant-web, sans-serif;
-font-weight: 700;
-font-style: normal;
-
-Italic
-font-family: bryant-web, sans-serif;
-font-weight: 400;
-font-style: italic;
-
-Bold Italic
-font-family: bryant-web, sans-serif;
-font-weight: 700;
-font-style: italic;
-
-Regular Alternate
-font-family: bryant-web-alternate, sans-serif;
-font-weight: 400;
-font-style: normal;
-
-Bold Alternate
-font-family: bryant-web-alternate, sans-serif;
-font-weight: 700;
-font-style: normal; */
-/* BRYANT ALTERNATE */
 @font-face {
   font-family: 'bippo';
   src: url('assets/fonts/webfontkit/bippo.woff2') format('woff2'),
@@ -83,15 +50,9 @@ header {
   margin: 0;
   vertical-align: middle;
 }
-.header-image {
-  width: 200px;
-  grid-column: 2;
-  margin: auto
-}
-.header-sides {
-  max-width: 330px;
-  width: 52px;
-  padding: 8px;
+#logo {
+  width: 16rem;
+  margin: 1rem auto auto auto;
 }
 
 /* LINK BUTTONS */
@@ -131,9 +92,11 @@ header {
   margin: 4px;
 }
 
+
 .main {
   height: 101vh;
   width: 100%;
+  z-index: 10;
   
   display: grid;
   position: absolute;
@@ -145,7 +108,7 @@ header {
   font-size: 1rem;
   text-align: center;
   position: absolute;
-  top: 99%;
+  top: 100vh;
   width: 100%;
   line-height: 2rem;
   margin: 0;
@@ -176,7 +139,10 @@ header {
   font-size: 1rem;
   z-index: 1;
 }
-.branded { font-family: bippo; }
+.branded { 
+  font-family: bippo;
+  font-weight: 100;
+ }
 .writing {
   margin: 0 10% 2rem 10%;
   height: 81vh;
@@ -189,6 +155,7 @@ h1 {
 }
 h2 {
   font-size: 2.5rem;
+  margin: 0;
   padding: 8px;
 }
 p {
@@ -203,50 +170,40 @@ button {
   border-radius: 60px;
   display: flex;
   justify-content: center;
-  position: relative;
-  z-index: 1;
   background-color: rgba(156, 156, 156, 0.4);
 
-  padding: 10px;
-  margin: 10px;
+  padding: 0.5rem;
   border-width: 0;
 
   font-size: 2.5rem;
 }
-button:hover {
-  background-color: rgba(255, 255, 255, 0.4);
-}
-
-/* hiding, disabling, deleting */
-.visible {
-  pointer-events: auto;
-  opacity: 1;
-}
-.hidden {
-  pointer-events: none;
-  opacity: 0;
-}
-.disabled { pointer-events: none; }
-.gone {
-  display: none;
-  pointer-events: none; 
+button:hover { background-color: rgba(255, 255, 255, 0.4); }
+.text-button {
+  padding: 0.5rem 1rem
 }
 
 /*---------------------- grinder.html ---------------------*/
 #video {
   position: absolute;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   object-fit: cover;
   z-index: -2;
 }
+model-viewer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
 
-/* bottom */
+
 .btn-container {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 1rem;
 
   padding: 8px;
   margin: auto auto 0px auto;
@@ -255,11 +212,14 @@ button:hover {
   width: 220px;
   font-size: 2rem;
   margin: 0;
-  background-color: rgb(254, 235, 202);
+  background-color: #feebca;
+  /* z-index: 1000; */
 }
-.pre-order {
-  margin: auto auto 8px auto;
+
+#pre-order {
+  margin: auto auto 0.5rem auto;
   padding: 8px;
+  font-size: 1.5rem;
 }
 
 .back-blur {
@@ -269,7 +229,6 @@ button:hover {
   /* box-shadow: 0 0 5px 5px rgba(156, 156, 156, 0.4); */
 }
 
-
 /* AR */
 ar-button:before {
   content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='38' height='38' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3'%3E%3C/path%3E%3C/svg%3E");
@@ -277,30 +236,65 @@ ar-button:before {
   margin-right: 0.3rem;
 }
 
-.age-container {
+#ageCheck {
   display: flex;
   justify-content: space-evenly;
   width: 300px;
   font-size: 3rem;
   flex-wrap: wrap;
+  gap: 1rem;
+  z-index: 3;
 }
-.age-container > button {
-  width: 93.5px;
-  font-size: 3.5rem;
+#ageCheck > button {
+  width: 100px;
+  font-size: 4rem;
+}
+#fullBlur {
+  width: 100%;
+  height: 100vh;
+  backdrop-filter: blur(15px);
+  z-index: 2;
+  position: absolute;
 }
 
-.popup {
-  filter: blur(15px);
-  background-color: rgba(255, 255, 255, 0.8);
-  z-index: -1;
-}
-
-.qrCode {
+#appQR {
   width: 360px;
   height: 360px;
-  z-index: 10;
+  z-index: 100;
+  border-radius: 35px;
 }
 
+#description {
+  position: absolute;
+  padding: 0.5rem;
+  margin: 1rem;
+  gap: 1rem;
+
+  width: 24%;
+  min-width: 20rem;
+  max-height: 60vh;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+}
+#description > p {
+  font-size: 1.75rem;
+  margin: 1rem 0.75rem;
+}
+#description > p > ul {
+  margin: 0;
+  line-height: 2.5rem;
+}
+#description > div > button {
+  width: 100%;
+  /* font-size: 3.5rem; */
+  padding: 0.5rem 1rem;
+}
+#emailSignup {
+  width: 400px
+}
+
+/* POSITIONING */
 .center {
   position: absolute;
   top: 50%;
@@ -337,9 +331,6 @@ ar-button:before {
 
 .ar-desktop-btn { visibility: hidden; }
 
-#appQRIcon { display: none; }
-#appButton { display: initial; }
-
 /* computer */
 @media only screen and (min-width: 650px) {
   h1 { font-size: 4.5rem; }
@@ -368,36 +359,21 @@ ar-button:before {
     vertical-align: middle;
   }
   
-  .app > img {
+  #appButton > img {
     vertical-align: middle;
     width: 56px;
     margin: 4px;
   }
-  .app > span {
-    display: initial;
-  }
-
-  /* APP */
-  #appButton { display: none; }
-  #appQRIcon { display: initial; }
+  #appButton > span { display: initial; }
   
   /* BOTTOM BUTTONS */
   .btn-container {
     line-height: 2.5rem;
   }
   .btn-container > button {
-    font-size: 4rem;
+    font-size: 3rem;
     /* width: 400px; */
     width: auto;
-    padding: 0 1rem 0 1rem;
+    padding: 1rem 2rem;
   }
-}
-
-/* UNUSED */
-.contact {
-  width: auto;
-  font-size: 3rem;
-  padding: 30px;
-  vertical-align: middle;
-  text-align: center;
 }
