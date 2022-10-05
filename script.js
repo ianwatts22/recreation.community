@@ -1,132 +1,147 @@
+//ELEMENTS
+const tan = "#feebca"
 
+// VIDEOS
+var vidElement = document.getElementById("video")
+var video = $('#video')
+const videoArray = {
+  "vibes": [],
+  "one": [],
+  "two": [],
+  "three": []
+}
+const video1 = "assets/videos/grinder demo.mp4"
+const video2 = "assets/videos/grinder vibes.mp4"
+const video1mobile = "assets/videos/grinder demo mobile.mp4"
+const video2mobile = "assets/videos/grinder vibes mobile.mp4"
+var videos = [video1, video2]
+var activeVideo = 0
+let currentVid;
 
-// VIDEO
-var vidElement = document.getElementById("video");
-const video1 = "assets/videos/grinder demo.mp4";
-const video2 = "assets/videos/grinder vibes.mp4";
-const video1mobile = "assets/videos/grinder demo mobile.mp4";
-const video2mobile = "assets/videos/grinder vibes mobile.mp4";
-var videos = [video1, video2];
-var activeVideo = 0;
-
-// source: https://stackoverflow.com/questions/53701660/change-html5-video-source-for-mobile
-$(document).ready(function () {   // detects when the document is ready
-  var screenWidth = $(window).width();
-  if (screenWidth < 600) {
-    videos = [video1mobile, video2mobile];
-    vidElement.src = videos[0];
+$(document).ready(function () {
+  if ($(window).width() < 767) {
+    videos = [video1mobile, video2mobile]
+    appQR.remove()
   }
-  // http://detectmobilebrowsers.com/
-  /*   if (jQuery.browser.mobile) {
-      videos = [video1mobile, video2mobile];
-      vidElement.src = videos[0];
-      vidElement.playbackRate = 2;
-    } */
-});
+  vidElement.src = videos[activeVideo]
+  currentVideo = videos[activeVideo]
+})
 
-// a video is an array (of frames?) so to reference 
 function vid(video) {
-  vidElement.src = video;
-  vidElement.load();
-  vidElement.play();
+  vidElement.src = video
+  currentVid = video
+  vidElement.load()
+  vidElement.play()
 }
 
-// update the active video index
-vidElement.addEventListener('ended', function (e) {
-  console.log("ended");
+video.click(toggleVid)
 
-  activeVideo += 1;
-  if (activeVideo == videos.length) {
-    activeVideo = 0;
-  }
-
-  vid(videos[activeVideo]);
-});
-
-function toggleVid() {
-  console.log("toggleVid");
-  if (vidElement.paused) {
-    vidElement.play();
-  } else {
-    vidElement.pause();
-  }
+// JQuery: vidElement.onended = nextVid(), would need to be object instead of DOM element
+vidElement.addEventListener('ended', nextVid)
+function nextVid() {
+  activeVideo == videos.length - 1 ? activeVideo = 0 : activeVideo += 1
+  vid(videos[activeVideo])
 }
 
+function toggleVid() { vidElement.paused ? vidElement.play() : vidElement.pause()}
+
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-// ––––––––––––––––––––––––––––––––––––SHOPIFY––––––––––––––––––––––––––––––––––––
+// ––––––––––––––––––––––––––––––––––––3D/AR––––––––––––––––––––––––––––––––––––––
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
-// import Client from 'shopify-buy';
-// import Client from 'shopify-buy/index.umd';
-//  type="module" src='http://sdks.shopifycdn.com/js-buy-sdk/v2/latest/index.umd.min.js"
+const modelViewer = $("model-viewer")
+const x = 0.1
+const y = 0.1
+const z = 0.1
+// trying to scale down 50%, not working
+const scale = () => {
+  modelViewer.scale = `${x} ${y} ${z}`
+  modelViewer.updateFraming()
+  console.log("scale")
+}
+if(modelViewer.loaded) scale()
 
-// import Client from 'shopify-buy';
-// import { Client } from 'http://sdks.shopifycdn.com/js-buy-sdk/v2/latest/index.umd.min.js'
-
-// initializing a client to return content
-/* const client = Client.buildClient({
-  domain: 'recreation-community.myshopify.com',
-  storefrontAccessToken: 'bdfb42209264a720ddde5f9c3fe720b0'
-});
-
-// products by ID
-const one = '';
-const one_plus = '';
-const two = '8086416130288';
-const two_plus = '8105641410800';
-const three = '8109160595696';
-const three_plus = '8109161808112';
-const plus = '8109167083760';
-
-client.product.fetch(one).then((product) => {
-
-});
-
-
-// create an empty checkout
-client.checkout.create().then((checkout) => {
-
-  console.log(checkout);
-});
-
-const checkoutId = 'Z2lkOi8vc2hvcGlmeS9DaGVja291dC9kMTZmM2EzMDM4Yjc4N=';
-const input = {customAttributes: [{key: "MyKey", value: "MyValue"}]};
-
-client.checkout.updateAttributes(checkoutId, input).then((checkout) => {
-
-});
-
-const lineItemsToAdd = [
-  {
-    variantId: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC8yOTEwNjAyMjc5Mg==',
-    quantity: 5,
-    customAttributes: [{key: "MyKey", value: "MyValue"}]
-  }
-];
-
-// add an item to the checkout
-client.checkout.addLineItems(checkoutId, lineItemsToAdd).then((checkout) => {
-  console.log(checkout.lineItems); // Array with one additional line item
-}); */
-
+const reality = $('#reality')
+reality.click(() => {
+  video.toggle()
+  modelViewer.toggle()
+  console.log("toggle")
+  vidElement.pause()
+  video.is(":hidden") ? reality.html("reality") : reality.html("virtual")
+})
 
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 // ––––––––––––––––––––––––––––––––––––BUYING–––––––––––––––––––––––––––––––––––––
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
-const TWObuy = document.getElementById("TWO-buy");
+const description = $('#description')
+const description_text = $('#description > p')
+const description_header = $('#description > h2')
+const buyButton = $('#buyButton')
+const btnContainer = $("#btnContainer")
 
-TWObuy.onclick = function () {
-  window.open('https://recreation-community.myshopify.com/66077622512/checkouts/cc54e961365c315f73dc92c436bd95a7', '_blank');
+
+const twoButton = $('#two')
+const threeButton = $('#three')
+const TWOplusbutton = $('#TWO+_buy')
+const buttons = [twoButton, threeButton, TWOplusbutton]
+let lastButton;
+
+// create some type of media file? although ideally would just get from Shopify (as backend)
+// header, description, price, image/video, 3D model, UGC?
+const two = {
+  'header': 'TWO-PIECE',
+  'description': 'Never out of place; fully featured; as portable as possible. This ain\'t your grandpa\'s two-piece. <br><ul><li>top storage</li><li>pocket sized</li><li>no-gunk guide-ring</li></ul>',
+  'video' : 'assets/videos/plus demo.mp4',
+  'link' : 'https://recreation-community.myshopify.com/66077622512/checkouts/cc54e961365c315f73dc92c436bd95a7',
+  'button' : twoButton
+}
+const three = {
+  'header': 'THREE-PIECE',
+  'description': '<br>The grinder you thought you knew. The freedom  Our no-gunk friction ring <br><ul><li>portable container</li><li>top storage</li><li>shareability</li></ul>',
+  'video' : 'assets/videos/plus demo.mp4',
+  'link' : 'https://recreation-community.myshopify.com/66077622512/checkouts/53f976204e77cdb828fb2c37b7bbda30',
+  'button' : threeButton
 }
 
-$('#TWO-buy').click(function () {
-  window.open('https://recreation-community.myshopify.com/66077622512/checkouts/cc54e961365c315f73dc92c436bd95a7', '_blank');
-});
 
-$('#main1').click(function () {
-  toggleVid();
-});
+products = [one, two, three]
+// create the elements using JS?
+/* products.forEach(element => {
+  btnContainer.append(element.button)
+}) */
+
+// twoButton.click(() => explore(two))
+twoButton.mouseenter(() => explore(two))
+threeButton.mouseenter(() => explore(three))
+
+function explore(product) {
+  if (lastButton == null) { 
+    lastButton = product.button; 
+    description.toggle() 
+  }
+  if (product == three) {
+    $("#disclaimer").show()
+    $("#emailSignup").show()
+    vidElement.pause()
+    video.css("filter", "blur(6px)")
+    buyButton.hide()
+  }
+  else {
+    $("#disclaimer").hide()
+    $("#emailSignup").hide()
+    if (currentVid != product.video) vid(product.video)
+    buyButton.show()
+    vidElement.play()
+    video.css("filter", "initial")
+  }
+
+  description_header.html(product.header)
+  description_text.html(product.description)
+  buyButton.html(`<a href="${product.link}" class="branded" style="text-decoration:none" target="_blank" onclick="toggleVid()">BUY NOW</a>`)
+  buttons.forEach(button => button.css("background-color", tan))
+  product.button.css("background-color", "#f2f2f2")
+}
 
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 // ––––––––––––––––––––––––––––––––––––POP-UPS––––––––––––––––––––––––––––––––––––
@@ -134,93 +149,81 @@ $('#main1').click(function () {
 
 // 21+
 function twentyOne() {
-  const twentyOne = document.getElementById("21").classList;
-  twentyOne.toggle("hidden");
-  toggleVid();
-  console.log('click');
-  document.getElementById("main1").classList.toggle("popup");   //blur background
+  $('#ageCheck').toggle()
+  $('#fullBlur').toggle()
+  toggleVid()
 }
 
-// APP
-/* const appQRIcon = document.getElementById("appQRIcon");
-const appQR = document.getElementById("appQR").classList;
-appQRIcon.onmouseenter = function () {
-  appQR.toggle("hidden");
-  toggleVid();
-};
-appQRIcon.onmouseleave = function () {
-  appQR.toggle("hidden");
-  toggleVid();
-}; */
+// ––––––––––––––––––––––––––––––––––––––APP––––––––––––––––––––––––––––––––––––––
+const appButton = $('#appButton')
+const appQR = $('#appQR')
+appButton.mouseenter(function () {
+  appQR.toggle()
+  toggleVid()
+  console.log('mouse enter')
+})
+appButton.mouseleave(function () {
+  appQR.toggle()
+  console.log('mouse leave')
+  toggleVid()
+})
+appButton.click(function () {
+  console.log('mouse click')
+  window.open('https://apps.apple.com/us/app/consume-alcohol-tracker/id1633718776', '_blank')
+})
 
-
-// const appQRIcon = document.getElementById("appQRIcon");
-// const appQR = document.getElementById("appQR").classList;
-const appQR = document.getElementsByClassName("appQR");
-const app = document.getElementsByClassName("app").classList;
-app.onmouseenter = function () {
-  appQR.toggle("hidden");
-  toggleVid();
-  console.log('mouse enter');
-};
-app.onmouseleave = function () {
-  appQR.toggle("hidden");
-  console.log('mouse leave');
-  toggleVid();
-};
-app.onmouseclick = function () {
-  console.log('mouse click');
-  window.open('https://apps.apple.com/us/app/consume-alcohol-tracker/id1633718776', '_blank');
-}
 
 
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-// ––––––––––––––––––––––––––––––––––EXPERIMENTAL–––––––––––––––––––––––––––––––––
+// ––––––––––––––––––––––––––––––––––––SHOPIFY––––––––––––––––––––––––––––––––––––
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
-// (source: https://stackoverflow.com/questions/52514522/html5-video-how-to-seamlessly-play-several-videos-and-then-loop-the-sequence )
-/* 
-var nextVidElement = document.createelement
-var videoContainer = document.getElementById('main1');
-nextVideo;
-videoObjects = [document.createElement('video'), document.createElement('video')];
-nextActiveVideo = 0;
+/* // import Client from 'shopify-buy'
+// import Client from 'shopify-buy/index.umd'
+// import { Client } from 'http://sdks.shopifycdn.com/js-buy-sdk/v2/latest/index.umd.min.js'
 
-videoObjects[0].inx = 0; //set index
-videoObjects[1].inx = 1;
+// initializing a client to return content
+const client = ShopifyBuy.buildClient({
+  domain: 'recreation-community.myshopify.com',
+  storefrontAccessToken: 'bdfb42209264a720ddde5f9c3fe720b0'
+})
 
-initVideoElement(videoObjects[0]);
-initVideoElement(videoObjects[1]);
+// products by ID
+const one = ''
+const one_plus = ''
+const two = '8086416130288'
+const two_plus = '8105641410800'
+const three = '8109160595696'
+const three_plus = '8109161808112'
+const plus = '8109167083760'
 
-videoObjects[0].src = videos[nextActiveVideo];
-videoContainer.appendChild(videoObjects[0]);
+client.product.fetch(one).then((product) => {
 
-videoObjects[1].style.display = 'none';
-videoContainer.appendChild(videoObjects[1]);
+})
 
-function initVideoElement(video) {
-    video.playsinline = true;
-    video.muted = false;
-    video.preload = 'auto'; //WARNING: autoplay deletes preload, loadedmetadata gives endless loop
+// create empty checkout
+client.checkout.create().then((checkout) => {
 
-    video.onplaying = function(e) {
-        //select next index. If is equal videos.length then it is 0
-        nextActiveVideo = ++nextActiveVideo % videos.length;
+  console.log(checkout)
+})
 
-        //replace the video elements against each other:
-        if(this.inx == 0) {
-            nextVideo = videoObjects[1]; }
-        else {
-            nextVideo = videoObjects[0]; }
+const checkoutId = 'Z2lkOi8vc2hvcGlmeS9DaGVja291dC9kMTZmM2EzMDM4Yjc4N='
+const input = { customAttributes: [{ key: "MyKey", value: "MyValue" }] }
 
-        nextVideo.src = videos[nextActiveVideo];
-        nextVideo.pause();
-    };
+client.checkout.updateAttributes(checkoutId, input).then((checkout) => {
 
-    video.onended = function(e) {
-        this.style.display = 'none';
-        nextVideo.style.display = 'block';
-        nextVideo.play();
-    };
-} 
-*/
+})
+
+const lineItemsToAdd = [ 
+  {
+    variantId: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC8yOTEwNjAyMjc5Mg==',
+    quantity: 5,
+    customAttributes: [{ key: "MyKey", value: "MyValue" }]
+  }
+]
+
+// add an item to the checkout
+client.checkout.addLineItems(checkoutId, lineItemsToAdd).then((checkout) => {
+  console.log(checkout.lineItems) // Array with one additional line item
+})
+ */

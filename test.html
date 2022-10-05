@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>recreation</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="assets/fav/favicon.ico?v=2">
+
+    <!-- fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
+    <link rel="stylesheet" href="https://use.typekit.net/qru3fkv.css">
+</head>
+
+<body>
+
+    <model-viewer src="assets/3D/USDZ to DAE to.glb"  skybox-image="assets/3D/moon_4k.hdr" ios-src="assets/3D/F1 internal v27.usdz" style="width: 100%; height: 100vh;"
+        ar
+        loading="eager"
+        camera-controls
+        touch-action="pan-y"
+        auto-rotate
+        interaction-prompt-threshold="10000"
+        interaction-prompt="none"
+        camera-orbit="200deg 80deg 3m"
+        shadow-softness="0.5"
+        scale="0.1 0.1 0.1"
+        >
+    </model-viewer>
+
+    <!-- JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="module" src="https://unpkg.com/@leoncvlt/ar-button"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@leoncvlt/ar-button/styles.css">
+    <!-- <script type="module" src="http://sdks.shopifycdn.com/js-buy-sdk/v2/latest/index.umd.min.js"></script> -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <script src="3D model.js"></script>
+</body>
+
+</html>
