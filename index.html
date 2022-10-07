@@ -23,12 +23,12 @@
     gtag('config', 'G-Y78ELM5FLB');
 </script> -->
 
-<body class="main">
+<body id="main">
     <!-- 21+ -->
-    <div id="ageCheck" class="center">
-        are you 21+?
-        <button id="21y" onclick="twentyOne();">&#128077;</button>
-        <button id="21n" onclick="window.location.href='https://google.com';">&#128078;</button>
+    <div id="ageCheck" class="center branded" style="font-size: 3rem;">
+        you 21+?
+        <button id="21y" onclick="twentyOne();"><img src="assets/images/drawings/thumbs up.png"></button>
+        <button id="21n" onclick="window.location.href='https://media.tenor.com/ZZEl8q6eRaoAAAAC/shame-game-of-thrones.gif';"><img src="assets/images/drawings/thumbs down.png"></button>
     </div>
 
     <!-- FULL SCREEN BLUR -->
@@ -39,7 +39,9 @@
 
     <!-- MAIN  -->
     <!-- HEADER -->
-    <img id="logo" src="assets/images/dial_recreation.svg">
+    <img id="logo" style="display: none;" src="assets/images/dial_recreation.svg">
+    <img id="logo" class="middle" src="assets/images/Dial Pill.png">
+    <!-- <div id="logo-text" class="branded middle back-blur" style="font-size: 6rem; margin: 1rem; padding: .5rem 1.5rem;">dial</div> -->
 
     <!-- CONSUME -->
     <a id="appButton" href="https://apps.apple.com/us/app/consume-alcohol-tracker/id1633718776"
@@ -59,31 +61,29 @@
 
     <!-- PRODUCT DESCRIPTION -->
     <div id="description" class="back-blur" style="display: none">
-        <h2 class="branded" style="text-align: center"></h2>
+        <h2 class="branded p2" style="text-align: center"></h2>
         <p></p>
         <!-- <input type="checkbox"> -->
-        <div id="disclaimer" style="text-align: center; font-size: 2rem; display: none; padding: 0">COMING ~5 WEEKS<br>SIGN-UP FOR UPDATES</div>
+        <div id="disclaimer" style="text-align: center; font-size: 1.75rem; padding: 0.25rem">free 3 week shipping</div>
         <div class="btn-container">
             <!-- <button id="reality" class="text-button" style="">VIRTUAL (ALPHA)</button> -->
-            <button id="buyButton" class="branded text-button" style="background-color: firebrick">BUY NOW</button>
+            <button id="buyButton" class="branded text-button">BUY $69</button>
             <!-- <div id="emailSignup" class="klaviyo-form-Wef6xU" style=""></div> -->
         </div>
     </div>
     <div id="emailSignup" class="klaviyo-form-Wef6xU center" style="display: none"></div>
 
-
-    <!-- OPTIONS
-    ar-scale="fixed", xr-environment
-     -->
-    <model-viewer src="assets/3D/USDZ to DAE to.glb" ar camera-controls touch-action="pan-y"
-        skybox-image="assets/3D/moon_4k.hdr" ios-src="assets/3D/F1 internal v27.usdz" auto-rotate
-        interaction-prompt-threshold camera-orbit="0deg 90deg 0.5m" style="display: none;">
-    </model-viewer>
-
     <!-- BACKGROUND VIDEO -->
-    <video id="video" playsinline>
+    <video id="video" playsinline style="">
         <source src="assets/videos/grinder demo.mp4" type="video/mp4">
     </video>
+    
+    <!-- PICTURES -->
+    <!-- <div style="background-color: #fbfbfb;">
+    <img class="center" style="width: 100%; z-index: -1;" src="assets/images/product/2piece-3.png"> </div>
+    <img class="bottom-left" style="width: 20%; z-index: 0;" src="assets/images/drawings/Dial it in.png"> </div>
+    <img class="bottom-right" style="margin: 3rem; width: 20%; z-index: 0;" src="assets/images/drawings/sundial.png"> </div>
+    <img class="bottom-middle" style="margin: 3rem; width: 10rem; z-index: 0;" src="assets/images/drawings/hand joint.png"> </div> -->
 
     <!-- BOTTOM BUTTONS -->
     <div class="btn-container">
@@ -96,11 +96,11 @@
             <span class="branded">ONE</span>
             <pre> $29+</pre>
         </button>
-        <button id="two">
+        <button id="two" style="display: none">
             <span class="branded">TWO</span>
             <pre> $69+</pre>
         </button>
-        <button id="three">
+        <button id="three" style="display: none">
             <span class="branded">THREE</span>
             <pre> $99+</pre>
         </button>
@@ -124,7 +124,7 @@
         -->
     </div>
 
-    <div id="pre-order" class="text">free shipping (3 weeks)</div>
+    <div id="pre-order" class="text" style="display: none;">free shipping (3 weeks)</div>
 
     <div class="footer">
         <img src="assets/images/footer_background.png">

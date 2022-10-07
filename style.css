@@ -3,12 +3,26 @@
 @tailwind components;
 @tailwind utilities;
 */
+/* colors 
+blue: #7196c9
+green: see * {}
+grey: #323232
+tan: #feebca
+red: #af3812
+*/
 
 /* general */
 @font-face {
   font-family: 'bippo';
   src: url('assets/fonts/webfontkit/bippo.woff2') format('woff2'),
        url('assets/fonts/webfontkit/bippo.woff1') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'retrokia';
+  src: url('assets/fonts/Retrokia Caps Rough/retrokia_caps_rough-webfont.woff2') format('woff2'),
+       url('assets/fonts/Retrokia Caps Rough/retrokia_caps_rough-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -51,52 +65,43 @@ header {
   vertical-align: middle;
 }
 #logo {
-  width: 16rem;
+  max-width: 16rem;
   margin: 1rem auto auto auto;
 }
 
 /* LINK BUTTONS */
 .links {
   margin: 1rem;
-  padding: 0.5rem;
-}
-.app { 
+  padding: .5rem;
   font-size: 2.5rem;
 }
 .app > img {
   vertical-align: middle;
   width: 3rem;
-  margin: 4px;
+  margin: .25rem;
 }
-.app > span { display: none; }  /* hide text on mobile */
 
-.socials {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 52px;
-}
 .socials > a > img {
-  width: 36px;
-  margin: 8px;
+  width: 3rem;
+  margin: .5rem;
   vertical-align: middle;
 }
 .info {
   position: absolute;
   left: 0;
-  bottom: 10px;
+  bottom: .5rem;
 }
 .info > a > img {
   vertical-align: middle;
-  width: 48px;
-  margin: 4px;
+  width: 3rem;
+  margin: .25rem;
 }
 
 
-.main {
+#main {
   height: 101vh;
   width: 100%;
-  z-index: 10;
+  /* z-index: 10; */
   
   display: grid;
   position: absolute;
@@ -121,7 +126,7 @@ header {
 .footer > img {
   position: absolute;
   object-fit: fill;
-  filter: blur(6px);
+  filter: blur(.5rem);
   z-index: -1;
   background-color: rgba(156, 156, 156, 0.4);
 }
@@ -131,7 +136,6 @@ header {
 }
 
 .text {
-  /* width: 100%; */
   justify-content: center;
   text-align: center;
   display : block;
@@ -140,7 +144,8 @@ header {
   z-index: 1;
 }
 .branded { 
-  font-family: bippo;
+  font-family: retrokia;
+  color: #7196c9;
   font-weight: 100;
  }
 .writing {
@@ -150,11 +155,11 @@ header {
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: 4.5rem;
   margin: 0;
 }
 h2 {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   margin: 0;
   padding: 8px;
 }
@@ -164,10 +169,15 @@ p {
 pre {
   margin: 0;
 }
+f1 { font-size: 4.5; }
+f2 { font-size: 3.5; }
+f3 { font-size: 2.5; }
+f4 { font-size: 1.5; }
+
 
 button {
   align-items: center;
-  border-radius: 60px;
+  border-radius: 4rem;
   display: flex;
   justify-content: center;
   background-color: rgba(156, 156, 156, 0.4);
@@ -188,7 +198,7 @@ button:hover { background-color: rgba(255, 255, 255, 0.4); }
   height: 100vh;
   width: 100%;
   object-fit: cover;
-  z-index: -2;
+  z-index: -1;
 }
 model-viewer {
   position: absolute;
@@ -205,26 +215,37 @@ model-viewer {
   flex-wrap: wrap;
   gap: 1rem;
 
-  padding: 8px;
-  margin: auto auto 0px auto;
+  padding: .5rem;
+  margin: auto auto 0 auto;
 }
 .btn-container > button {
-  width: 220px;
-  font-size: 2rem;
+  min-width: 13.75rem;
+  font-size: 3rem;
   margin: 0;
+  padding: 1rem 2rem;
   background-color: #feebca;
-  /* z-index: 1000; */
 }
 
+#buyButton {
+  background-color: #feebca;
+}
 #pre-order {
   margin: auto auto 0.5rem auto;
-  padding: 8px;
+  padding: .5rem;
   font-size: 1.5rem;
 }
 
 .back-blur {
-  backdrop-filter: blur(6px);
-  background-color: rgba(254, 235, 202, 0.4);
+  backdrop-filter: blur(1rem);
+  /* tan */
+  /* background-color: #feebca67; */
+
+  /* blue */
+  /* background-color: #98afea35; */
+
+  /* white */
+  background-color: #ffffff5e;
+
   border-radius: 60px;
   /* box-shadow: 0 0 5px 5px rgba(156, 156, 156, 0.4); */
 }
@@ -239,29 +260,32 @@ ar-button:before {
 #ageCheck {
   display: flex;
   justify-content: space-evenly;
-  width: 300px;
+  width: 19rem;
   font-size: 3rem;
   flex-wrap: wrap;
   gap: 1rem;
-  z-index: 3;
+  z-index: 100;
 }
 #ageCheck > button {
-  width: 100px;
-  font-size: 4rem;
+  font-size: 5rem;
+  background-color: #ffffff00;
 }
+#ageCheck > button > img {
+  width: 4rem;
+}
+
 #fullBlur {
   width: 100%;
   height: 100vh;
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(1rem);
   z-index: 2;
   position: absolute;
 }
 
 #appQR {
-  width: 360px;
-  height: 360px;
+  width: 22rem;
   z-index: 100;
-  border-radius: 35px;
+  border-radius: 5px;
 }
 
 #description {
@@ -271,7 +295,7 @@ ar-button:before {
   gap: 1rem;
 
   width: 24%;
-  min-width: 20rem;
+  min-width: 24rem;
   max-height: 60vh;
   top: 50%;
   right: 0;
@@ -279,19 +303,20 @@ ar-button:before {
 }
 #description > p {
   font-size: 1.75rem;
-  margin: 1rem 0.75rem;
+  margin: 1rem .75rem;
+}
+#description > h2 {
+  padding: 0;
 }
 #description > p > ul {
   margin: 0;
-  line-height: 2.5rem;
 }
 #description > div > button {
   width: 100%;
-  /* font-size: 3.5rem; */
-  padding: 0.5rem 1rem;
+  padding: .5rem 1rem;
 }
 #emailSignup {
-  width: 400px
+  width: 25rem;
 }
 
 /* POSITIONING */
@@ -303,6 +328,12 @@ ar-button:before {
 }
 .middle {
   position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+.bottom-middle {
+  position: absolute;
+  bottom: 0;
   left: 50%;
   transform: translate(-50%);
 }
@@ -329,51 +360,34 @@ ar-button:before {
   right: 0;
 }
 
-.ar-desktop-btn { visibility: hidden; }
-
-/* computer */
-@media only screen and (min-width: 650px) {
-  h1 { font-size: 4.5rem; }
-  h2 { font-size: 3.5rem; }
+/* mobile */
+@media only screen and (max-width: 40rem) {
+  h1 { font-size: 3.5rem; }
+  h2 { font-size: 2.5rem; }
   .text { font-size: 3rem; }
+  f1 { font-size: 3.5; }
+  f2 { font-size: 2.5; }
+  f3 { font-size: 1.5; }
+  f4 { font-size: 1; }
 
-  /* AR */
-  ar-button:before {
-    pointer-events: none;
-  }
-  .ar-desktop-btn {
-    visibility: visible;
-  }
+  #logo {width: 12rem}
+  .app > span { display: none; }
+  .socials { width: 52px; }
+  .socials > a > img { width: 2.25rem; }
 
-  .header-sides {
-    width: auto;
-  }
+  .btn-container > button { font-size: 2rem; }
 
-  .socials {
-    position: absolute;
+  #description {
+    inset: auto auto 1rem auto;
+    transform: translate(0, 0);
     width: auto;
+    min-width: 0rem;
+    padding: 0 1rem;
+    border-radius: 2rem;
+    margin: 0 1rem;
   }
-  .socials > a > img {
-    width: 48px;
-    margin: 8px;
-    vertical-align: middle;
-  }
-  
-  #appButton > img {
-    vertical-align: middle;
-    width: 56px;
-    margin: 4px;
-  }
-  #appButton > span { display: initial; }
-  
-  /* BOTTOM BUTTONS */
-  .btn-container {
-    line-height: 2.5rem;
-  }
-  .btn-container > button {
-    font-size: 3rem;
-    /* width: 400px; */
-    width: auto;
-    padding: 1rem 2rem;
+  #description > p {
+    font-size: 1.25rem;
+    margin: 0;
   }
 }
