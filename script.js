@@ -35,6 +35,8 @@ function vid(video) {
 }
 
 video.click(toggleVid)
+$("#main").click(toggleVid)
+video.click(console.log("asdlkfj"))
 
 // JQuery: vidElement.onended = nextVid(), would need to be object instead of DOM element
 vidElement.addEventListener('ended', nextVid)
@@ -43,7 +45,10 @@ function nextVid() {
   vid(videos[activeVideo])
 }
 
-function toggleVid() { vidElement.paused ? vidElement.play() : vidElement.pause()}
+function toggleVid() { 
+  vidElement.paused ? vidElement.play() : vidElement.pause()
+  console.log('toggle')
+}
 
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 // ––––––––––––––––––––––––––––––––––––3D/AR––––––––––––––––––––––––––––––––––––––
@@ -94,7 +99,8 @@ const two = {
   'description': 'Never out of place; fully featured; as portable as possible. This ain\'t your grandpa\'s two-piece. <br><ul><li>top storage</li><li>pocket sized</li><li>no-gunk guide-ring</li></ul>',
   'video' : 'assets/videos/plus demo.mp4',
   'link' : 'https://recreation-community.myshopify.com/66077622512/checkouts/cc54e961365c315f73dc92c436bd95a7',
-  'button' : twoButton
+  'button' : twoButton,
+  'price' : '$69'
 }
 const three = {
   'header': 'THREE-PIECE',
@@ -115,30 +121,31 @@ products = [one, two, three]
 twoButton.mouseenter(() => explore(two))
 threeButton.mouseenter(() => explore(three))
 
+
+
 function explore(product) {
   if (lastButton == null) { 
     lastButton = product.button; 
     description.toggle() 
   }
   if (product == three) {
-    $("#disclaimer").show()
     $("#emailSignup").show()
     vidElement.pause()
     video.css("filter", "blur(6px)")
     buyButton.hide()
   }
   else {
-    $("#disclaimer").hide()
+
     $("#emailSignup").hide()
-    if (currentVid != product.video) vid(product.video)
+    // if (currentVid != product.video) vid(product.video)
     buyButton.show()
-    vidElement.play()
+    // vidElement.play()
     video.css("filter", "initial")
   }
 
   description_header.html(product.header)
   description_text.html(product.description)
-  buyButton.html(`<a href="${product.link}" class="branded" style="text-decoration:none" target="_blank" onclick="toggleVid()">BUY NOW</a>`)
+  buyButton.html(`<a href="${product.link}" class="branded" style="text-decoration:none" target="_blank" onclick="toggleVid()">BUY ${product.price}</a>`)
   buttons.forEach(button => button.css("background-color", tan))
   product.button.css("background-color", "#f2f2f2")
 }
@@ -151,8 +158,10 @@ function explore(product) {
 function twentyOne() {
   $('#ageCheck').toggle()
   $('#fullBlur').toggle()
-  toggleVid()
+  // toggleVid()
+  explore(two)
 }
+// twentyOne()
 
 // ––––––––––––––––––––––––––––––––––––––APP––––––––––––––––––––––––––––––––––––––
 const appButton = $('#appButton')
@@ -171,59 +180,3 @@ appButton.click(function () {
   console.log('mouse click')
   window.open('https://apps.apple.com/us/app/consume-alcohol-tracker/id1633718776', '_blank')
 })
-
-
-
-// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-// ––––––––––––––––––––––––––––––––––––SHOPIFY––––––––––––––––––––––––––––––––––––
-// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
-/* // import Client from 'shopify-buy'
-// import Client from 'shopify-buy/index.umd'
-// import { Client } from 'http://sdks.shopifycdn.com/js-buy-sdk/v2/latest/index.umd.min.js'
-
-// initializing a client to return content
-const client = ShopifyBuy.buildClient({
-  domain: 'recreation-community.myshopify.com',
-  storefrontAccessToken: 'bdfb42209264a720ddde5f9c3fe720b0'
-})
-
-// products by ID
-const one = ''
-const one_plus = ''
-const two = '8086416130288'
-const two_plus = '8105641410800'
-const three = '8109160595696'
-const three_plus = '8109161808112'
-const plus = '8109167083760'
-
-client.product.fetch(one).then((product) => {
-
-})
-
-// create empty checkout
-client.checkout.create().then((checkout) => {
-
-  console.log(checkout)
-})
-
-const checkoutId = 'Z2lkOi8vc2hvcGlmeS9DaGVja291dC9kMTZmM2EzMDM4Yjc4N='
-const input = { customAttributes: [{ key: "MyKey", value: "MyValue" }] }
-
-client.checkout.updateAttributes(checkoutId, input).then((checkout) => {
-
-})
-
-const lineItemsToAdd = [ 
-  {
-    variantId: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC8yOTEwNjAyMjc5Mg==',
-    quantity: 5,
-    customAttributes: [{ key: "MyKey", value: "MyValue" }]
-  }
-]
-
-// add an item to the checkout
-client.checkout.addLineItems(checkoutId, lineItemsToAdd).then((checkout) => {
-  console.log(checkout.lineItems) // Array with one additional line item
-})
- */
