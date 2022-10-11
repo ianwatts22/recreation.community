@@ -19,7 +19,7 @@ var activeVideo = 0
 let currentVid;
 
 $(document).ready(function () {
-  if ($(window).width() < 767) {
+  if ($(window).width() < 640) {
     videos = [video1mobile, video2mobile]
     appQR.remove()
   }
@@ -34,9 +34,8 @@ function vid(video) {
   vidElement.play()
 }
 
-video.click(toggleVid)
+video.click(() => toggleVid())
 $("#main").click(toggleVid)
-video.click(console.log("asdlkfj"))
 
 // JQuery: vidElement.onended = nextVid(), would need to be object instead of DOM element
 vidElement.addEventListener('ended', nextVid)
@@ -45,10 +44,7 @@ function nextVid() {
   vid(videos[activeVideo])
 }
 
-function toggleVid() { 
-  vidElement.paused ? vidElement.play() : vidElement.pause()
-  console.log('toggle')
-}
+function toggleVid() { vidElement.paused ? vidElement.play() : vidElement.pause() }
 
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 // ––––––––––––––––––––––––––––––––––––3D/AR––––––––––––––––––––––––––––––––––––––
@@ -64,7 +60,7 @@ const scale = () => {
   modelViewer.updateFraming()
   console.log("scale")
 }
-if(modelViewer.loaded) scale()
+if (modelViewer.loaded) scale()
 
 const reality = $('#reality')
 reality.click(() => {
@@ -85,7 +81,6 @@ const description_header = $('#description > h2')
 const buyButton = $('#buyButton')
 const btnContainer = $("#btnContainer")
 
-
 const twoButton = $('#two')
 const threeButton = $('#three')
 const TWOplusbutton = $('#TWO+_buy')
@@ -97,86 +92,96 @@ let lastButton;
 const two = {
   'header': 'TWO-PIECE',
   'description': 'Never out of place; fully featured; as portable as possible. This ain\'t your grandpa\'s two-piece. <br><ul><li>top storage</li><li>pocket sized</li><li>no-gunk guide-ring</li></ul>',
-  'video' : 'assets/videos/plus demo.mp4',
-  'link' : 'https://recreation-community.myshopify.com/66077622512/checkouts/cc54e961365c315f73dc92c436bd95a7',
-  'button' : twoButton,
-  'price' : '$69'
+  'video': 'assets/videos/plus demo.mp4',
+  'link': 'https://recreation-community.myshopify.com/66077622512/checkouts/cc54e961365c315f73dc92c436bd95a7',
+  'button': twoButton,
+  'price': '$69'
 }
 const three = {
   'header': 'THREE-PIECE',
   'description': '<br>The grinder you thought you knew. The freedom  Our no-gunk friction ring <br><ul><li>portable container</li><li>top storage</li><li>shareability</li></ul>',
-  'video' : 'assets/videos/plus demo.mp4',
-  'link' : 'https://recreation-community.myshopify.com/66077622512/checkouts/53f976204e77cdb828fb2c37b7bbda30',
-  'button' : threeButton
+  'video': 'assets/videos/plus demo.mp4',
+  'link': 'https://recreation-community.myshopify.com/66077622512/checkouts/53f976204e77cdb828fb2c37b7bbda30',
+  'button': threeButton
 }
 
 
 products = [one, two, three]
+let currentProduct
+
 // create the elements using JS?
 /* products.forEach(element => {
   btnContainer.append(element.button)
 }) */
 
-// twoButton.click(() => explore(two))
-twoButton.mouseenter(() => explore(two))
-threeButton.mouseenter(() => explore(three))
-
-
-
 function explore(product) {
-  if (lastButton == null) { 
-    lastButton = product.button; 
-    description.toggle() 
+  if (lastButton == null) {
+    lastButton = product.button
+    description.toggle()
   }
   if (product == three) {
-    $("#emailSignup").show()
+    console.log('product three')
     vidElement.pause()
     video.css("filter", "blur(6px)")
-    buyButton.hide()
+    buyButton.html('WAITLIST')
   }
   else {
-
-    $("#emailSignup").hide()
     // if (currentVid != product.video) vid(product.video)
     buyButton.show()
     // vidElement.play()
     video.css("filter", "initial")
+    buyButton.html(`<a href="${product.link}" class="branded" style="text-decoration:none" target="_blank" onclick="toggleVid()">BUY ${product.price}</a>`)
   }
+
+  console.log('other shits')
+  currentProduct = product
 
   description_header.html(product.header)
   description_text.html(product.description)
-  buyButton.html(`<a href="${product.link}" class="branded" style="text-decoration:none" target="_blank" onclick="toggleVid()">BUY ${product.price}</a>`)
+  // description_text.html("lalalalalal")
   buttons.forEach(button => button.css("background-color", tan))
   product.button.css("background-color", "#f2f2f2")
 }
+
+/* document.querySelector('.klaviyo_form_trigger').addEventListener('click', function () {
+  if (currentProduct == three) {
+    window._klOnsite = window._klOnsite || []
+    window._klOnsite.push(['openForm', 'Wef6xU'])
+    console.log('form toggle')
+  }
+}) */
+
+$('.klaviyo_form_trigger').click(() => {
+  if (currentProduct == three) {
+    window._klOnsite = window._klOnsite || []
+    window._klOnsite.push(['openForm', 'Wef6xU'])
+    console.log('form toggle')
+  }
+})
 
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 // ––––––––––––––––––––––––––––––––––––POP-UPS––––––––––––––––––––––––––––––––––––
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 // 21+
+$("#21y").click(() => twentyOne())
+$("#21n").click(() => window.open('https://media.tenor.com/ZZEl8q6eRaoAAAAC/shame-game-of-thrones.gif', '_self'))
 function twentyOne() {
-  $('#ageCheck').toggle()
-  $('#fullBlur').toggle()
+  $('#ageCheck').hide()
+  $('#fullBlur').hide()
   // toggleVid()
-  explore(two)
+  explore(three)
 }
-// twentyOne()
 
 // ––––––––––––––––––––––––––––––––––––––APP––––––––––––––––––––––––––––––––––––––
 const appButton = $('#appButton')
 const appQR = $('#appQR')
-appButton.mouseenter(function () {
-  appQR.toggle()
-  toggleVid()
-  console.log('mouse enter')
+appButton.mouseenter(() => {
+  appQR.show()
+  video[0].pause()
 })
-appButton.mouseleave(function () {
-  appQR.toggle()
-  console.log('mouse leave')
-  toggleVid()
+appButton.mouseleave(() => {
+  appQR.hide()
+  video[0].play()
 })
-appButton.click(function () {
-  console.log('mouse click')
-  window.open('https://apps.apple.com/us/app/consume-alcohol-tracker/id1633718776', '_blank')
-})
+appButton.click(() => window.open('https://apps.apple.com/us/app/consume-alcohol-tracker/id1633718776', '_blank'))

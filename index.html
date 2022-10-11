@@ -5,12 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>recreation</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="icon" href="assets/fav/favicon.ico?v=2">
+    <link type="text/css" href="style.css" rel="stylesheet">
+    <link href="assets/fav/favicon.ico?v=2" rel="icon">
 
     <!-- fonts -->
     <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
-    <link rel="stylesheet" href="https://use.typekit.net/qru3fkv.css">
+    <link href="https://use.typekit.net/qru3fkv.css" rel="stylesheet">
+    <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet">
+
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -27,8 +29,8 @@
     <!-- 21+ -->
     <div id="ageCheck" class="center branded" style="font-size: 3rem;">
         you 21+?
-        <button id="21y" onclick="twentyOne();"><img src="assets/images/drawings/thumbs up.png"></button>
-        <button id="21n" onclick="window.location.href='https://media.tenor.com/ZZEl8q6eRaoAAAAC/shame-game-of-thrones.gif';"><img src="assets/images/drawings/thumbs down.png"></button>
+        <button id="21y"><img src="assets/images/drawings/thumbs up.png"></button>
+        <button id="21n"><img src="assets/images/drawings/thumbs down.png"></button>
     </div>
 
     <!-- FULL SCREEN BLUR -->
@@ -37,23 +39,20 @@
     <!-- app QR -->
     <img id="appQR" class="back-blur center" style="display: none;" src="assets/images/appQR.png">
 
-    <!-- MAIN  -->
     <!-- HEADER -->
-    <img id="logo" style="display: none;" src="assets/images/dial_recreation.svg">
     <img id="logo" class="middle" src="assets/images/Dial Pill.png">
-    <!-- <div id="logo-text" class="branded middle back-blur" style="font-size: 6rem; margin: 1rem; padding: .5rem 1.5rem;">dial</div> -->
 
     <!-- CONSUME -->
     <a id="appButton" href="https://apps.apple.com/us/app/consume-alcohol-tracker/id1633718776"
         class="app info back-blur links top-left" style="text-decoration:none" target="_blank">
-        <img src="assets/images/app store button.png">
-        <span style="margin: 0">Consume</span>
+        <img src="assets/images/App Store icon.svg">
+        <span class="branded" style="margin: 0">Consume</span>
     </a>
 
     <!-- SOCIALS -->
     <div class="socials links back-blur top-right">
         <a href="https://www.instagram.com/recreation.life/" target="_blank"><img src="assets/images/IG icon.svg"></a>
-        <a href="https://twitter.com/recreation_life" target="_blank"><img src="assets/images/Twitter icon.png"></a>
+        <a href="https://twitter.com/recreation_life" target="_blank"><img src="assets/images/Twitter icon.svg"></a>
         <a href="https://www.youtube.com/channel/UCA1tCuEnEiZLYgk4Oxe9k4w" target="_blank"><img
                 src="assets/images/YT icon.svg"></a>
         <a href="https://www.tiktok.com/@recreation.life" target="_blank"><img src="assets/images/TikTok icon.svg"></a>
@@ -67,7 +66,7 @@
         <div id="disclaimer" style="text-align: center; font-size: 1.75rem; padding: 0.25rem">free 3 week shipping</div>
         <div class="btn-container">
             <!-- <button id="reality" class="text-button" style="">VIRTUAL (ALPHA)</button> -->
-            <button id="buyButton" class="branded text-button">BUY $69</button>
+            <button id="buyButton" class="klaviyo_form_trigger branded text-button">BUY $69</button>
             <!-- <div id="emailSignup" class="klaviyo-form-Wef6xU" style=""></div> -->
         </div>
     </div>
@@ -77,7 +76,11 @@
     <video id="video" playsinline style="">
         <source src="assets/videos/grinder demo.mp4" type="video/mp4">
     </video>
-    
+
+    <!-- <video id="vid1" class="video-js vjs-default-skin" controls autoplay width="640" height="264"
+        data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=xjS6SftYQaQ"}] }'>
+    </video> -->
+
     <!-- PICTURES -->
     <!-- <div style="background-color: #fbfbfb;">
     <img class="center" style="width: 100%; z-index: -1;" src="assets/images/product/2piece-3.png"> </div>
@@ -124,27 +127,25 @@
         -->
     </div>
 
-    <div id="pre-order" class="text" style="display: none;">free shipping (3 weeks)</div>
+    <div id="pre-order" style="display: none;">free shipping (3 weeks)</div>
 
     <div class="footer">
-        <img src="assets/images/footer_background.png">
-        <div>
-            <span>
-                policies:
-                <a href="https://recreation.community/policies/privacy">privacy</a>,
-                <a href="https://recreation.community/policies/shipping">shipping</a>,
-                <a href="https://recreation.community/policies/refund">refund</a>
-            </span>
-            <span>
-                all sales appear as "recreation community" on your billing statement
-                <img style="vertical-align: middle" alt="credit card logos" title="credit card logos"
-                    src="https://www.shift4shop.com/images/credit-card-logos/cc-sm-4.png" width="198" height="28" />
-            </span>
-            <span>(310) 220-0351 | <a href="mailto:help@recreation.community" style="text-decoration:none;"
-                    target="_blank">email</a></span>
-            <span>Watts Enterprises LLC, Los Angeles, CA</a></span>
-            <span>© 2022, Recreation</span>
-        </div>
+        <!-- <img src="assets/images/footer_background.png"> -->
+        <span>
+            policies:
+            <a href="https://recreation.community/policies/privacy">privacy</a>,
+            <a href="https://recreation.community/policies/shipping">shipping</a>,
+            <a href="https://recreation.community/policies/refund">refund</a>
+        </span>
+        <span>
+            all sales appear as "recreation community" on your billing statement
+            <img style="vertical-align: middle" alt="credit card logos" title="credit card logos"
+                src="https://www.shift4shop.com/images/credit-card-logos/cc-sm-4.png" width="140" height="20" />
+        </span>
+        <span>(310) 220-0351 | <a href="mailto:help@recreation.community" style="text-decoration:none;"
+                target="_blank">email</a></span>
+        <span>Watts Enterprises LLC, Los Angeles, CA</a></span>
+        <span>© 2022, Recreation</span>
     </div>
 
     <!-- JS -->
@@ -154,6 +155,8 @@
     <!-- <script type="module" src="http://sdks.shopifycdn.com/js-buy-sdk/v2/latest/index.umd.min.js"></script> -->
     <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=XUuHGq"></script>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script type="module" src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+    <script type="text/html" src="https://unpkg.com/browse/videojs-youtube@2.6.0/dist/Youtube.min.js"></script>
     <script src="script.js"></script>
 </body>
 
