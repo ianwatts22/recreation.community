@@ -1,5 +1,7 @@
 //ELEMENTS
 const tan = "#feebca"
+/* const blue
+const gray */
 
 // VIDEOS
 var vidElement = document.getElementById("video")
@@ -35,7 +37,7 @@ function vid(video) {
 }
 
 video.click(() => toggleVid())
-$("#main").click(toggleVid)
+$("#main").click(() => toggleVid())
 
 // JQuery: vidElement.onended = nextVid(), would need to be object instead of DOM element
 vidElement.addEventListener('ended', nextVid)
@@ -44,6 +46,7 @@ function nextVid() {
   vid(videos[activeVideo])
 }
 
+// const toggleVid = () => vidElement.paused ? vidElement.play() : vidElement.pause()
 function toggleVid() { vidElement.paused ? vidElement.play() : vidElement.pause() }
 
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -81,14 +84,22 @@ const description_header = $('#description > h2')
 const buyButton = $('#buyButton')
 const btnContainer = $("#btnContainer")
 
+const oneButton = $('#one')
 const twoButton = $('#two')
 const threeButton = $('#three')
-const TWOplusbutton = $('#TWO+_buy')
-const buttons = [twoButton, threeButton, TWOplusbutton]
+const buttons = [oneButton, twoButton, threeButton]
 let lastButton;
 
 // create some type of media file? although ideally would just get from Shopify (as backend)
 // header, description, price, image/video, 3D model, UGC?
+const one = {
+  'header': 'ONE-PIECE',
+  'description': 'Your trusty sidekick. Everything you need in the smoothest package yet.<br><ul><li>light as a feather</li><li>ample storage</li><li>airtight</li></ul>',
+  'video': '',
+  'link': '',
+  'button': oneButton,
+  'price': '$29'
+}
 const two = {
   'header': 'TWO-PIECE',
   'description': 'Never out of place; fully featured; as portable as possible. This ain\'t your grandpa\'s two-piece. <br><ul><li>top storage</li><li>pocket sized</li><li>no-gunk guide-ring</li></ul>',
@@ -113,6 +124,8 @@ let currentProduct
 /* products.forEach(element => {
   btnContainer.append(element.button)
 }) */
+twoButton.click(() => explore(two))
+threeButton.click(() => explore(three))
 
 function explore(product) {
   if (lastButton == null) {
@@ -124,38 +137,32 @@ function explore(product) {
     vidElement.pause()
     video.css("filter", "blur(6px)")
     buyButton.html('WAITLIST')
+    $('#disclaimer').hide()
   }
   else {
     // if (currentVid != product.video) vid(product.video)
     buyButton.show()
     // vidElement.play()
     video.css("filter", "initial")
-    buyButton.html(`<a href="${product.link}" class="branded" style="text-decoration:none" target="_blank" onclick="toggleVid()">BUY ${product.price}</a>`)
+    $('#disclaimer').hide()
+    buyButton.html(`<a href="${product.link}" class="branded" style="text-decoration:none" target="_blank" onclick="vidElement.pause()">BUY ${product.price}</a>`)
   }
 
-  console.log('other shits')
   currentProduct = product
 
   description_header.html(product.header)
   description_text.html(product.description)
-  // description_text.html("lalalalalal")
-  buttons.forEach(button => button.css("background-color", tan))
-  product.button.css("background-color", "#f2f2f2")
-}
 
-/* document.querySelector('.klaviyo_form_trigger').addEventListener('click', function () {
-  if (currentProduct == three) {
-    window._klOnsite = window._klOnsite || []
-    window._klOnsite.push(['openForm', 'Wef6xU'])
-    console.log('form toggle')
-  }
-}) */
+  buttons.forEach(button => button.css("background-color", tan))
+  buttons.forEach(button => button.children().css("color", "#7196c9"))
+  product.button.css("background-color", "#7196c9")
+  product.button.children().css("color", tan)
+}
 
 $('.klaviyo_form_trigger').click(() => {
   if (currentProduct == three) {
     window._klOnsite = window._klOnsite || []
     window._klOnsite.push(['openForm', 'Wef6xU'])
-    console.log('form toggle')
   }
 })
 
@@ -164,14 +171,13 @@ $('.klaviyo_form_trigger').click(() => {
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 // 21+
-$("#21y").click(() => twentyOne())
-$("#21n").click(() => window.open('https://media.tenor.com/ZZEl8q6eRaoAAAAC/shame-game-of-thrones.gif', '_self'))
-function twentyOne() {
+$("#21y").click(() => {
   $('#ageCheck').hide()
   $('#fullBlur').hide()
+  explore(two)
   // toggleVid()
-  explore(three)
-}
+})
+$("#21n").click(() => window.open('https://media.tenor.com/ZZEl8q6eRaoAAAAC/shame-game-of-thrones.gif', '_self'))
 
 // ––––––––––––––––––––––––––––––––––––––APP––––––––––––––––––––––––––––––––––––––
 const appButton = $('#appButton')
