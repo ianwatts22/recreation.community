@@ -51,19 +51,6 @@ body {
   max-height: -webkit-fill-available;
 }
 
-header {
-  padding: 8px;
-  text-align: center;
-  font-size: 2rem;
-  
-  /* display: grid;
-  grid-template-columns: 1fr 1fr 1fr; */
-  
-  grid-column: 1;
-  grid-row: 1;
-  margin: 0;
-  vertical-align: middle;
-}
 #logo {
   max-width: 16rem;
   margin: 1rem auto auto auto;
@@ -97,26 +84,16 @@ header {
   margin: .25rem;
 }
 
-#main {
-  height: 100vh;
-  /* z-index: 10; */
-  
-  display: grid;
-  position: absolute;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto auto;
-}
-
 .footer { 
   text-align: center;
-  position: relative;
-  /* top: 100vh; */
+  position: absolute;
+  top: 100vh;
   overflow: hidden;
   background-color: #9c9c9c66;
 }
 .footer > span {
   margin: 0;
-  padding: 0 2rem 0 2rem;
+  padding: 0 2rem;
 }
 
 .branded { 
@@ -145,10 +122,10 @@ p {
 pre {
   margin: 0;
 }
-f1 { font-size: 4.5; }
-f2 { font-size: 3.5; }
-f3 { font-size: 2.5; }
-f4 { font-size: 1.5; }
+.f1 { font-size: 4.5rem; }
+.f2 { font-size: 3.5rem; }
+.f3 { font-size: 2.5rem; }
+.f4 { font-size: 1.5rem; }
 
 
 button {
@@ -196,7 +173,6 @@ model-viewer {
 }
 .btn-container > button {
   min-width: 13.75rem;
-  font-size: 3rem;
   margin: 0;
   padding: 1rem 2rem;
   background-color: #feebca;
@@ -204,6 +180,7 @@ model-viewer {
 
 #buyButton {
   background-color: #feebca;
+  width: 100%;
 }
 #pre-order {
   margin: auto auto 0.5rem auto;
@@ -266,7 +243,7 @@ ar-button:before {
 
   width: 24%;
   min-width: 24rem;
-  max-height: 60vh;
+  /* max-height: 60vh; */
   top: 50%;
   right: 0;
   transform: translate(0, -50%);
@@ -282,12 +259,15 @@ ar-button:before {
   margin: 0;
 }
 #description > div > button {
-  width: 100%;
   padding: .5rem 1rem;
 }
-#emailSignup {
-  width: 25rem;
+#productButtons > button {
+  padding: .5rem auto;
+  font-size: 2.5rem;
+  min-width: 0rem;
+  width: 47%;
 }
+
 
 /* POSITIONING */
 .center {
@@ -334,10 +314,10 @@ ar-button:before {
 @media only screen and (max-width: 40rem) {
   h1 { font-size: 3.5rem; }
   h2 { font-size: 2.5rem; }
-  f1 { font-size: 3.5; }
-  f2 { font-size: 2.5; }
-  f3 { font-size: 1.5; }
-  f4 { font-size: 1; }
+  f1 { font-size: 3.5rem; }
+  f2 { font-size: 2.5rem; }
+  f3 { font-size: 1.5rem; }
+  f4 { font-size: 1rem; }
 
   #logo {width: 12rem}
   .app > span { display: none; }
