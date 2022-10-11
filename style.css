@@ -5,7 +5,7 @@
 */
 /* colors 
 blue: #7196c9
-green: see * {}
+green: #47730d
 grey: #323232
 tan: #feebca
 red: #af3812
@@ -56,8 +56,8 @@ header {
   text-align: center;
   font-size: 2rem;
   
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr; */
   
   grid-column: 1;
   grid-row: 1;
@@ -97,10 +97,8 @@ header {
   margin: .25rem;
 }
 
-
 #main {
-  height: 101vh;
-  width: 100%;
+  height: 100vh;
   /* z-index: 10; */
   
   display: grid;
@@ -110,44 +108,22 @@ header {
 }
 
 .footer { 
-  font-size: 1rem;
   text-align: center;
-  position: absolute;
-  top: 100vh;
-  width: 100%;
-  line-height: 2rem;
-  margin: 0;
+  position: relative;
+  /* top: 100vh; */
   overflow: hidden;
-  
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+  background-color: #9c9c9c66;
 }
-.footer > img {
-  position: absolute;
-  object-fit: fill;
-  filter: blur(.5rem);
-  z-index: -1;
-  background-color: rgba(156, 156, 156, 0.4);
-}
-.footer > div > span {
+.footer > span {
   margin: 0;
   padding: 0 2rem 0 2rem;
 }
 
-.text {
-  justify-content: center;
-  text-align: center;
-  display : block;
-  margin: auto;
-  font-size: 1rem;
-  z-index: 1;
-}
 .branded { 
   font-family: retrokia;
   color: #7196c9;
-  font-weight: 100;
  }
+
 .writing {
   margin: 0 10% 2rem 10%;
   height: 81vh;
@@ -237,12 +213,6 @@ model-viewer {
 
 .back-blur {
   backdrop-filter: blur(1rem);
-  /* tan */
-  /* background-color: #feebca67; */
-
-  /* blue */
-  /* background-color: #98afea35; */
-
   /* white */
   background-color: #ffffff5e;
 
@@ -364,7 +334,6 @@ ar-button:before {
 @media only screen and (max-width: 40rem) {
   h1 { font-size: 3.5rem; }
   h2 { font-size: 2.5rem; }
-  .text { font-size: 3rem; }
   f1 { font-size: 3.5; }
   f2 { font-size: 2.5; }
   f3 { font-size: 1.5; }

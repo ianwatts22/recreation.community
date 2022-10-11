@@ -11,6 +11,7 @@
 
 **video**
 [video.js](https://videojs.com/)
+[YouTube plugin](https://www.npmjs.com/package/videojs-youtube)
 
 
 [BFG repo cleaner](https://rtyley.github.io/bfg-repo-cleaner/): cleans up  git history, useful for large video files
@@ -34,6 +35,7 @@ adding custom font to website [1](https://www.pagecloud.com/blog/how-to-add-cust
 icons
  * [iconmnstr.com](https://iconmonstr.com) 
  * coloring SVGs: https://stackoverflow.com/questions/22252472/how-to-change-the-color-of-an-svg-element
+ * [App Store](https://commons.wikimedia.org/wiki/File:App_Store_(iOS).svg)
 
 [Shopify JS Buy SDK](https://shopify.github.io/js-buy-sdk/)
 * [Shopify](https://shopify.dev/custom-storefronts/tools/js-buy)
