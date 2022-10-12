@@ -37,7 +37,7 @@ function vid(video) {
 }
 
 video.click(() => toggleVid())
-$("#main").click(() => toggleVid())
+// $("#main").click(() => toggleVid())
 
 // JQuery: vidElement.onended = nextVid(), would need to be object instead of DOM element
 vidElement.addEventListener('ended', nextVid)
@@ -101,16 +101,16 @@ const one = {
   'price': '$29'
 }
 const two = {
-  'header': 'TWO-PIECE',
-  'description': 'Never out of place; fully featured; as portable as possible. This ain\'t your grandpa\'s two-piece. <br><ul><li>top storage</li><li>pocket sized</li><li>no-gunk guide-ring</li></ul>',
+  'header': 'COMPACT',
+  'description': 'Fully featured; as portable as possible. This ain\'t your grandpa\'s two-piece. <br><ul><li>top storage</li><li>no-gunk guide-ring</li><li>pocket sized</li></ul>',
   'video': 'assets/videos/plus demo.mp4',
   'link': 'https://recreation-community.myshopify.com/66077622512/checkouts/cc54e961365c315f73dc92c436bd95a7',
   'button': twoButton,
   'price': '$69'
 }
 const three = {
-  'header': 'THREE-PIECE',
-  'description': '<br>The grinder you thought you knew. The freedom  Our no-gunk friction ring <br><ul><li>portable container</li><li>top storage</li><li>shareability</li></ul>',
+  'header': 'CLASSIC',
+  'description': 'The grinder you thought you knew. Our no-gunk friction ring <br><ul><li>portable container</li><li>top storage</li><li>shareability</li></ul>',
   'video': 'assets/videos/plus demo.mp4',
   'link': 'https://recreation-community.myshopify.com/66077622512/checkouts/53f976204e77cdb828fb2c37b7bbda30',
   'button': threeButton
@@ -133,7 +133,6 @@ function explore(product) {
     description.toggle()
   }
   if (product == three) {
-    console.log('product three')
     vidElement.pause()
     video.css("filter", "blur(6px)")
     buyButton.html('WAITLIST')
@@ -142,7 +141,7 @@ function explore(product) {
   else {
     // if (currentVid != product.video) vid(product.video)
     buyButton.show()
-    // vidElement.play()
+    vidElement.play()
     video.css("filter", "initial")
     $('#disclaimer').hide()
     buyButton.html(`<a href="${product.link}" class="branded" style="text-decoration:none" target="_blank" onclick="vidElement.pause()">BUY ${product.price}</a>`)
@@ -175,7 +174,6 @@ $("#21y").click(() => {
   $('#ageCheck').hide()
   $('#fullBlur').hide()
   explore(two)
-  // toggleVid()
 })
 $("#21n").click(() => window.open('https://media.tenor.com/ZZEl8q6eRaoAAAAC/shame-game-of-thrones.gif', '_self'))
 
