@@ -1,3 +1,5 @@
+// const { RedIntegerFormat } = require("three")
+
 //ELEMENTS
 const tan = "#feebca"
 /* const blue
@@ -19,6 +21,7 @@ const video2mobile = "assets/videos/grinder vibes mobile.mp4"
 var videos = [video1, video2]
 var activeVideo = 0
 let currentVid;
+const video1cdn = 'https://cdn.shopify.com/videos/c/o/v/171c06e8a55744e2aef07bfabae8f5c6.mp4'
 
 $(document).ready(function () {
   if ($(window).width() < 640) {
@@ -31,13 +34,15 @@ $(document).ready(function () {
 
 function vid(video) {
   vidElement.src = video
+  console.log('source')
   currentVid = video
   vidElement.load()
   vidElement.play()
+  console.log('play')
 }
 
 video.click(() => toggleVid())
-// $("#main").click(() => toggleVid())
+video.hide()
 
 // JQuery: vidElement.onended = nextVid(), would need to be object instead of DOM element
 vidElement.addEventListener('ended', nextVid)
@@ -52,6 +57,8 @@ function toggleVid() { vidElement.paused ? vidElement.play() : vidElement.pause(
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 // ––––––––––––––––––––––––––––––––––––3D/AR––––––––––––––––––––––––––––––––––––––
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+const render = $('#render')
 
 const modelViewer = $("model-viewer")
 const x = 0.1
@@ -81,6 +88,7 @@ reality.click(() => {
 const description = $('#description')
 const description_text = $('#description > p')
 const description_header = $('#description > h2')
+const description_disclaimer = $('#description > p > a')
 const buyButton = $('#buyButton')
 const btnContainer = $("#btnContainer")
 
@@ -103,7 +111,7 @@ const one = {
 const two = {
   'header': 'COMPACT',
   'description': 'Fully featured; as portable as possible. This ain\'t your grandpa\'s two-piece. <br><ul><li>top storage</li><li>no-gunk guide-ring</li><li>pocket sized</li></ul>',
-  'video': 'assets/videos/plus demo.mp4',
+  'video': video1cdn,
   'link': 'https://recreation-community.myshopify.com/66077622512/checkouts/cc54e961365c315f73dc92c436bd95a7',
   'button': twoButton,
   'price': '$69'
@@ -113,7 +121,8 @@ const three = {
   'description': 'The grinder you thought you knew. Our no-gunk friction ring <br><ul><li>portable container</li><li>top storage</li><li>shareability</li></ul>',
   'video': 'assets/videos/plus demo.mp4',
   'link': 'https://recreation-community.myshopify.com/66077622512/checkouts/53f976204e77cdb828fb2c37b7bbda30',
-  'button': threeButton
+  'button': threeButton,
+  'price': '$99'
 }
 
 
@@ -127,10 +136,13 @@ let currentProduct
 twoButton.click(() => explore(two))
 threeButton.click(() => explore(three))
 
+$('#disclaimer').hide()
+buyButton.hide()
+
 function explore(product) {
   if (lastButton == null) {
     lastButton = product.button
-    description.toggle()
+    buyButton.html(`BUY ${product.price}`)
   }
   if (product == three) {
     vidElement.pause()
@@ -140,11 +152,13 @@ function explore(product) {
   }
   else {
     // if (currentVid != product.video) vid(product.video)
+    vid(product.video)
     buyButton.show()
-    vidElement.play()
     video.css("filter", "initial")
-    $('#disclaimer').hide()
+    $('#disclaimer').show()
     buyButton.html(`<a href="${product.link}" class="branded" style="text-decoration:none" target="_blank" onclick="vidElement.pause()">BUY ${product.price}</a>`)
+    render.hide()
+    video.show()
   }
 
   currentProduct = product
@@ -171,9 +185,9 @@ $('.klaviyo_form_trigger').click(() => {
 
 // 21+
 $("#21y").click(() => {
+  console.log("21y")
   $('#ageCheck').hide()
   $('#fullBlur').hide()
-  explore(two)
 })
 $("#21n").click(() => window.open('https://media.tenor.com/ZZEl8q6eRaoAAAAC/shame-game-of-thrones.gif', '_self'))
 

@@ -23,7 +23,7 @@ popup tutorials
  * https://www.youtube.com/watch?v=AF6vGYIyV8M
 
  QR-code generator
- * [paid](https://app.qr-code-generator.com/): expensive, better designs ($10/month billed annually)
+ * [BeaconStack](https://dashboard.beaconstac.com/qr-codes): seems to be the best
  * [free](https://www.qrcode-monkey.com/): free, good enough for now
 
 **FONTS**
@@ -48,4 +48,5 @@ APP: https://apps.apple.com/us/app/consume-alcohol-tracker/id1633718776
 
 **Markdown**
 
-[<md-block>](https://www.makeuseof.com/md-block-render-markdown-web-page/)
+[<md-block>](https://www.makeuseof.com/md-block-render-markdown-web-page/): better because renders in DOM, automaticall applies styles
+[<zero-md>](https://zerodevx.github.io/zero-md/): renders in Shadow-DOM, need to specify styles (downside but also benefit if you want to customize further)
