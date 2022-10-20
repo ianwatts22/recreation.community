@@ -58,6 +58,7 @@ body {
 header {
   font-size: 4rem;
 }
+ul { margin: 0; }
 
 /* h1 { font-family: retrokia; } */
 
@@ -69,7 +70,7 @@ header {
 }
 #logo {
   max-width: 16rem;
-  margin: 1rem auto auto auto;
+  margin: 1rem;
 }
 
 /* LINK BUTTONS */
@@ -231,9 +232,11 @@ ar-button:before {
 
 #description {
   position: absolute;
-  padding: 0.5rem;
+  padding: 1rem;
   margin: 1rem;
   gap: 1rem;
+
+  border-radius: 2rem;
 
   width: 24%;
   min-width: 24rem;
@@ -312,7 +315,9 @@ ar-button:before {
     font-size: 1.5rem;
   }
 
-  #logo {width: 12rem}
+  #logo {
+    width: 12rem;
+  }
   #appButton > span { display: none }
   .socials { width: 52px; }
   .socials > a > img { width: 2.25rem; }
@@ -323,14 +328,23 @@ ar-button:before {
     font-size: 1.25rem;
   }
 
-  #description {
+  /* #description {
     inset: auto auto 1rem auto;
     transform: translate(0, 0);
     width: auto;
     min-width: 0rem;
-    padding: 0 1rem;
     border-radius: 2rem;
     margin: 0 1rem;
+  } */
+
+  #description {
+    inset: auto auto 0 auto;
+    transform: translate(0, 0);
+    width: auto;
+    min-width: 0rem;
+    border-radius: 0;
+    margin: 0;
+    padding: 1rem 1rem 0 1rem;
   }
   #description > p {
     font-size: 1.25rem;

@@ -23,11 +23,22 @@ var activeVideo = 0
 let currentVid;
 const video1cdn = 'https://cdn.shopify.com/videos/c/o/v/171c06e8a55744e2aef07bfabae8f5c6.mp4'
 
+const logo = $('#logo')
+const sundial = $("#sundial")
+const beDialed = $('#beDialed')
+
 $(document).ready(function () {
   if ($(window).width() < 640) {
     videos = [video1mobile, video2mobile]
     appQR.remove()
+    logo.addClass("top-left")
+    sundial.hide()
+    beDialed.hide()
+  } else {
+    logo.addClass("middle")
   }
+  
+  
   vidElement.src = videos[activeVideo]
   currentVideo = videos[activeVideo]
 })
@@ -136,6 +147,8 @@ let currentProduct
 twoButton.click(() => explore(two))
 threeButton.click(() => explore(three))
 
+explore(two)
+
 $('#disclaimer').hide()
 buyButton.hide()
 
@@ -188,6 +201,7 @@ $("#21y").click(() => {
   console.log("21y")
   $('#ageCheck').hide()
   $('#fullBlur').hide()
+  vidElement.play()
 })
 $("#21n").click(() => window.open('https://media.tenor.com/ZZEl8q6eRaoAAAAC/shame-game-of-thrones.gif', '_self'))
 
