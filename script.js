@@ -150,7 +150,7 @@ threeButton.click(() => explore(three))
 explore(two)
 
 $('#disclaimer').hide()
-buyButton.hide()
+// buyButton.hide()
 
 function explore(product) {
   if (lastButton == null) {
