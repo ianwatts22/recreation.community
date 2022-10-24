@@ -79,6 +79,7 @@ ul { margin: 0; }
 /* LINK BUTTONS */
 .links {
   margin: 1rem;
+  border-radius: 0px 0px 0px 50px;
   padding: .5rem;
   font-size: 2.5rem;
 }
@@ -319,25 +320,34 @@ ar-button:before {
     font-size: 1.5rem;
   }
 
+  .links {
+    margin: 0px
+  }
+  
+  .top-right {
+    border-radius: 0px 0px 0px 30px;
+  }
+
   #logo {
-    width: 11rem;
+    width: 9rem;
   }
   #appButton > span { display: none }
   .socials { width: 52px; }
   .socials > a > img { width: 2.25rem; }
 
-  .btn-container > button { font-size: 2rem; }
+  .btn-container > button { font-size: 1.5rem; }
 
   .writing {
     font-size: 1.25rem;
   }
 
   #description {
+    border-radius: 30px 30px 0px 0px;
     inset: auto auto 0 auto;
     transform: translate(0, 0);
     width: 100%;
     min-width: 0rem;
-    border-radius: 0;
+    /* border-radius: 0; */
     margin: 0;
     padding: 1rem 1rem 0 1rem;
 
@@ -346,7 +356,7 @@ ar-button:before {
     box-sizing: border-box;         /* Opera/IE 8+ */
   }
   #description > p {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     margin: 0;
   }
 }
