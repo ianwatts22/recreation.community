@@ -37,8 +37,8 @@ $(document).ready(function () {
   } else {
     logo.addClass("middle")
   }
-  
-  
+
+
   vidElement.src = videos[activeVideo]
   currentVideo = videos[activeVideo]
 })
@@ -151,6 +151,15 @@ explore(two)
 
 $('#disclaimer').hide()
 // buyButton.hide()
+
+
+// let expandButton = $('#expand')
+
+// $('#details').hide()
+// expandButton.click(() => {
+//   $('#details').show()
+//    expandButton.html('hide')
+// })
 
 function explore(product) {
   if (lastButton == null) {
