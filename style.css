@@ -43,6 +43,7 @@ html {
   font-family: 'Varela Round', sans-serif;
   /* font-size: 1.5rem; */
   font-weight: 600;
+  /* color:#7196c9; */
   color: #323232;
   transition-property: filter, opacity;
   transition-duration: .5s;
@@ -167,7 +168,7 @@ model-viewer {
   flex-wrap: wrap;
   gap: 1rem;
 
-  padding: .5rem;
+  /* padding: .5rem; */
   margin: auto auto 0 auto;
 }
 .btn-container > button {
@@ -325,7 +326,7 @@ ar-button:before {
   }
   
   .top-right {
-    border-radius: 0px 0px 0px 30px;
+    border-radius: 0px 0px 0px 24px;
   }
 
   #logo {
@@ -342,14 +343,14 @@ ar-button:before {
   }
 
   #description {
-    border-radius: 30px 30px 0px 0px;
+    border-radius: 20px 20px 0px 0px;
     inset: auto auto 0 auto;
     transform: translate(0, 0);
     width: 100%;
     min-width: 0rem;
     /* border-radius: 0; */
     margin: 0;
-    padding: 1rem 1rem 0 1rem;
+    padding: 0.7rem 0.7rem 0.7rem 0.7rem;
 
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */

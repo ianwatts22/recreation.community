@@ -121,7 +121,7 @@ const one = {
 }
 const two = {
   'header': 'COMPACT',
-  'description': 'Fully featured; as portable as possible. This ain\'t your grandpa\'s two-piece. <br>top storage | no-gunk guide-ring | pocket sized',
+  'description': 'Portable. top storage<br> | no-gunk guide-ring | pocket sized',
   //'description': 'Fully featured; as portable as possible. This ain\'t your grandpa\'s two-piece. <br><ul><li>top storage</li><li>no-gunk guide-ring</li><li>pocket sized</li></ul>',
   'video': video1cdn,
   'link': 'https://recreation-community.myshopify.com/66077622512/checkouts/cc54e961365c315f73dc92c436bd95a7',
