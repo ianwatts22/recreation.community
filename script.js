@@ -163,11 +163,11 @@ const appButton = $('#appButton')
 const appQR = $('#appQR')
 appButton.mouseenter(() => {
   appQR.show()
-  video[0].pause()
+  //video[0].pause()
 })
 appButton.mouseleave(() => {
   appQR.hide()
-  video[0].play()
+  //video[0].play()
 })
 appButton.click(() => window.open('https://apps.apple.com/us/app/consume-alcohol-tracker/id1633718776', '_blank'))
 
