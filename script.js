@@ -1,47 +1,23 @@
-// const { RedIntegerFormat } = require("three")
-
 //ELEMENTS
 const tan = "#feebca"
-/* const blue
-const gray */
-
-// VIDEOS
-var vidElement = document.getElementById("video")
-var video = $('#video')
-const videoArray = {
-  "vibes": [],
-  "one": [],
-  "two": [],
-  "three": []
-}
-const video1 = "assets/videos/grinder demo.mp4"
-const video2 = "assets/videos/grinder vibes.mp4"
-const video1mobile = "assets/videos/grinder demo mobile.mp4"
-const video2mobile = "assets/videos/grinder vibes mobile.mp4"
-var videos = [video1, video2]
-var activeVideo = 0
-let currentVid;
-const video1cdn = 'https://cdn.shopify.com/videos/c/o/v/171c06e8a55744e2aef07bfabae8f5c6.mp4'
-
 const logo = $('#logo')
 const sundial = $("#sundial")
 const beDialed = $('#beDialed')
 
-$(document).ready(function () {
-  if ($(window).width() < 640) {
-    videos = [video1mobile, video2mobile]
-    appQR.remove()
-    logo.addClass("top-left")
-    sundial.hide()
-    beDialed.hide()
-  } else {
-    logo.addClass("top-left")
-  }
+var vidElement = document.getElementById("video")
+var video = $('#video')
+var audio = $('#audio')
 
-
-  vidElement.src = videos[activeVideo]
-  currentVideo = videos[activeVideo]
-})
+//VIDEO FUNCTIONALITY
+const video1cdn = 'https://cdn.shopify.com/videos/c/o/v/e5033a19a09e495ab762ab5dbedb6bbe.mp4'
+const video1 = "assets/videos/grinder demo.mp4"
+const video2 = "assets/videos/grinder vibes.mp4"
+const video1cdnMobile = "https://cdn.shopify.com/videos/c/o/v/ff36a632e008489297f22ba16a76a30b.mp4"
+const video1mobile = "assets/videos/grinder demo mobile.mp4"
+const video2mobile = "assets/videos/grinder vibes mobile.mp4"
+var videos = [video1cdn, video1, video2]
+var activeVideo = 0
+let currentVid;
 
 function vid(video) {
   vidElement.src = video
@@ -52,8 +28,18 @@ function vid(video) {
   console.log('play')
 }
 
-video.click(() => toggleVid())
-video.hide()
+//ON-READY
+$(document).ready(function () {
+  audio.play()
+  if ($(window).width() < 640) {
+    videos = [video1cdnMobile, video1mobile, video2mobile]
+    appQR.remove()
+    sundial.hide()
+    beDialed.hide()
+  }
+  vidElement.src = videos[activeVideo]
+  currentVideo = videos[activeVideo]
+})
 
 // JQuery: vidElement.onended = nextVid(), would need to be object instead of DOM element
 vidElement.addEventListener('ended', nextVid)
@@ -62,35 +48,9 @@ function nextVid() {
   vid(videos[activeVideo])
 }
 
-// const toggleVid = () => vidElement.paused ? vidElement.play() : vidElement.pause()
+video.click(() => toggleVid())
 function toggleVid() { vidElement.paused ? vidElement.play() : vidElement.pause() }
 
-// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-// ––––––––––––––––––––––––––––––––––––3D/AR––––––––––––––––––––––––––––––––––––––
-// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
-const render = $('#render')
-
-const modelViewer = $("model-viewer")
-const x = 0.1
-const y = 0.1
-const z = 0.1
-// trying to scale down 50%, not working
-const scale = () => {
-  modelViewer.scale = `${x} ${y} ${z}`
-  modelViewer.updateFraming()
-  console.log("scale")
-}
-if (modelViewer.loaded) scale()
-
-const reality = $('#reality')
-reality.click(() => {
-  video.toggle()
-  modelViewer.toggle()
-  console.log("toggle")
-  vidElement.pause()
-  video.is(":hidden") ? reality.html("reality") : reality.html("virtual")
-})
 
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 // ––––––––––––––––––––––––––––––––––––BUYING–––––––––––––––––––––––––––––––––––––
@@ -121,7 +81,7 @@ const one = {
 }
 const two = {
   'header': 'COMPACT',
-  'description': 'Portable. top storage<br> | no-gunk guide-ring | pocket sized',
+  'description': 'Elegant, Portable, Storable',
   //'description': 'Fully featured; as portable as possible. This ain\'t your grandpa\'s two-piece. <br><ul><li>top storage</li><li>no-gunk guide-ring</li><li>pocket sized</li></ul>',
   'video': video1cdn,
   'link': 'https://recreation-community.myshopify.com/66077622512/checkouts/cc54e961365c315f73dc92c436bd95a7',
@@ -137,30 +97,14 @@ const three = {
   'price': '$99'
 }
 
-
 products = [one, two, three]
 let currentProduct
 
-// create the elements using JS?
-/* products.forEach(element => {
-  btnContainer.append(element.button)
-}) */
+explore(two)
 twoButton.click(() => explore(two))
 threeButton.click(() => explore(three))
 
-explore(two)
-
 $('#disclaimer').hide()
-// buyButton.hide()
-
-
-// let expandButton = $('#expand')
-
-// $('#details').hide()
-// expandButton.click(() => {
-//   $('#details').show()
-//    expandButton.html('hide')
-// })
 
 function explore(product) {
   if (lastButton == null) {
@@ -174,13 +118,12 @@ function explore(product) {
     $('#disclaimer').hide()
   }
   else {
-    // if (currentVid != product.video) vid(product.video)
+    //if (currentVid != product.video) vid(product.video)
     vid(product.video)
-    buyButton.show()
     video.css("filter", "initial")
-    $('#disclaimer').show()
     buyButton.html(`<a href="${product.link}" class="branded" style="text-decoration:none" target="_blank" onclick="vidElement.pause()">BUY ${product.price}</a>`)
-    render.hide()
+    //description_header.html(product.header)
+    description_text.html(product.description)
     video.show()
   }
 
@@ -227,3 +170,32 @@ appButton.mouseleave(() => {
   video[0].play()
 })
 appButton.click(() => window.open('https://apps.apple.com/us/app/consume-alcohol-tracker/id1633718776', '_blank'))
+
+
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+// ––––––––––––––––––––––––––––––––––––3D/AR––––––––––––––––––––––––––––––––––––––
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+/*
+const render = $('#render')
+
+const modelViewer = $("model-viewer")
+const x = 0.1
+const y = 0.1
+const z = 0.1
+// trying to scale down 50%, not working
+const scale = () => {
+  modelViewer.scale = `${x} ${y} ${z}`
+  modelViewer.updateFraming()
+  console.log("scale")
+}
+if (modelViewer.loaded) scale()
+
+const reality = $('#reality')
+reality.click(() => {
+  video.toggle()
+  modelViewer.toggle()
+  console.log("toggle")
+  vidElement.pause()
+  video.is(":hidden") ? reality.html("reality") : reality.html("virtual")
+})
+*/
