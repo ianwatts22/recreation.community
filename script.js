@@ -132,7 +132,7 @@ const three = {
   'header': 'CLASSIC',
   'description': 'The grinder you thought you knew. Our no-gunk friction ring <br><ul><li>portable container</li><li>top storage</li><li>shareability</li></ul>',
   'video': 'assets/videos/plus demo.mp4',
-  'link': 'https://recreation-community.myshopify.com/66077622512/checkouts/53f976204e77cdb828fb2c37b7bbda30',
+  'link': 'https://recreation-community.myshopify.com/66077622512/checkouts/53f976204e77cdb828fb2c37b7bbda30',le
   'button': threeButton,
   'price': '$99'
 }
