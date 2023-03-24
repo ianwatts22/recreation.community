@@ -4,15 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>recreation</title>
+    <title>RECREATION</title>
+    <meta name="description" content="RECREATION products. Magnetic grinder and portable pod system that enables you to take it on the go.">
     <link type="text/css" href="style.css" rel="stylesheet">
-    <link href="assets/fav/favicon.ico?v=2" rel="icon">
+    <link href="assets/fav/favicon-256.ico" rel="icon">
 
     <!-- fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
-    <link href="https://use.typekit.net/qru3fkv.css" rel="stylesheet">
-    <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet">
-
+    <!-- <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'> -->
+    <!-- <link href="https://use.typekit.net/qru3fkv.css" rel="stylesheet"> -->
+    <!-- <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet"> -->
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -29,23 +29,23 @@
     <!-- 21+ -->
     <div id="ageCheck" class="center branded" style="font-size: 3rem;">
         you 21+?
-        <button id="21y"><img src="assets/images/drawings/thumbs up.png"></button>
-        <button id="21n"><img src="assets/images/drawings/thumbs down.png"></button>
+        <button id="21y" name="I am 21" alt="I am 21"><img src="assets/images/drawings/thumbs up.svg" alt="I am 21 (thumbs up)"></button>
+        <button id="21n" name="I am 21" alt="I am not 21"><img src="assets/images/drawings/thumbs down.svg" alt="I am not 21 (thumbs down)"></button>
     </div>
 
     <!-- FULL SCREEN BLUR -->
     <div id="fullBlur"></div>
 
     <!-- app QR -->
-    <img id="appQR" class="back-blur center" style="display: none;" src="assets/images/appQR.png">
+    <img id="appQR" class="back-blur center" style="display: none;" src="assets/images/Consume.svg" alt="QR code for Consume app in Apple Store">
 
     <!-- HEADER -->
-    <img id="logo" src="assets/images/Dial Pill.png">
+    <img id="logo" class = "top-left" src="assets/images/RECREATION.svg" alt="Recreation logo">
 
     <!-- CONSUME -->
     <!-- <a id="appButton" href="https://apps.apple.com/us/app/consume-alcohol-tracker/id1633718776"
         class="app back-blur links top-left" style="text-decoration:none" target="_blank">
-        <img style="width: 3rem;" src="assets/images/App Store icon.svg">
+        <img style="width: 3rem;" src="assets/images/icons/App Store icon.svg">
         <span class="branded">Consume</span>
     </a> -->
 
@@ -56,13 +56,11 @@
 
     <!-- SOCIALS -->
     <div class="socials links back-blur top-right">
-        <a href="https://www.instagram.com/recreation.life/" target="_blank"><img src="assets/images/IG icon.svg"></a>
-        <!-- <a href="https://twitter.com/recreation_life" target="_blank"><img src="assets/images/Twitter icon.svg"></a> -->
-        <!-- <a href="https://www.youtube.com/channel/UCA1tCuEnEiZLYgk4Oxe9k4w" target="_blank"><img src="assets/images/YT icon.svg"></a> -->
-        <a href="https://www.tiktok.com/@recreation.life" target="_blank"><img src="assets/images/TikTok icon.svg"></a>
-        <a id="appButton" href="https://apps.apple.com/us/app/consume-alcohol-tracker/id1633718776"
-        style="text-decoration:none" target="_blank">
-        <img src="assets/images/App Store icon.svg">
+        <a href="https://www.instagram.com/recreation.life/" target="_blank" rel="noopener" alt="Instagram account link"><img src="assets/images/icons/IG icon.svg" alt="Instagram icon"></a>
+        <!-- <a href="https://twitter.com/recreation_life" target="_blank" alt="Twitter account link"><img src="assets/images/icons/Twitter icon.svg" alt="Twitter icon"></a> -->
+        <!-- <a href="https://www.youtube.com/channel/UCA1tCuEnEiZLYgk4Oxe9k4w" target="_blank" alt="YouTube channel link><img src="assets/images/icons/YT icon.svg" alt="YouTube icon"></a> -->
+        <a href="https://www.tiktok.com/@recreation.life" target="_blank" rel="noopener" alt="TikTok account link"><img src="assets/images/icons/TikTok icon.svg" alt="TikTok icon"></a>
+        <a id="appButton" href="https://apps.apple.com/us/app/consume-alcohol-tracker/id1633718776" style="text-decoration:none" target="_blank" rel="noopener" alt="Consume Apple App Store link"><img src="assets/images/icons/App Store icon.svg" alt="Apple App Store icon">
         <span class="branded"></span>
     </a>
 
@@ -70,9 +68,8 @@
 
     <!-- PRODUCT DESCRIPTION -->
     <div id="description" class="back-blur">
-        <div class="branded p2" style="text-align: center"></div>
-        <!-- <button id="expand" class="branded">details</button> -->
-        <p id="details" style="text-align: center"></p>
+        <p style="text-align: center"></p>
+        <div class="branded p2" style="text-align: center; padding-bottom: 15px"></div>
         <!-- <input type="checkbox"> -->
         <div id="disclaimer" style="text-align: center; font-size: 1.75rem; padding: 0.25rem;">free 3 week shipping</div>
         <div class="btn-container" style="">
@@ -93,9 +90,12 @@
         </div>
     </div>
 
+    <audio id="audio" autoplay loop src="https://cdn.shopify.com/s/files/1/0660/7762/2512/files/ES_Fact_Checkers_Instrumental_Version_-_Xavy_Rusan.mp3?v=1665472023"></audio>
     <!-- BACKGROUND VIDEO -->
-    <video id="video" playsinline="true">
-        <source src="assets/videos/grinder demo.mp4" type="video/mp4">
+    <video id="video" muted playsinline="true">
+        <source src="https://cdn.shopify.com/videos/c/o/v/ff36a632e008489297f22ba16a76a30b.mp4" type="video/mp4">
+
+        <!-- <source src="assets/videos/grinder demo.mp4" type="video/mp4"> -->
     </video>
 
     <!-- <video id="vid1" class="video-js vjs-default-skin" controls autoplay width="640" height="264"
@@ -104,28 +104,28 @@
 
     <!-- PICTURES -->
     <!-- <div style="background-color: #fbfbfb;"> -->
-    <img id="render" class="center" style="width: 100%; z-index: -1;" src="assets/images/product/2piece-3.png"></div>
-    <img id="beDialed" class="bottom-right" style="margin: 2rem; width: 20%; z-index: 0; max-width: 16rem;" src="assets/images/drawings/be dialed.png">
+    <!-- <img id="render" class="center" style="width: 100%; z-index: -1;" src="assets/images/product/2piece-3.png"></div> -->
+    <!-- <img id="beDialed" class="bottom-right" style="margin: 2rem; width: 20%; z-index: 0; max-width: 16rem;" src="assets/images/drawings/be dialed.png"> -->
     </div>
-    <img id="sundial" class="bottom-left" style="margin: 2rem; width: 15%; z-index: 0; max-width: 10rem;" src="assets/images/drawings/sundial.png">
+    <!-- <img id="sundial" class="bottom-left" style="margin: 2rem; width: 15%; z-index: 0; max-width: 10rem;" src="assets/images/drawings/sundial.png"> -->
     </div>
     <!-- <img class="bottom-middle" style="margin: 3rem; width: 20%; z-index: 0;" src="assets/images/drawings/hand joint.png"> </div> -->
 
     <!-- BOTTOM BUTTONS -->
     <div class="btn-container">
         <!-- PRODUCT BUTTONS -->
-        <!-- <button id="one" style="display: none">
+        <button type="button" id="one" style="display: none">
             <span class="branded">ONE</span>
             <pre> $29+</pre>
         </button>
-        <button id="two" style="display: none">
+        <button type="button" id="two" style="display: none">
             <span class="branded">TWO</span>
             <pre> $69+</pre>
         </button>
-        <button id="three" style="display: none">
+        <button type="button" id="three" style="display: none">
             <span class="branded">THREE</span>
             <pre> $99+</pre>
-        </button> -->
+        </button>
 
         <!-- AR BUTTON (source: https://leoncvlt.github.io/ar-button/ )-->
         <!-- <ar-button class = "btn ar-btn"
@@ -167,16 +167,22 @@
     </div>
 
     <!-- scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script type="module" src="https://unpkg.com/@leoncvlt/ar-button"></script>
     <link rel="stylesheet" href="https://unpkg.com/@leoncvlt/ar-button/styles.css">
     <!-- <script type="module" src="http://sdks.shopifycdn.com/js-buy-sdk/v2/latest/index.umd.min.js"></script> -->
     <script async type="text/javascript"
         src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=XUuHGq"></script>
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    <script type="module" src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+    <!-- <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js" defer></script> -->
+    <!-- <script type="module" src="https://vjs.zencdn.net/7.20.3/video.min.js" defer></script> -->
     <script type="text/html" src="https://unpkg.com/browse/videojs-youtube@2.6.0/dist/Youtube.min.js"></script>
     <script src="script.js"></script>
+
+    <!-- LOOX -->
+    <script async src="//loox.io/widget/loox.js?shop=recreation-community.myshopify.com"></script>
+
+    <script src="http://sdks.shopifycdn.com/js-buy-sdk/v2/latest/index.umd.min.js"></script>
+    <script src="shopify.js"></script>
 </body>
 
 </html>

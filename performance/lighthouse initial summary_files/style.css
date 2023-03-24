@@ -4,8 +4,8 @@
 @tailwind utilities;
 */
 /* colors 
-blue: #395a73
-green: #616535
+blue: #7196c9
+green: #5D731B
 grey: #323232
 tan: #feebca
 red: #af3812
@@ -69,7 +69,7 @@ ul { margin: 0; }
 
 .branded { 
   font-family: retrokia;
-  color: #395a73;
+  color: #7196c9;
   line-height: 1;
 }
 #logo {
